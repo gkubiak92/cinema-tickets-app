@@ -1,14 +1,20 @@
 import React from "react";
-import Header from "./components/header/header-component";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
+
+import Header from "./components/header/header.component";
 import HomePage from "./pages/home/homepage.component";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <HomePage />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 

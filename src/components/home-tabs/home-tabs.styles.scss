@@ -1,0 +1,28 @@
+@import "../../styles/variables";
+
+div.home-tabs {
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    li {
+      flex: 1;
+      display: inline-block;
+      text-align: center;
+      height: 32px;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 4px;
+        background-color: $primary-color;
+        transition: width 0.2s linear;
+      }
+
+      &.active:after {
+        width: 100%;
+      }
+    }
+  }
+}
