@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu-icon {
+  font-size: 24px;
+  color: $primary-text-color;
+}
