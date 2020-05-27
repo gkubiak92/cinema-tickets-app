@@ -8,6 +8,7 @@ div.tabs-container {
     li {
       flex: 1;
       display: inline-block;
+      position: relative;
       text-align: center;
       height: auto;
       padding: 12px 8px;
@@ -15,15 +16,18 @@ div.tabs-container {
       &:after {
         content: "";
         display: block;
+        position: absolute;
+        left: 50%;
         margin-top: 8px;
         width: 0;
         height: 6px;
         background-color: $primary-color;
         border-radius: 4px;
-        transition: width 0.2s linear;
+        transition: all 0.2s linear;
       }
 
       &.active:after {
+        left: 0;
         width: 100%;
       }
     }
