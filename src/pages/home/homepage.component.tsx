@@ -1,5 +1,6 @@
 import React from "react";
 import Tabs from "../../components/tabs/tabs.component";
+import Slider from "../../components/slider/slider.component";
 
 const HomePage = () => {
   const tabsData = [
@@ -19,7 +20,7 @@ const HomePage = () => {
 
   return (
     <main className="homepage">
-      <h1>HOME</h1>
+      <Slider />
       <Tabs tabs={tabsData} />
     </main>
   );

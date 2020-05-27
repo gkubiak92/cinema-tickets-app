@@ -1,0 +1,16 @@
+section.slider-container {
+  display: block;
+  width: 100vw;
+  height: 400px;
+  margin-left: -24px;
+}
+
+div.slide {
+  display: none;
+  background-size: cover;
+  height: 100%;
+  transition: display 0.5 ease-in;
+  &.active {
+    display: block;
+  }
+}

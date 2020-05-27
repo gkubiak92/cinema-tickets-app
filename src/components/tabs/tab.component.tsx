@@ -6,7 +6,7 @@ const Tab = ({ name, isActive, onClickHandler }: ITabProps) => (
     className={isActive ? "active" : undefined}
     onClick={() => onClickHandler()}
   >
-    {name}
+    {name.toUpperCase()}
   </li>
 );
 
