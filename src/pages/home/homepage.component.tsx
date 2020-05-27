@@ -1,11 +1,28 @@
 import React from "react";
-import HomeTabs from "../../components/home-tabs/home-tabs.component";
+import Tabs from "../../components/tabs/tabs.component";
 
-const HomePage = () => (
-  <main className="homepage">
-    <h1>HOME</h1>
-    <HomeTabs />
-  </main>
-);
+const HomePage = () => {
+  const tabsData = [
+    {
+      name: "new",
+      content: <div>new</div>,
+    },
+    {
+      name: "popular",
+      content: <div>popular</div>,
+    },
+    {
+      name: "upcoming",
+      content: <div>upcoming</div>,
+    },
+  ];
+
+  return (
+    <main className="homepage">
+      <h1>HOME</h1>
+      <Tabs tabs={tabsData} />
+    </main>
+  );
+};
 
 export default HomePage;

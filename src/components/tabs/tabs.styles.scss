@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-div.home-tabs {
+div.tabs-container {
   ul {
     list-style: none;
     display: flex;
@@ -9,14 +9,17 @@ div.home-tabs {
       flex: 1;
       display: inline-block;
       text-align: center;
-      height: 32px;
+      height: auto;
+      padding: 12px 8px;
 
       &:after {
         content: "";
         display: block;
+        margin-top: 8px;
         width: 0;
-        height: 4px;
+        height: 6px;
         background-color: $primary-color;
+        border-radius: 4px;
         transition: width 0.2s linear;
       }
 

@@ -1,10 +1,5 @@
 import React from "react";
-
-interface ITabProps {
-  name: string;
-  isActive: boolean;
-  onClickHandler: Function;
-}
+import { ITabProps } from "./types";
 
 const Tab = ({ name, isActive, onClickHandler }: ITabProps) => (
   <li
