@@ -1,7 +1,7 @@
 import React from "react";
 import Tabs from "../../components/tabs/tabs.component";
 import Slider from "../../components/slider/slider.component";
-import { tabsData, slides, movies } from "../../data/dump-data";
+import { slides, movies } from "../../data/dump-data";
 import MoviesList from "../../components/movies-list/movies-list.component";
 
 const HomePage = () => {
