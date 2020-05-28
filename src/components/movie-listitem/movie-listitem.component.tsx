@@ -12,7 +12,9 @@ const MovieListItem = ({ movie }: IMovieProps) => {
         <header>{movie.title}</header>
         <p className="director">{movie.director}</p>
         {movie.genres.map((genre) => (
-          <p className="genre">{genre}, </p>
+          <p key={genre} className="genre">
+            {genre},
+          </p>
         ))}
       </div>
     </div>
