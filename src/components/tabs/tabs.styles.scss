@@ -5,6 +5,8 @@ div.tabs-container {
     list-style: none;
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
+
     li {
       flex: 1;
       display: inline-block;
