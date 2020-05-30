@@ -1,6 +1,7 @@
 import React from "react";
 import "./movie-listitem.styles.scss";
 import { IMovieProps } from "./types";
+import Rating from '../rating/rating.component'
 
 const MovieListItem = ({ movie }: IMovieProps) => {
   return (
@@ -16,6 +17,7 @@ const MovieListItem = ({ movie }: IMovieProps) => {
             {genre},
           </p>
         ))}
+        <Rating rating={movie.rating} />
       </div>
     </div>
   );

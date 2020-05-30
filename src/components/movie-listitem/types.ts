@@ -9,6 +9,7 @@ export interface IMovie {
   stars: string[];
   thumbnailUrl: string;
   title: string;
+  rating: number;
   writer: string;
 }
 

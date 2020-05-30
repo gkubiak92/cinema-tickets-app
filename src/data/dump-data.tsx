@@ -36,6 +36,7 @@ export const movies = [
     thumbnailUrl:
       "https://m.media-amazon.com/images/M/MV5BNmMwYzFlNTEtYTc0NC00NGY4LTgzNzItZGFiYTViY2QzNzU1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
     title: "Tenet",
+    rating: 3,
     writer: "Christopher Nolan",
   },
   {
@@ -50,6 +51,7 @@ export const movies = [
     stars: ["Dakota Fanning", "Evan Rachel", "Wood", "Zoë Kravitz"],
     thumbnailUrl: "https://m.media-amazon.com/images/M/MV5BODk1ZWM3NmYtOTBkMC00ZDNkLWFhYzUtZWYyODUzNmFhOTQ3XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
     title: "Viena and the Fantomes",
+    rating: 4.5,
     writer: "Gerardo Naranjo",
   },
   {
@@ -63,6 +65,7 @@ export const movies = [
     stars: ["Dean-Charles Chapman", "George MacKay", "Daniel Mays"],
     thumbnailUrl: "https://m.media-amazon.com/images/M/MV5BOTdmNTFjNDEtNzg0My00ZjkxLTg1ZDAtZTdkMDc2ZmFiNWQ1XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_UX182_CR0,0,182,268_AL_.jpg",
     title: "1917",
+    rating: 5,
     writer: "Sam Mendes",
   },
   {
@@ -76,6 +79,7 @@ export const movies = [
     stars: [" Joaquin Phoenix", "Robert De Niro", "Zazie Beetz"],
     thumbnailUrl: "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
     title: "Joker",
+    rating: 3.8,
     writer: "Todd Phillips",
   },
 ];
