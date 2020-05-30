@@ -9,7 +9,6 @@ import { createStructuredSelector } from 'reselect'
 import { IHomePageState } from "./types";
 
 const HomePage = ({ newMovies, popularMovies, upcomingMovies }: IHomePageState) => {
-  console.log(newMovies);
   const tabsData = [
     {
       name: "new",
