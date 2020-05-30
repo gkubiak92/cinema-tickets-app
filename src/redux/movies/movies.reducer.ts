@@ -28,7 +28,7 @@ const moviesReducer = (state = INITIAL_STATE, action: MovieActionTypes) => {
         error: action.payload,
       };
     default:
-      break;
+      return state;
   }
 };
 

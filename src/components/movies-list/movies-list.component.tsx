@@ -6,9 +6,7 @@ import "./movies-list.styles.scss";
 const MoviesList = ({ movies }: IMoviesListProps) => {
   return (
     <div className="movie-list-container">
-      {Object.entries(movies).map(([key, value]) => (
-        <MovieListItem key={key} movie={value} />
-      ))}
+      {movies.map((movie) => <MovieListItem key={movie.id} movie={movie} />)}
     </div>
   );
 };

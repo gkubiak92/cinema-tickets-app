@@ -1,4 +1,5 @@
 export interface IMovie {
+  id: string,
   description: string;
   director: string;
   genres: string[];
@@ -8,6 +9,7 @@ export interface IMovie {
   stars: string[];
   thumbnailUrl: string;
   title: string;
+  rating: number;
   writer: string;
 }
 

@@ -25,3 +25,9 @@ export type MovieActionTypes =
   | FetchMoviesStartAction
   | FetchMoviesSuccessAction
   | FetchMoviesFailureAction;
+
+export interface IMoviesState {
+  movies: IMoviesList,
+  isFetching: boolean,
+  error: string,
+}
