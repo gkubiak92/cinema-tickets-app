@@ -1,22 +1,27 @@
 import React from "react";
+import { connect } from 'react-redux'
 import Tabs from "../../components/tabs/tabs.component";
 import Slider from "../../components/slider/slider.component";
-import { slides, movies } from "../../data/dump-data";
+import { slides } from "../../data/dump-data";
 import MoviesList from "../../components/movies-list/movies-list.component";
+import { selectNewMovies, selectPopularMovies, selectUpcomingMovies } from "../../redux/movies/movies.selectors";
+import { createStructuredSelector } from 'reselect'
+import { IHomePageState } from "./types";
 
-const HomePage = () => {
+const HomePage = ({ newMovies, popularMovies, upcomingMovies }: IHomePageState) => {
+  console.log(newMovies);
   const tabsData = [
     {
       name: "new",
-      content: <MoviesList movies={movies} />,
+      content: <MoviesList movies={newMovies} />,
     },
     {
       name: "popular",
-      content: <div>popular</div>,
+      content: <MoviesList movies={popularMovies} />,
     },
     {
       name: "upcoming",
-      content: <div>upcoming</div>,
+      content: <MoviesList movies={upcomingMovies} />,
     },
   ];
 
@@ -28,4 +33,10 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+const mapStateToProps = createStructuredSelector<any, any>({
+  newMovies: selectNewMovies,
+  popularMovies: selectPopularMovies,
+  upcomingMovies: selectUpcomingMovies
+});
+
+export default connect(mapStateToProps)(HomePage);

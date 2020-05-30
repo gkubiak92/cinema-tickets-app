@@ -1,4 +1,5 @@
 export interface IMovie {
+  id: string,
   description: string;
   director: string;
   genres: string[];

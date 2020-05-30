@@ -1,8 +1,6 @@
 import { IMovie } from "../movie-listitem/types";
 
-export interface IMoviesList {
-  [key: string]: IMovie;
-}
+export type IMoviesList = IMovie[];
 
 export interface IMoviesListProps {
   movies: IMoviesList;
