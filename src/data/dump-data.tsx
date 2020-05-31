@@ -1,10 +1,12 @@
+import { IMovie } from "../components/movie-listitem/types";
+
 export const slides = [
   "https://cdn.pastemagazine.com/www/system/images/photo_albums/best-movie-posters-2016/large/moonlight-ver2-xlg.jpg?1384968217",
   "https://www.joblo.com/assets/images/joblo/posters/2019/01/IO-poster-1.jpg",
   "https://images-na.ssl-images-amazon.com/images/I/71zaL8t0qgL._AC_SL1406_.jpg",
 ];
 
-export const movies = [
+export const movies: IMovie[] = [
   {
     id: 'A13xQ3QRVPxFMQGqaTkq',
     description:
@@ -15,6 +17,11 @@ export const movies = [
     isNew: true,
     isPopular: true,
     isUpcoming: false,
+    photosUrl: [
+      'https://m.media-amazon.com/images/M/MV5BNWFlNjVkM2ItZDE1My00NTEwLWJhYmQtYWM5ODRkNzY3OGE5XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_.jpg',
+      'https://m.media-amazon.com/images/M/MV5BNDA2NjQxNzctZGMzMy00NzczLWI4MTctZWU3MWVhZWMwMDNjXkEyXkFqcGdeQXVyNzg0ODMwNDg@._V1_SX1777_CR0,0,1777,755_AL_.jpg',
+      'https://m.media-amazon.com/images/M/MV5BYmI5Zjk5MDMtNTdmMC00MDU5LTkyOTktZWE2ZGMyOGFhNWFkXkEyXkFqcGdeQXVyNzg0ODMwNDg@._V1_SX1777_CR0,0,1777,755_AL_.jpg',
+    ],
     stars: ["John David Washington", "Robert Pattinson", "Elizabeth Debicki"],
     thumbnailUrl:
       "https://m.media-amazon.com/images/M/MV5BNmMwYzFlNTEtYTc0NC00NGY4LTgzNzItZGFiYTViY2QzNzU1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
@@ -31,6 +38,11 @@ export const movies = [
     isNew: true,
     isPopular: false,
     isUpcoming: true,
+    photosUrl: [
+      'https://m.media-amazon.com/images/M/MV5BOWIzODkwYTEtYmI0OC00YTM0LWFmY2QtNGU5Zjk0OTliOGIyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SY1000_CR0,0,1498,1000_AL_.jpg',
+      'https://m.media-amazon.com/images/M/MV5BMjU4NTc3MzktM2Y3MC00OTlmLThkZjMtODc4MmJmMjM2YzI1XkEyXkFqcGdeQXVyNDMwODgwOTc@._V1_SY1000_CR0,0,1498,1000_AL_.jpg',
+      'https://m.media-amazon.com/images/M/MV5BMmRkYWQ4ZDQtZjZjMy00NWY0LWExMWUtMTM2YWMxZmE4MGNkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SY1000_CR0,0,1498,1000_AL_.jpg',
+    ],
     stars: ["Dakota Fanning", "Evan Rachel", "Wood", "Zoë Kravitz"],
     thumbnailUrl: "https://m.media-amazon.com/images/M/MV5BODk1ZWM3NmYtOTBkMC00ZDNkLWFhYzUtZWYyODUzNmFhOTQ3XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
     title: "Viena and the Fantomes",
@@ -45,6 +57,11 @@ export const movies = [
     isNew: false,
     isPopular: true,
     isUpcoming: false,
+    photosUrl: [
+      'https://m.media-amazon.com/images/M/MV5BZjNhYTc5NDgtZGY4Mi00OWQ2LWI0NjktYmU1OWYyMjdlMmFiXkEyXkFqcGdeQXVyNzI1NzMxNzM@._V1_SY1000_SX1500_AL_.jpg',
+      'https://m.media-amazon.com/images/M/MV5BZjNhYTc5NDgtZGY4Mi00OWQ2LWI0NjktYmU1OWYyMjdlMmFiXkEyXkFqcGdeQXVyNzI1NzMxNzM@._V1_SY1000_SX1500_AL_.jpg',
+      'https://m.media-amazon.com/images/M/MV5BOTUxZWM1NDMtOTE0Zi00YmM1LTk2YTMtNmQ4Mjc2MGQxMGI5XkEyXkFqcGdeQXVyNzI1NzMxNzM@._V1_.jpg',
+    ],
     stars: ["Dean-Charles Chapman", "George MacKay", "Daniel Mays"],
     thumbnailUrl: "https://m.media-amazon.com/images/M/MV5BOTdmNTFjNDEtNzg0My00ZjkxLTg1ZDAtZTdkMDc2ZmFiNWQ1XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_UX182_CR0,0,182,268_AL_.jpg",
     title: "1917",
@@ -59,6 +76,11 @@ export const movies = [
     isNew: false,
     isPopular: true,
     isUpcoming: false,
+    photosUrl: [
+      'https://m.media-amazon.com/images/M/MV5BYmZlOTY2OGUtYWY2Yy00NGE0LTg5YmQtNmM2MmYxOWI2YmJiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SY1000_SX1500_AL_.jpg',
+      'https://m.media-amazon.com/images/M/MV5BYmZlOTY2OGUtYWY2Yy00NGE0LTg5YmQtNmM2MmYxOWI2YmJiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SY1000_SX1500_AL_.jpg',
+      'https://m.media-amazon.com/images/M/MV5BYmZlOTY2OGUtYWY2Yy00NGE0LTg5YmQtNmM2MmYxOWI2YmJiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SY1000_SX1500_AL_.jpg',
+    ],
     stars: [" Joaquin Phoenix", "Robert De Niro", "Zazie Beetz"],
     thumbnailUrl: "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
     title: "Joker",
