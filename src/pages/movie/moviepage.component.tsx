@@ -1,9 +1,11 @@
 import React from 'react';
 import './moviepage.styles.scss';
-import { useParams } from 'react-router-dom';
+import { useParams, RouteComponentProps } from 'react-router-dom';
 import { selectMovie } from '../../redux/movies/movies.selectors';
 import { connect } from 'react-redux';
 import Rating from '../../components/rating/rating.component';
+import { IMoviePageMatchParams } from './types'
+import { IRootState } from '../../redux/types';
 
 const MoviePage = ({ movie }: any) => {
     const { movieId } = useParams();
@@ -22,7 +24,10 @@ const MoviePage = ({ movie }: any) => {
 
 }
 
-const mapStateToProps = (state: any, ownProps: any) => ({
+const mapStateToProps = (
+    state: IRootState,
+    ownProps: RouteComponentProps<IMoviePageMatchParams>
+) => ({
     movie: selectMovie(ownProps.match.params.movieId)(state)
 })
 
