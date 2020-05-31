@@ -4,10 +4,10 @@ import { useParams, RouteComponentProps } from 'react-router-dom';
 import { selectMovie } from '../../redux/movies/movies.selectors';
 import { connect } from 'react-redux';
 import Rating from '../../components/rating/rating.component';
-import { IMoviePageMatchParams } from './types'
+import { IMoviePageMatchParams, IMoviePageState } from './types'
 import { IRootState } from '../../redux/types';
 
-const MoviePage = ({ movie }: any) => {
+const MoviePage = ({ movie }: IMoviePageState) => {
     const { movieId } = useParams();
     return movie ?
         (

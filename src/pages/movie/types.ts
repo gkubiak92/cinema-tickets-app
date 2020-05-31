@@ -5,5 +5,5 @@ export interface IMoviePageMatchParams {
 }
 
 export interface IMoviePageState {
-    movie: IMovie
+    movie: IMovie | null
 }
