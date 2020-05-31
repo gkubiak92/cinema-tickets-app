@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import Rating from '../../components/rating/rating.component';
 
 const MoviePage = ({ movie }: any) => {
-    console.log(movie);
     const { movieId } = useParams();
     return movie ?
         (
