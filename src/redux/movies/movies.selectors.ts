@@ -17,3 +17,14 @@ export const selectUpcomingMovies = createSelector(
     selectMovies,
     ({ movies }) => movies.filter((movie) => movie.isUpcoming)
 )
+
+export const selectMovie = (id: string) => createSelector(
+    selectMovies,
+    ({ movies }) => {
+        const movie = movies.find((movie) => movie.id === id);
+        if (movie) {
+            return movie;
+        }
+        return null;
+    }
+)

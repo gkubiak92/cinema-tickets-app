@@ -6,6 +6,7 @@ export interface IMovie {
   isNew: boolean;
   isPopular: boolean;
   isUpcoming: boolean;
+  photosUrl: string[],
   stars: string[];
   thumbnailUrl: string;
   title: string;
