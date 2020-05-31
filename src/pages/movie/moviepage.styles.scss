@@ -1,0 +1,11 @@
+.movie-page {
+    display: flex;
+    flex-direction: column;
+
+    .image {
+        margin-left: -24px;
+        width: 100vw;
+        height: 30vh;
+        background-size: cover;
+    }
+}
