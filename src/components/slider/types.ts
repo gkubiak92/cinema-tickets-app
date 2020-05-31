@@ -1,4 +1,4 @@
 export interface ISliderProps {
-  interval: number;
+  interval?: number;
   slides: string[];
 }

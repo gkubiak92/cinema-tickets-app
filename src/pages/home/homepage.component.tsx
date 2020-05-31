@@ -6,9 +6,10 @@ import { slides } from "../../data/dump-data";
 import MoviesList from "../../components/movies-list/movies-list.component";
 import { selectNewMovies, selectPopularMovies, selectUpcomingMovies } from "../../redux/movies/movies.selectors";
 import { createStructuredSelector } from 'reselect'
-import { IHomePageState } from "./types";
+import { IHomePageProps } from "./types";
+import { IRootState } from "../../redux/types";
 
-const HomePage = ({ newMovies, popularMovies, upcomingMovies }: IHomePageState) => {
+const HomePage = ({ newMovies, popularMovies, upcomingMovies }: IHomePageProps) => {
   const tabsData = [
     {
       name: "new",
@@ -32,7 +33,7 @@ const HomePage = ({ newMovies, popularMovies, upcomingMovies }: IHomePageState) 
   );
 };
 
-const mapStateToProps = createStructuredSelector<any, any>({
+const mapStateToProps = createStructuredSelector<IRootState, IHomePageProps>({
   newMovies: selectNewMovies,
   popularMovies: selectPopularMovies,
   upcomingMovies: selectUpcomingMovies

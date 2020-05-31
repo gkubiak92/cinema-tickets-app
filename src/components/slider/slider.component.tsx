@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./slider.styles.scss";
 import { ISliderProps } from "./types";
 
-const Slider = ({ interval, slides }: ISliderProps) => {
+const Slider = ({ interval = 2000, slides }: ISliderProps) => {
   const images = [...slides];
 
   const startSlider = () => {
@@ -31,9 +31,9 @@ const Slider = ({ interval, slides }: ISliderProps) => {
 
   return (
     <section className="slider-container">
-      {images.map((img) => (
+      {images.map((img, index) => (
         <div
-          key={img}
+          key={index}
           className="slide"
           style={{ backgroundImage: `url(${img})` }}
         />
