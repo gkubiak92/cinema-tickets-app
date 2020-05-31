@@ -1,21 +1,22 @@
 .sidedrawer {
+    display: none;
     position: fixed;
     z-index: 10;
     top: 0;
     left: 0;
     width: 0;
     height: 100vh;
-    transition: width 0.2s linear;
+    transition: all 0.2s linear;
     background-color: #fff;
     
     .close-button {
-        display: none;
         position: absolute;
         top: 10px;
         right: 10px;
     }
 
     &.show {
+        display: block;
         width: 60vw;
         .close-button {
             display: inline-block;

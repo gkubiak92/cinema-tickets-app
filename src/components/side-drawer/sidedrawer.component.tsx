@@ -1,6 +1,6 @@
-import React, { Dispatch } from 'react'
-import { createStructuredSelector } from 'reselect'
-import { ISideDrawerProps } from './types'
+import React, { Dispatch } from 'react';
+import { createStructuredSelector } from 'reselect';
+import { ISideDrawerProps } from './types';
 import './sidedrawer.styles.scss';
 import { selectIsSideDrawerShown } from '../../redux/ui/ui.selectors';
 import { IRootState } from '../../redux/types';
@@ -9,12 +9,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { UIActionTypes } from '../../redux/ui/ui.types';
 import { toggleSideDrawer } from '../../redux/ui/ui.actions';
+import MenuItemsList from '../menu-items-list/menuitemslist.component';
 
 const SideDrawer = ({ show, toggleSideDrawer }: ISideDrawerProps) => (
     <div className={`sidedrawer ${show ? 'show' : ""}`}>
         <div onClick={toggleSideDrawer} className="close-button">
             <FontAwesomeIcon icon={faTimes} />
         </div>
+        <MenuItemsList />
     </div>
 )
 
