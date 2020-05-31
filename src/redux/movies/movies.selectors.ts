@@ -3,6 +3,11 @@ import { IRootState } from '../types'
 
 export const selectMovies = (state: IRootState) => state.movies;
 
+export const selectAllMovies = createSelector(
+    selectMovies,
+    ({ movies }) => movies
+)
+
 export const selectNewMovies = createSelector(
     selectMovies,
     ({ movies }) => movies.filter((movie) => movie.isNew)
