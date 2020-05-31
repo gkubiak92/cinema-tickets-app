@@ -1,0 +1,14 @@
+.sidedrawer {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100vh;
+    transition: width 0.2s linear;
+    background-color: #fff;
+
+    &.show {
+        width: 60vw;
+    }
+}
