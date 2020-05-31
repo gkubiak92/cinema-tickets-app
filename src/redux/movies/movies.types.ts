@@ -6,25 +6,25 @@ export const MovieActionNames = {
   FETCH_MOVIES_FAILURE: "FETCH_MOVIES_FAILURE",
 };
 
-interface FetchMoviesStartAction {
+interface IFetchMoviesStartAction {
   type: typeof MovieActionNames.FETCH_MOVIES_START;
   payload: any;
 }
 
-interface FetchMoviesSuccessAction {
+interface IFetchMoviesSuccessAction {
   type: typeof MovieActionNames.FETCH_MOVIES_SUCCESS;
   payload: IMoviesList;
 }
 
-interface FetchMoviesFailureAction {
+interface IFetchMoviesFailureAction {
   type: typeof MovieActionNames.FETCH_MOVIES_FAILURE;
   payload: string;
 }
 
 export type MovieActionTypes =
-  | FetchMoviesStartAction
-  | FetchMoviesSuccessAction
-  | FetchMoviesFailureAction;
+  | IFetchMoviesStartAction
+  | IFetchMoviesSuccessAction
+  | IFetchMoviesFailureAction;
 
 export interface IMoviesState {
   movies: IMoviesList,

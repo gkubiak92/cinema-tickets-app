@@ -5,6 +5,7 @@ import "./App.scss";
 import Header from "./components/header/header.component";
 import HomePage from "./pages/home/homepage.component";
 import MoviePage from "./pages/movie/moviepage.component";
+import MoviesPage from "./pages/movies/moviespage.component";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/movie/:movieId" component={MoviePage} />
+        <Route path="/movies" component={MoviesPage} />
       </Switch>
     </div>
   );
