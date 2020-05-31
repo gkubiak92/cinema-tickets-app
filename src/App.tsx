@@ -7,14 +7,12 @@ import HomePage from "./pages/home/homepage.component";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Header />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-        </Switch>
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <Header />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+      </Switch>
+    </div>
   );
 }
 
