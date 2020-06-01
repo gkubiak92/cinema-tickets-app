@@ -1,25 +1,26 @@
 .sidedrawer {
-    display: none;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100vh;
-    transition: all 0.2s linear;
-    background-color: #fff;
-    
-    .close-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-    }
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 60vw;
+  transform: translateX(-100%);
+  transition: all 0.2s linear;
+  background-color: #fff;
+  padding-top: 34px;
 
-    &.show {
-        display: block;
-        width: 60vw;
-        .close-button {
-            display: inline-block;
-        }
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+  }
+
+  &.show {
+    transform: translateX(0);
+    .close-button {
+      display: inline-block;
     }
+  }
 }
