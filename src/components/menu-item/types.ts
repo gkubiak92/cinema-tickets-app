@@ -4,4 +4,5 @@ export interface IMenuItemProps {
   to: string;
   title: string;
   icon: IconProp;
+  toggleSideDrawer: () => void;
 }
