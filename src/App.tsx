@@ -1,11 +1,33 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import "./App.scss";
-
+import "./styles/index.scss";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faBars,
+  faSearch,
+  faTimes,
+  faStar,
+  faStarHalf,
+  faFilm,
+  faHome,
+} from "@fortawesome/free-solid-svg-icons";
+import { faStar as starEmpty } from "@fortawesome/free-regular-svg-icons";
 import Header from "./components/header/header.component";
 import HomePage from "./pages/home/homepage.component";
 import MoviePage from "./pages/movie/moviepage.component";
 import MoviesPage from "./pages/movies/moviespage.component";
+
+library.add(
+  faBars,
+  faSearch,
+  faTimes,
+  faStar,
+  faStarHalf,
+  starEmpty,
+  faFilm,
+  faHome
+);
 
 function App() {
   return (
