@@ -1,0 +1,11 @@
+.thumbnail {
+  flex: 1 1 0;
+
+  img {
+    max-height: 100%;
+    border-radius: 12px;
+    -webkit-box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.39);
+    box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.39);
+  }
+}

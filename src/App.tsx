@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.scss";
+import "./styles/index.scss";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faBars,

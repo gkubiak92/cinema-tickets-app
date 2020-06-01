@@ -1,11 +1,40 @@
 .movie-page {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    .image {
-        margin-left: -24px;
-        width: 100vw;
-        height: 30vh;
-        background-size: cover;
+  .image {
+    margin-left: -24px;
+    width: 100vw;
+    height: 30vh;
+    background-size: cover;
+  }
+
+  div.rating {
+    padding-bottom: 12px;
+  }
+
+  p.description {
+    text-align: justify;
+  }
+
+  .movie-header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 160px;
+
+    .thumbnail {
+      flex: 2 1;
+      img {
+        height: 200px;
+        max-height: none;
+        position: absolute;
+        top: -64px;
+      }
     }
+
+    .main-info {
+      flex: 3 1;
+    }
+  }
 }

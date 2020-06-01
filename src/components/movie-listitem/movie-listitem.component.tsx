@@ -1,14 +1,13 @@
 import React from "react";
 import "./movie-listitem.styles.scss";
 import { IMovieProps } from "./types";
-import Rating from '../rating/rating.component'
+import Rating from "../rating/rating.component";
+import MovieThumbnail from "../movie-thumbnail/moviethumbnail.component";
 
 const MovieListItem = ({ movie }: IMovieProps) => {
   return (
     <div className="movie-list-item">
-      <div className="thumbnail">
-        <img src={movie.thumbnailUrl} alt="" />
-      </div>
+      <MovieThumbnail thumbnailUrl={movie.thumbnailUrl} />
       <div className="content">
         <header>{movie.title}</header>
         <p className="director">{movie.director}</p>
