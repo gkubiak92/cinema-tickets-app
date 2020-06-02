@@ -4,8 +4,8 @@ import { IMenuItemProps } from "./types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./menuitem.styles.scss";
 import { Dispatch } from "redux";
-import { UIActionTypes } from "../../redux/ui/ui.types";
-import { toggleSideDrawer } from "../../redux/ui/ui.actions";
+import { UIActionTypes } from "redux/ui/ui.types";
+import { toggleSideDrawer } from "redux/ui/ui.actions";
 import { connect } from "react-redux";
 
 const MenuItem = ({ to, title, icon, toggleSideDrawer }: IMenuItemProps) => (

@@ -1,3 +1,4 @@
 export interface IRatingProps {
-    rating: number
+  rating: number;
+  color?: string;
 }

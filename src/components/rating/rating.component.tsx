@@ -3,13 +3,15 @@ import { IRatingProps } from "./types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as starEmpty } from "@fortawesome/free-regular-svg-icons";
 
-const Rating = ({ rating }: IRatingProps) => {
+const Rating = ({ rating, color = "blue" }: IRatingProps) => {
   const stars = [];
   for (let index = 0; index < 5; index++) {
     if (index < rating) {
-      stars.push(<FontAwesomeIcon key={index} icon="star" />);
+      stars.push(<FontAwesomeIcon key={index} icon="star" color={color} />);
     } else {
-      stars.push(<FontAwesomeIcon key={index} icon={starEmpty} />);
+      stars.push(
+        <FontAwesomeIcon key={index} icon={starEmpty} color={color} />
+      );
     }
   }
 

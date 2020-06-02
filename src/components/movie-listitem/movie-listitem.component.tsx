@@ -1,8 +1,8 @@
 import React from "react";
 import "./movie-listitem.styles.scss";
 import { IMovieProps } from "./types";
-import Rating from "../rating/rating.component";
-import MovieThumbnail from "../movie-thumbnail/moviethumbnail.component";
+import Rating from "components/rating/rating.component";
+import MovieThumbnail from "components/movie-thumbnail/moviethumbnail.component";
 
 const MovieListItem = ({ movie }: IMovieProps) => {
   return (
@@ -10,13 +10,13 @@ const MovieListItem = ({ movie }: IMovieProps) => {
       <MovieThumbnail thumbnailUrl={movie.thumbnailUrl} />
       <div className="content">
         <header>{movie.title}</header>
+        <Rating rating={movie.rating} />
         <p className="director">{movie.director}</p>
         {movie.genres.map((genre) => (
           <p key={genre} className="genre">
             {genre},
           </p>
         ))}
-        <Rating rating={movie.rating} />
       </div>
     </div>
   );

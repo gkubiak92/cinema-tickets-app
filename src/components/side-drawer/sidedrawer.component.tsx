@@ -1,14 +1,14 @@
 import React, { Dispatch } from "react";
+import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { ISideDrawerProps } from "./types";
 import "./sidedrawer.styles.scss";
-import { selectIsSideDrawerShown } from "../../redux/ui/ui.selectors";
-import { IRootState } from "../../redux/types";
-import { connect } from "react-redux";
+import { selectIsSideDrawerShown } from "redux/ui/ui.selectors";
+import { UIActionTypes } from "redux/ui/ui.types";
+import { toggleSideDrawer } from "redux/ui/ui.actions";
+import { IRootState } from "redux/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { UIActionTypes } from "../../redux/ui/ui.types";
-import { toggleSideDrawer } from "../../redux/ui/ui.actions";
-import MenuItemsList from "../menu-items-list/menuitemslist.component";
+import MenuItemsList from "components/menu-items-list/menuitemslist.component";
 
 const SideDrawer = ({ show, toggleSideDrawer }: ISideDrawerProps) => (
   <div className={`sidedrawer ${show ? "show" : ""}`}>

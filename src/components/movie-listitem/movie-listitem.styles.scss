@@ -1,11 +1,13 @@
 .movie-list-item {
   display: flex;
   flex-direction: row;
-  max-height: 200px;
+  height: 140px;
   margin-bottom: 10px;
 
   .thumbnail {
     flex: 1 1 0;
+    height: 100%;
+    margin-right: 24px;
   }
 
   .content {
