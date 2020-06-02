@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+
+.screening-hours {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  padding: 12px 0;
+
+  .screening-hour {
+    padding: 12px 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    border-radius: 12px;
+    margin-right: 12px;
+    transition: all 0.2s linear;
+
+    span {
+      color: $primary-color;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $primary-text-color;
+      border: 2px solid $primary-text-color;
+
+      span {
+        color: $primary-text-color;
+      }
+    }
+
+    &.active {
+      color: white;
+      background-color: $primary-color;
+      border: 2px solid $primary-color;
+
+      span {
+        color: white;
+      }
+    }
+  }
+}

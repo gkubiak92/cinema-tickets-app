@@ -17,6 +17,7 @@
       text-align: center;
       font-size: 16px;
       font-weight: 400;
+      transition: all 0.2s linear;
     }
 
     &:hover {
@@ -40,41 +41,11 @@
     &.active {
       p {
         font-weight: 600;
+        font-size: 20px;
       }
       &:after {
         left: 0;
         width: 100%;
-      }
-    }
-  }
-}
-
-.screening-hours {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  padding: 12px 0;
-
-  .screening-hour {
-    padding: 12px 8px;
-    font-size: 16px;
-    font-weight: 600;
-    color: $primary-color;
-    border: 2px solid $primary-color;
-    border-radius: 12px;
-    margin-right: 12px;
-
-    span {
-      color: $primary-color;
-    }
-
-    &:hover {
-      cursor: pointer;
-      color: $primary-text-color;
-      border: 2px solid $primary-text-color;
-
-      span {
-        color: $primary-text-color;
       }
     }
   }

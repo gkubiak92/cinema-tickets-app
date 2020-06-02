@@ -1,6 +1,6 @@
 import React from "react";
-import "./screening-dates.styles.scss";
 import { IScreeningDatesProps } from "./types";
+import "./screening-dates.styles.scss";
 
 const locale = "pl-PL";
 

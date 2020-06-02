@@ -16,4 +16,6 @@ export interface IScreeningDatesProps {
 
 export interface IScreeningHoursProps {
   screeningDate: IScreeningDate;
+  activeHourIndex: number;
+  onClick: Function;
 }
