@@ -8,7 +8,7 @@ import { IMoviePageMatchParams, IMoviePageState } from "./types";
 import { IRootState } from "redux/types";
 import Slider from "components/slider/slider.component";
 import MovieThumbnail from "components/movie-thumbnail/moviethumbnail.component";
-import ScreeningDates from "components/screening-dates/screening-dates.component";
+import ScreeningDatesContainer from "components/screening-dates/screening-dates.container";
 
 const MoviePage = ({ movie }: IMoviePageState) => {
   return movie ? (
@@ -22,7 +22,7 @@ const MoviePage = ({ movie }: IMoviePageState) => {
         </div>
       </div>
       <p className="description">{movie.description}</p>
-      <ScreeningDates movieId={movie.id} />
+      <ScreeningDatesContainer movieId={movie.id} />
     </div>
   ) : (
     <div className="movie-page">Not found</div>

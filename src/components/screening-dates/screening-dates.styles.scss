@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: row;
   height: 100px;
-  background-color: #f5f8ff;
 
   .screening-date {
     display: flex;
@@ -17,7 +16,7 @@
       display: inline-block;
       text-align: center;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 400;
     }
 
     &:hover {
@@ -38,9 +37,14 @@
       transition: all 0.2s linear;
     }
 
-    &.active:after {
-      left: 0;
-      width: 100%;
+    &.active {
+      p {
+        font-weight: 600;
+      }
+      &:after {
+        left: 0;
+        width: 100%;
+      }
     }
   }
 }
