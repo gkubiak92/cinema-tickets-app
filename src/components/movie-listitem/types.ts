@@ -1,12 +1,13 @@
 export interface IMovie {
-  id: string,
+  id: string;
   description: string;
   director: string;
   genres: string[];
   isNew: boolean;
   isPopular: boolean;
   isUpcoming: boolean;
-  photosUrl: string[],
+  photosUrl: string[];
+  screeningDates: { date: string; hours: string[] }[];
   stars: string[];
   thumbnailUrl: string;
   title: string;
