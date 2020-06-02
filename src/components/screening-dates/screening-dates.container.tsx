@@ -10,19 +10,25 @@ const ScreeningDatesContainer = ({
   movieId,
   screeningDates,
 }: IScreeningDatesContainerProps) => {
-  const [activeDate, setActiveDate] = useState(0);
-  const [activeHour, setActiveHour] = useState(0);
+  const [{ activeDate, activeDateIndex }, setActiveDate] = useState({
+    activeDate: undefined,
+    activeDateIndex: 0,
+  });
+  const [{ activeHour, activeHourIndex }, setActiveHour] = useState({
+    activeHour: undefined,
+    activeHourIndex: 0,
+  });
 
   return (
     <div className="screening-dates-container">
       <ScreeningDates
         screeningDates={screeningDates}
-        activeDateIndex={activeDate}
+        activeDateIndex={activeDateIndex}
         onClick={setActiveDate}
       />
       <ScreeningHours
-        screeningDate={screeningDates![activeDate]}
-        activeHourIndex={activeHour}
+        screeningDate={screeningDates![activeDateIndex]}
+        activeHourIndex={activeHourIndex}
         onClick={setActiveHour}
       />
     </div>

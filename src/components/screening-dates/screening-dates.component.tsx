@@ -19,7 +19,9 @@ const ScreeningDates = ({
         return (
           <div
             key={index}
-            onClick={() => onClick(index)}
+            onClick={() =>
+              onClick({ activeDate: date, activeDateIndex: index })
+            }
             className={`screening-date ${
               index === activeDateIndex ? "active" : ""
             } `}

@@ -12,7 +12,7 @@ const ScreeningHours = ({
       {screeningDate.hours.map((hour, index) => (
         <div
           key={index}
-          onClick={() => onClick(index)}
+          onClick={() => onClick({ activeHour: hour, activeHourIndex: index })}
           className={`screening-hour ${
             index === activeHourIndex ? "active" : ""
           } `}
