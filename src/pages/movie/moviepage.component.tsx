@@ -1,13 +1,14 @@
 import React from "react";
 import "./moviepage.styles.scss";
 import { RouteComponentProps } from "react-router-dom";
-import { selectMovie } from "../../redux/movies/movies.selectors";
+import { selectMovie } from "redux/movies/movies.selectors";
 import { connect } from "react-redux";
-import Rating from "../../components/rating/rating.component";
+import Rating from "components/rating/rating.component";
 import { IMoviePageMatchParams, IMoviePageState } from "./types";
-import { IRootState } from "../../redux/types";
-import Slider from "../../components/slider/slider.component";
-import MovieThumbnail from "../../components/movie-thumbnail/moviethumbnail.component";
+import { IRootState } from "redux/types";
+import Slider from "components/slider/slider.component";
+import MovieThumbnail from "components/movie-thumbnail/moviethumbnail.component";
+import ScreeningDates from "components/screening-dates/screening-dates.component";
 
 const MoviePage = ({ movie }: IMoviePageState) => {
   return movie ? (
@@ -21,6 +22,7 @@ const MoviePage = ({ movie }: IMoviePageState) => {
         </div>
       </div>
       <p className="description">{movie.description}</p>
+      <ScreeningDates movieId={movie.id} />
     </div>
   ) : (
     <div className="movie-page">Not found</div>
