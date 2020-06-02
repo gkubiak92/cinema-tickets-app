@@ -1,7 +1,7 @@
 import React, { Dispatch } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { toggleSideDrawer } from "../../redux/ui/ui.actions";
-import { UIActionTypes } from "../../redux/ui/ui.types";
+import { toggleSideDrawer } from "redux/ui/ui.actions";
+import { UIActionTypes } from "redux/ui/ui.types";
 import { IMenuIconProps } from "./types";
 import { connect } from "react-redux";
 

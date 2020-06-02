@@ -1,5 +1,5 @@
 import React from "react";
-import MenuItem from "../menu-item/menuitem.component";
+import MenuItem from "components/menu-item/menuitem.component";
 import "./menuitemslist.styles.scss";
 
 const MenuItemsList = () => (
