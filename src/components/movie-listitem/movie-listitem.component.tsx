@@ -10,13 +10,13 @@ const MovieListItem = ({ movie }: IMovieProps) => {
       <MovieThumbnail thumbnailUrl={movie.thumbnailUrl} />
       <div className="content">
         <header>{movie.title}</header>
+        <Rating rating={movie.rating} />
         <p className="director">{movie.director}</p>
         {movie.genres.map((genre) => (
           <p key={genre} className="genre">
             {genre},
           </p>
         ))}
-        <Rating rating={movie.rating} />
       </div>
     </div>
   );
