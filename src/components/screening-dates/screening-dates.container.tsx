@@ -5,6 +5,7 @@ import { selectMovieScreeningDates } from "redux/movies/movies.selectors";
 import { connect } from "react-redux";
 import ScreeningDates from "./screening-dates.component";
 import ScreeningHours from "./screening-hours.component";
+import Button from "components/button/button.component";
 
 const ScreeningDatesContainer = ({
   movieId,
@@ -30,6 +31,11 @@ const ScreeningDatesContainer = ({
         screeningDate={screeningDates![activeDateIndex]}
         activeHourIndex={activeHourIndex}
         onClick={setActiveHour}
+      />
+      <Button
+        text="Take a seat"
+        type="block"
+        to={`/seat-reservation/${movieId}/${activeDate}/${activeHour}`}
       />
     </div>
   );
