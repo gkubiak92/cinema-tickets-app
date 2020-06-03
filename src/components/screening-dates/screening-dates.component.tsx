@@ -1,6 +1,10 @@
 import React from "react";
 import { IScreeningDatesProps } from "./types";
 import "./screening-dates.styles.scss";
+import { Dispatch } from "redux";
+import { ReservationActionTypes } from "redux/reservation/reservation.types";
+import { setReservationDate } from "redux/reservation/reservation.actions";
+import { connect } from "react-redux";
 
 const locale = "pl-PL";
 
@@ -8,6 +12,7 @@ const ScreeningDates = ({
   screeningDates,
   activeDateIndex,
   onClick,
+  setReservationDate,
 }: IScreeningDatesProps) => {
   return (
     <div className="screening-dates">
@@ -19,9 +24,10 @@ const ScreeningDates = ({
         return (
           <div
             key={index}
-            onClick={() =>
-              onClick({ activeDate: date, activeDateIndex: index })
-            }
+            onClick={() => {
+              onClick({ activeDate: date, activeDateIndex: index });
+              setReservationDate(date.toLocaleDateString());
+            }}
             className={`screening-date ${
               index === activeDateIndex ? "active" : ""
             } `}
@@ -36,4 +42,8 @@ const ScreeningDates = ({
   );
 };
 
-export default ScreeningDates;
+const mapDispatchToProps = (dispatch: Dispatch<ReservationActionTypes>) => ({
+  setReservationDate: (date: string) => dispatch(setReservationDate(date)),
+});
+
+export default connect(null, mapDispatchToProps)(ScreeningDates);

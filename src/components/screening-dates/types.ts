@@ -12,10 +12,12 @@ export interface IScreeningDatesProps {
   screeningDates?: IScreeningDate[] | null;
   activeDateIndex: number;
   onClick: Function;
+  setReservationDate: (date: string) => void;
 }
 
 export interface IScreeningHoursProps {
   screeningDate: IScreeningDate;
   activeHourIndex: number;
   onClick: Function;
+  setReservationHour: (hour: string) => void;
 }

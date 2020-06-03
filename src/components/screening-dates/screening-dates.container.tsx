@@ -6,9 +6,6 @@ import { connect } from "react-redux";
 import ScreeningDates from "./screening-dates.component";
 import ScreeningHours from "./screening-hours.component";
 import Button from "components/button/button.component";
-import { ReservationActionTypes } from "redux/reservation/reservation.types";
-import { Dispatch } from "redux";
-import { setReservationMovieId } from "redux/reservation/reservation.actions";
 
 const ScreeningDatesContainer = ({
   movieId,
@@ -40,7 +37,7 @@ const ScreeningDatesContainer = ({
       <Button
         text="Take a seat"
         type="block"
-        to={`/seat-reservation`}
+        to={`/seat-reservation/:movieId`}
         disabled={!canChooseSeat}
       />
     </div>
@@ -53,9 +50,5 @@ const mapStateToProps = (
 ) => ({
   screeningDates: selectMovieScreeningDates(ownProps.movieId)(state),
 });
-
-// const mapDispatchToProps = (dispatch: Dispatch<ReservationActionTypes>) {
-//   setReservationMovieId: (movieId) => dispatch(setReservationMovieId(movieId))
-// }
 
 export default connect(mapStateToProps)(ScreeningDatesContainer);
