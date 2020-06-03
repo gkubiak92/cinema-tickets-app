@@ -17,6 +17,7 @@ import Header from "./components/header/header.component";
 import HomePage from "./pages/home/homepage.component";
 import MoviePage from "./pages/movie/moviepage.component";
 import MoviesPage from "./pages/movies/moviespage.component";
+import SeatReservationPage from "pages/seat-reservation/seat-reservation.page";
 
 library.add(
   faBars,
@@ -37,6 +38,10 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/movie/:movieId" component={MoviePage} />
         <Route path="/movies" component={MoviesPage} />
+        <Route
+          path="/seat-reservation/:movieId"
+          component={SeatReservationPage}
+        />
       </Switch>
     </div>
   );
