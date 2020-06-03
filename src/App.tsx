@@ -38,10 +38,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/movie/:movieId" component={MoviePage} />
         <Route path="/movies" component={MoviesPage} />
-        <Route
-          path="/seat-reservation/:movieId/:date/:hour"
-          component={SeatReservationPage}
-        />
+        <Route path="/seat-reservation" component={SeatReservationPage} />
       </Switch>
     </div>
   );

@@ -3,4 +3,5 @@ export interface IButtonProps {
   onClick?: Function;
   to?: string;
   type: "button" | "block";
+  disabled?: boolean;
 }
