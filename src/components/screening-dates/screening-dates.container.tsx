@@ -37,7 +37,7 @@ const ScreeningDatesContainer = ({
       <Button
         text="Take a seat"
         type="block"
-        to={`/seat-reservation/:movieId`}
+        to={`/seat-reservation/${movieId}`}
         disabled={!canChooseSeat}
       />
     </div>

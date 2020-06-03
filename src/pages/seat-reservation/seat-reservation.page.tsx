@@ -2,31 +2,32 @@ import React from "react";
 import { connect } from "react-redux";
 import { IRootState } from "redux/types";
 import { createStructuredSelector } from "reselect";
-import { ISeatReservationPageProps } from "./types";
 import {
-  selectReservationMovieId,
+  ISeatReservationPageProps,
+  ISeatReservationPageMapStateProps,
+} from "./types";
+import {
   selectReservationDate,
   selectReservationHour,
 } from "redux/reservation/reservation.selectors";
+import { useParams } from "react-router-dom";
 
-const SeatReservationPage = ({
-  movieId,
-  date,
-  hour,
-}: ISeatReservationPageProps) => (
-  <div className="seat-reservation">
-    <h1>Choose seat</h1>
-    <p>{movieId}</p>
-    <p>{date}</p>
-    <p>{hour}</p>
-  </div>
-);
+const SeatReservationPage = ({ date, hour }: ISeatReservationPageProps) => {
+  const { movieId } = useParams();
+  return (
+    <div className="seat-reservation">
+      <h1>Choose seat</h1>
+      <p>{movieId}</p>
+      <p>{date}</p>
+      <p>{hour}</p>
+    </div>
+  );
+};
 
 const mapStateToProps = createStructuredSelector<
   IRootState,
-  ISeatReservationPageProps
+  ISeatReservationPageMapStateProps
 >({
-  movieId: selectReservationMovieId,
   date: selectReservationDate,
   hour: selectReservationHour,
 });
