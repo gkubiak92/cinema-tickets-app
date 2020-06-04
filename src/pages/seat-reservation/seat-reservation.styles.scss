@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+
+div.seat-reservation {
+  div.movie-info {
+    display: flex;
+    flex-direction: row;
+    div.thumbnail {
+      flex: 2;
+      height: 120px;
+      img {
+        height: 100px;
+      }
+    }
+
+    div.movie-details {
+      flex: 8;
+      h1 {
+        font-size: 20px;
+      }
+      p {
+        display: inline-block;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .screen {
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background-color: $secondary-color;
+
+    &::after {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "SCREEN";
+      font-size: 18px;
+    }
+  }
+
+  .legend {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+  }
+}
