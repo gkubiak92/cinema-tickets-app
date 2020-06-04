@@ -17,7 +17,7 @@ const Seat = ({
   return (
     <div
       onClick={() => {
-        if (type !== "disabled") {
+        if (type !== "disabled" && type !== "booked") {
           selectSeat(!selected);
           console.log(`you chosed seat ${row} ${seatNumber}`);
           const seat: ISeat = {
