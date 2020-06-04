@@ -10,26 +10,32 @@ import {
   selectReservationDate,
   selectReservationHour,
 } from "redux/reservation/reservation.selectors";
-import { useParams } from "react-router-dom";
+import { selectMovie } from "redux/movies/movies.selectors";
 
-const SeatReservationPage = ({ date, hour }: ISeatReservationPageProps) => {
-  const { movieId } = useParams();
+const SeatReservationPage = ({
+  match,
+  date,
+  hour,
+  movie,
+}: ISeatReservationPageProps) => {
   return (
     <div className="seat-reservation">
       <h1>Choose seat</h1>
-      <p>{movieId}</p>
-      <p>{date}</p>
-      <p>{hour}</p>
+      <p>Movie: {movie?.title}</p>
+      <p>Date: {date}</p>
+      <p>Hour: {hour}</p>
     </div>
   );
 };
 
 const mapStateToProps = createStructuredSelector<
   IRootState,
+  ISeatReservationPageProps,
   ISeatReservationPageMapStateProps
 >({
   date: selectReservationDate,
   hour: selectReservationHour,
+  movie: (state, ownProps) => selectMovie(ownProps.match.params.movieId)(state),
 });
 
 export default connect(mapStateToProps)(SeatReservationPage);
