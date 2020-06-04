@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import "./seat-reservation.styles.scss";
 import { IRootState } from "redux/types";
@@ -6,6 +6,7 @@ import { createStructuredSelector } from "reselect";
 import {
   ISeatReservationPageMapStateProps,
   ISeatReservationPageMatchParams,
+  ISeatReservationPageMapDispatchProps,
 } from "./types";
 import {
   selectReservationDate,
@@ -18,14 +19,23 @@ import Seat from "components/seat/seat.component";
 import SeatingPlan from "components/seating-plan/seating-plan.component";
 import Button from "components/button/button.component";
 import { RouteComponentProps } from "react-router-dom";
+import { Dispatch } from "redux";
+import { ReservationActionTypes } from "redux/reservation/reservation.types";
+import { resetSelectedSeats } from "redux/reservation/reservation.actions";
 
 const SeatReservationPage = ({
   date,
   hour,
   movie,
   selectedSeatsCount,
+  resetSelectedSeats,
 }: RouteComponentProps<ISeatReservationPageMatchParams> &
-  ISeatReservationPageMapStateProps) => {
+  ISeatReservationPageMapStateProps &
+  ISeatReservationPageMapDispatchProps) => {
+  useEffect(() => {
+    resetSelectedSeats();
+  }, [resetSelectedSeats]);
+
   return (
     <div className="seat-reservation">
       <div className="movie-info">
@@ -68,4 +78,11 @@ const mapStateToProps = createStructuredSelector<
   selectedSeatsCount: selectSelectedSeatsCount,
 });
 
-export default connect(mapStateToProps)(SeatReservationPage);
+const mapDispatchToProps = (dispatch: Dispatch<ReservationActionTypes>) => ({
+  resetSelectedSeats: () => dispatch(resetSelectedSeats()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SeatReservationPage);

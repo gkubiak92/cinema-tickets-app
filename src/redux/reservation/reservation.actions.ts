@@ -25,3 +25,8 @@ export const removeSeatFromReservation = (seat: ISeat) => ({
   type: ReservationActionNames.REMOVE_SEAT_FROM_RESERVATION,
   payload: seat,
 });
+
+export const resetSelectedSeats = () => ({
+  type: ReservationActionNames.RESET_SELECTED_SEATS,
+  payload: null,
+});

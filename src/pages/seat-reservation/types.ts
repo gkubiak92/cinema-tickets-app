@@ -10,3 +10,7 @@ export interface ISeatReservationPageMapStateProps {
   movie: IMovie | null;
   selectedSeatsCount: number;
 }
+
+export interface ISeatReservationPageMapDispatchProps {
+  resetSelectedSeats: () => void;
+}

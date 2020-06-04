@@ -44,6 +44,11 @@ const reservationReducer = (
           (seat) => seat !== action.payload
         ),
       };
+    case ReservationActionNames.RESET_SELECTED_SEATS:
+      return {
+        ...state,
+        selectedSeats: [],
+      };
 
     default:
       return state;

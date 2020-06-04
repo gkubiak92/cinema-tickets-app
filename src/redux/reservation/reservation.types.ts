@@ -6,6 +6,7 @@ export const ReservationActionNames = {
   SET_RESERVATION_HOUR: "SET_RESERVATION_HOUR",
   ADD_SEAT_TO_RESERVATION: "ADD_SEAT_TO_RESERVATION",
   REMOVE_SEAT_FROM_RESERVATION: "REMOVE_SEAT_FROM_RESERVATION",
+  RESET_SELECTED_SEATS: "RESET_SELECTED_SEATS",
 };
 
 interface ISetReservationMovieId {
@@ -33,12 +34,18 @@ interface IRemoveSeatFromReservation {
   payload: ISeat;
 }
 
+interface IResetSelectedSeats {
+  type: typeof ReservationActionNames.RESET_SELECTED_SEATS;
+  payload: null;
+}
+
 export type ReservationActionTypes =
   | ISetReservationDate
   | ISetReservationHour
   | ISetReservationMovieId
   | IAddSeatToReservation
-  | IRemoveSeatFromReservation;
+  | IRemoveSeatFromReservation
+  | IResetSelectedSeats;
 
 export interface IReservationState {
   movieId: string;
