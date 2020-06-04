@@ -1,0 +1,25 @@
+@import "../../styles/variables";
+
+div.seat {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin: 8px 4px;
+  border: 2px solid $primary-color;
+  background-color: transparent;
+
+  &.disabled {
+    cursor: none;
+    border: none;
+    background-color: transparent;
+  }
+
+  &.booked {
+    border-color: gray;
+    background-color: gray;
+  }
+
+  &.selected {
+    background-color: $primary-color;
+  }
+}

@@ -8,6 +8,7 @@ const INITIAL_STATE: IReservationState = {
   movieId: "",
   date: "",
   hour: "",
+  selectedSeats: [],
 };
 
 const reservationReducer = (
@@ -30,6 +31,18 @@ const reservationReducer = (
       return {
         ...state,
         hour: action.payload,
+      };
+    case ReservationActionNames.ADD_SEAT_TO_RESERVATION:
+      return {
+        ...state,
+        selectedSeats: [...state.selectedSeats, action.payload],
+      };
+    case ReservationActionNames.REMOVE_SEAT_FROM_RESERVATION:
+      return {
+        ...state,
+        selectedSeats: state.selectedSeats.filter(
+          (seat) => seat !== action.payload
+        ),
       };
 
     default:

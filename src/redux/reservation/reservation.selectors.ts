@@ -17,3 +17,8 @@ export const selectReservationHour = createSelector(
   selectReservation,
   (reservation) => reservation.hour
 );
+
+export const selectSelectedSeatsCount = createSelector(
+  selectReservation,
+  (reservation) => reservation.selectedSeats.length
+);
