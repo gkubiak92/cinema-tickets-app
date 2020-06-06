@@ -13,4 +13,5 @@ export interface ISeatProps {
   type: "disabled" | "booked" | "selected" | "";
   row: string;
   seatNumber: number;
+  isLegend?: boolean;
 }

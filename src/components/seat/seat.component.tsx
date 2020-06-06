@@ -13,13 +13,14 @@ const Seat = ({
   type,
   row,
   seatNumber,
+  isLegend,
   addSeatToReservation,
   removeSeatFromReservation,
 }: ISeatProps & ISeatDispatchProps) => {
   const [selected, selectSeat] = useState(false);
 
   const onSeatClickHandler = () => {
-    if (type !== "disabled" && type !== "booked") {
+    if (!isLegend && type !== "disabled" && type !== "booked") {
       const seat: ISeat = {
         id: `${row}${seatNumber}`,
         row: row,

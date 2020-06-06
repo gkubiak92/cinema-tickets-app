@@ -42,17 +42,17 @@ const SeatReservationPage = ({
         <MovieThumbnail thumbnailUrl={movie!.thumbnailUrl} />
         <div className="movie-details">
           <h1>{movie?.title}</h1>
-          <p>Date: {date}</p>
-          <p>Hour: {hour}</p>
+          <h2>{date}</h2>
+          <h2>{hour}</h2>
         </div>
       </div>
       <div className="screen" />
       <div className="legend">
-        <Seat type="" row="" seatNumber={-1} />
+        <Seat isLegend type="" row="" seatNumber={-1} />
         <p>available</p>
-        <Seat type="booked" row="" seatNumber={-1} />
+        <Seat isLegend type="booked" row="" seatNumber={-1} />
         <p>booked</p>
-        <Seat type="selected" row="" seatNumber={-1} />
+        <Seat isLegend type="selected" row="" seatNumber={-1} />
         <p>selected</p>
       </div>
       <SeatingPlan />
