@@ -3,7 +3,10 @@ import "./seat.styles.scss";
 import { ISeatProps, ISeat, ISeatDispatchProps } from "./types";
 import { Dispatch } from "redux";
 import { ReservationActionTypes } from "redux/reservation/reservation.types";
-import { addSeatToReservation } from "redux/reservation/reservation.actions";
+import {
+  addSeatToReservation,
+  removeSeatFromReservation,
+} from "redux/reservation/reservation.actions";
 import { connect } from "react-redux";
 
 const Seat = ({
@@ -11,29 +14,38 @@ const Seat = ({
   row,
   seatNumber,
   addSeatToReservation,
+  removeSeatFromReservation,
 }: ISeatProps & ISeatDispatchProps) => {
   const [selected, selectSeat] = useState(false);
 
+  const onSeatClickHandler = () => {
+    if (type !== "disabled" && type !== "booked") {
+      const seat: ISeat = {
+        id: `${row}${seatNumber}`,
+        row: row,
+        seatNumber: seatNumber,
+      };
+      if (!selected) {
+        addSeatToReservation(seat);
+      } else {
+        removeSeatFromReservation(seat);
+      }
+      selectSeat(!selected);
+    }
+  };
+
   return (
     <div
-      onClick={() => {
-        if (type !== "disabled" && type !== "booked") {
-          selectSeat(!selected);
-          console.log(`you chosed seat ${row} ${seatNumber}`);
-          const seat: ISeat = {
-            row: row,
-            seatNumber: seatNumber,
-          };
-          addSeatToReservation(seat);
-        }
-      }}
+      onClick={onSeatClickHandler}
       className={`seat ${type} ${selected ? "selected" : ""}`}
-    ></div>
+    />
   );
 };
 
 const mapDispatchToProps = (dispatch: Dispatch<ReservationActionTypes>) => ({
   addSeatToReservation: (seat: ISeat) => dispatch(addSeatToReservation(seat)),
+  removeSeatFromReservation: (seat: ISeat) =>
+    dispatch(removeSeatFromReservation(seat)),
 });
 
 export default connect(null, mapDispatchToProps)(Seat);

@@ -4,7 +4,6 @@ import { seatArrangement } from "../../data/seat-arrangement";
 import Seat from "components/seat/seat.component";
 
 const SeatingPlan = () => {
-  console.log(Object.entries(seatArrangement));
   return (
     <div className="seating-plan">
       {Object.entries(seatArrangement).map((row) => {
