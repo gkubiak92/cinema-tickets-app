@@ -54,7 +54,7 @@ const SeatReservationPage = ({
             ? `${(selectedSeatsCount * ticketPrice!).toFixed(2)}$`
             : ""
         }`}
-      ></Button>
+      />
     </div>
   );
 };
