@@ -22,6 +22,7 @@ import { RouteComponentProps } from "react-router-dom";
 import { Dispatch } from "redux";
 import { ReservationActionTypes } from "redux/reservation/reservation.types";
 import { resetSelectedSeats } from "redux/reservation/reservation.actions";
+import SeatingPlanLegend from "components/seating-plan-legend/seating-plan-legend.comopnent";
 
 const SeatReservationPage = ({
   date,
@@ -42,23 +43,17 @@ const SeatReservationPage = ({
         <MovieThumbnail thumbnailUrl={movie!.thumbnailUrl} />
         <div className="movie-details">
           <h1>{movie?.title}</h1>
-          <p>Date: {date}</p>
-          <p>Hour: {hour}</p>
+          <p>{date}</p>
+          <p>{hour}</p>
         </div>
       </div>
       <div className="screen" />
-      <div className="legend">
-        <Seat type="" row="" seatNumber={-1} />
-        <p>available</p>
-        <Seat type="booked" row="" seatNumber={-1} />
-        <p>booked</p>
-        <Seat type="selected" row="" seatNumber={-1} />
-        <p>selected</p>
-      </div>
       <SeatingPlan />
+      <SeatingPlanLegend />
       <Button
-        onClick={() => {}}
+        to="/payment"
         type="block"
+        disabled={!selectedSeatsCount}
         text={`Pay now ${
           selectedSeatsCount ? `${selectedSeatsCount * 10}$` : ""
         }`}

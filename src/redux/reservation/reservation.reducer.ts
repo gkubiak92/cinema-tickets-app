@@ -3,6 +3,10 @@ import {
   ReservationActionTypes,
   ReservationActionNames,
 } from "./reservation.types";
+import {
+  addSeatToReservation,
+  removeSeatFromReservation,
+} from "./reservation.utils";
 
 const INITIAL_STATE: IReservationState = {
   movieId: "",
@@ -35,13 +39,17 @@ const reservationReducer = (
     case ReservationActionNames.ADD_SEAT_TO_RESERVATION:
       return {
         ...state,
-        selectedSeats: [...state.selectedSeats, action.payload],
+        selectedSeats: addSeatToReservation(
+          state.selectedSeats,
+          action.payload
+        ),
       };
     case ReservationActionNames.REMOVE_SEAT_FROM_RESERVATION:
       return {
         ...state,
-        selectedSeats: state.selectedSeats.filter(
-          (seat) => seat !== action.payload
+        selectedSeats: removeSeatFromReservation(
+          state.selectedSeats,
+          action.payload
         ),
       };
     case ReservationActionNames.RESET_SELECTED_SEATS:

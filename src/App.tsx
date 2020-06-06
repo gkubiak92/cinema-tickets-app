@@ -18,6 +18,7 @@ import HomePage from "./pages/home/homepage.component";
 import MoviePage from "./pages/movie/moviepage.component";
 import MoviesPage from "./pages/movies/moviespage.component";
 import SeatReservationPage from "pages/seat-reservation/seat-reservation.page";
+import PaymentPage from "pages/payment/paymentpage.component";
 
 library.add(
   faBars,
@@ -42,6 +43,7 @@ function App() {
           path="/seat-reservation/:movieId"
           component={SeatReservationPage}
         />
+        <Route path="/payment" component={PaymentPage} />
       </Switch>
     </div>
   );
