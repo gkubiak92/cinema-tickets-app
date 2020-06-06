@@ -59,6 +59,7 @@ const SeatReservationPage = ({
       <Button
         onClick={() => {}}
         type="block"
+        disabled={!selectedSeatsCount}
         text={`Pay now ${
           selectedSeatsCount ? `${selectedSeatsCount * 10}$` : ""
         }`}
