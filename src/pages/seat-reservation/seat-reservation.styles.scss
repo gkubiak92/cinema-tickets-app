@@ -1,6 +1,8 @@
 @import "../../styles/variables";
 
 div.seat-reservation {
+  padding-top: 24px;
+
   div.movie-info {
     display: flex;
     flex-direction: row;
@@ -14,11 +16,12 @@ div.seat-reservation {
 
     div.movie-details {
       flex: 8;
+      margin-left: 24px;
       h1 {
         font-size: 20px;
       }
       p {
-        display: inline-block;
+        display: block;
         font-size: 16px;
       }
     }
