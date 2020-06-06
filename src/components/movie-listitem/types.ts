@@ -10,6 +10,7 @@ export interface IMovie {
   screeningDates: { date: string; hours: string[] }[];
   stars: string[];
   thumbnailUrl: string;
+  ticketPrice: number;
   title: string;
   rating: number;
   writer: string;

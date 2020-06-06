@@ -9,6 +9,7 @@ export interface ISeatReservationPageMapStateProps {
   hour: string;
   movie: IMovie | null;
   selectedSeatsCount: number;
+  ticketPrice: number | null;
 }
 
 export interface ISeatReservationPageMapDispatchProps {

@@ -37,3 +37,12 @@ export const selectMovieScreeningDates = (id: string) =>
     }
     return null;
   });
+
+export const selectMovieTicketPrice = (id: string) =>
+  createSelector(selectMovies, ({ movies }) => {
+    const movie = movies.find((movie) => movie.id === id);
+    if (movie) {
+      return movie.ticketPrice;
+    }
+    return null;
+  });
