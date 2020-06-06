@@ -13,9 +13,11 @@ import {
   selectReservationHour,
   selectSelectedSeatsCount,
 } from "redux/reservation/reservation.selectors";
-import { selectMovie } from "redux/movies/movies.selectors";
+import {
+  selectMovie,
+  selectMovieTicketPrice,
+} from "redux/movies/movies.selectors";
 import MovieThumbnail from "components/movie-thumbnail/moviethumbnail.component";
-import Seat from "components/seat/seat.component";
 import SeatingPlan from "components/seating-plan/seating-plan.component";
 import Button from "components/button/button.component";
 import { RouteComponentProps } from "react-router-dom";
@@ -30,6 +32,7 @@ const SeatReservationPage = ({
   movie,
   selectedSeatsCount,
   resetSelectedSeats,
+  ticketPrice,
 }: RouteComponentProps<ISeatReservationPageMatchParams> &
   ISeatReservationPageMapStateProps &
   ISeatReservationPageMapDispatchProps) => {
@@ -55,7 +58,9 @@ const SeatReservationPage = ({
         type="block"
         disabled={!selectedSeatsCount}
         text={`Pay now ${
-          selectedSeatsCount ? `${selectedSeatsCount * 10}$` : ""
+          selectedSeatsCount
+            ? `${(selectedSeatsCount * ticketPrice!).toFixed(2)}$`
+            : ""
         }`}
       ></Button>
     </div>
@@ -71,6 +76,8 @@ const mapStateToProps = createStructuredSelector<
   hour: selectReservationHour,
   movie: (state, ownProps) => selectMovie(ownProps.match.params.movieId)(state),
   selectedSeatsCount: selectSelectedSeatsCount,
+  ticketPrice: (state, ownProps) =>
+    selectMovieTicketPrice(ownProps.match.params.movieId)(state),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<ReservationActionTypes>) => ({
