@@ -1,17 +1,36 @@
-import React from "react";
+import React, { useState, FormEvent, ChangeEvent } from "react";
 import "./paymentpage.styles.scss";
 import MovieInfo from "components/movie-info/movie-info.component";
 import { useSelector } from "react-redux";
 import { selectReservation } from "redux/reservation/reservation.selectors";
 import { selectMovie } from "redux/movies/movies.selectors";
-import Button from "components/button/button.component";
+import PaymentForm from "components/payment-form/payment-form.component";
 
 const PaymentPage = () => {
   const reservation = useSelector(selectReservation);
   const movie = useSelector(selectMovie(reservation.movieId));
 
-  const handleSubmit = () => {};
-  const handleInputChange = () => {};
+  const [formData, setFormData] = useState({
+    email: "",
+    firstName: "",
+    lastName: "",
+  });
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormData({ email: "", firstName: "", lastName: "" });
+  };
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target as HTMLInputElement;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const total = (movie!.ticketPrice * reservation.selectedSeats.length).toFixed(
+    2
+  );
 
   return (
     <div className="payment-page">
@@ -28,34 +47,12 @@ const PaymentPage = () => {
           </div>
         ))}
       </div>
-      <div className="total">
-        Total:{" "}
-        {(movie!.ticketPrice * reservation.selectedSeats.length).toFixed(2)} $
-      </div>
-      <form className="payment-form" onSubmit={handleSubmit}>
-        <label htmlFor="email">E-mail</label>
-        <input
-          type="text"
-          name="email"
-          id="email"
-          onChange={handleInputChange}
-        />
-        <label htmlFor="firstname">First name</label>
-        <input
-          type="text"
-          name="firstname"
-          id="firstname"
-          onChange={handleInputChange}
-        />
-        <label htmlFor="lastname">Last name</label>
-        <input
-          type="text"
-          name="lastname"
-          id="lastname"
-          onChange={handleInputChange}
-        />
-      </form>
-      <Button onClick={handleSubmit} type="block" text="Confirm payment" />
+      <div className="total">Total: {total} $</div>
+      <PaymentForm
+        formData={formData}
+        handleInputChange={handleInputChange}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 };
