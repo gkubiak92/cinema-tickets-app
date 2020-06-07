@@ -14,4 +14,5 @@ export interface ISeatReservationPageMapStateProps {
 
 export interface ISeatReservationPageMapDispatchProps {
   resetSelectedSeats: () => void;
+  setReservationMovieId: (movieId: string) => void;
 }
