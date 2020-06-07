@@ -18,7 +18,7 @@ import {
   selectMovieTicketPrice,
 } from "redux/movies/movies.selectors";
 import SeatingPlan from "components/seating-plan/seating-plan.component";
-import Button from "components/button/button.component";
+import CustomButton from "components/custom-button/custombutton.component";
 import { RouteComponentProps } from "react-router-dom";
 import { Dispatch } from "redux";
 import { ReservationActionTypes } from "redux/reservation/reservation.types";
@@ -46,21 +46,23 @@ const SeatReservationPage = ({
     setReservationMovieId(match.params.movieId);
   }, [resetSelectedSeats, setReservationMovieId, match.params.movieId]);
 
+  const total = selectedSeatsCount
+    ? `${(selectedSeatsCount * ticketPrice!).toFixed(2)}$`
+    : "";
+
   return (
     <div className="seat-reservation">
       <MovieInfo movie={movie} date={date} hour={hour} />
       <SeatingPlan />
       <SeatingPlanLegend />
-      <Button
+      <CustomButton
+        type="button"
         to="/payment"
-        type="block"
+        block
         disabled={!selectedSeatsCount}
-        text={`Pay now ${
-          selectedSeatsCount
-            ? `${(selectedSeatsCount * ticketPrice!).toFixed(2)}$`
-            : ""
-        }`}
-      />
+      >
+        Pay now {total}
+      </CustomButton>
     </div>
   );
 };
