@@ -7,7 +7,7 @@ const SeatingPlanLegend = () => (
     <p>available</p>
     <Seat isLegend type="booked" row="" seatNumber={-1} />
     <p>booked</p>
-    <Seat isLegend type="selected" row="" seatNumber={-1} />
+    <Seat isLegend type="" isSelected={true} row="" seatNumber={-1} />
     <p>selected</p>
   </div>
 );
