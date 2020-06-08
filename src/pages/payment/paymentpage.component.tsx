@@ -39,7 +39,12 @@ const PaymentPage = () => {
         date={reservation.date}
         hour={reservation.hour}
       />
-      <h2>Selected seats</h2>
+      <PaymentForm
+        formData={formData}
+        handleInputChange={handleInputChange}
+        handleSubmit={handleSubmit}
+      />
+      <h2>Selected seats:</h2>
       <div className="selected-tickets">
         {reservation.selectedSeats.map((seat, index) => (
           <div key={index} className="ticket">
@@ -48,11 +53,6 @@ const PaymentPage = () => {
         ))}
       </div>
       <div className="total">Total: {total} $</div>
-      <PaymentForm
-        formData={formData}
-        handleInputChange={handleInputChange}
-        handleSubmit={handleSubmit}
-      />
     </div>
   );
 };
