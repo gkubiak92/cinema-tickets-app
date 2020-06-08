@@ -1,11 +1,24 @@
 div.payment-page {
+  h2 {
+    margin-top: 24px;
+    text-align: right;
+  }
+
   .selected-tickets {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
 
     .ticket {
       font-size: 16px;
-      margin-right: 12px;
+      margin-left: 12px;
     }
+  }
+
+  .total {
+    padding: 24px 0;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: right;
   }
 }

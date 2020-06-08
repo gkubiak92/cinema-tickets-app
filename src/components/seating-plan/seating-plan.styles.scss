@@ -12,7 +12,9 @@ div.screen {
     left: 50%;
     transform: translateX(-50%);
     content: "SCREEN";
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    color: $primary-text-color;
   }
 }
 

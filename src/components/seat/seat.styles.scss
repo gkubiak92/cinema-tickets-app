@@ -2,10 +2,11 @@
 
 div.seat {
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   margin: 8px 4px;
   border: 2px solid $primary-color;
+  border-radius: 4px;
   background-color: transparent;
 
   &.disabled {

@@ -9,9 +9,12 @@ export interface ISeatDispatchProps {
   removeSeatFromReservation: (seat: ISeat) => void;
 }
 
+export type SeatType = "disabled" | "booked" | "";
+
 export interface ISeatProps {
-  type: "disabled" | "booked" | "selected" | "";
+  type: SeatType;
   row: string;
   seatNumber: number;
+  isSelected?: boolean;
   isLegend?: boolean;
 }
