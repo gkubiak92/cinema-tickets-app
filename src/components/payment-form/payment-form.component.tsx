@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState, FormEvent, ChangeEvent } from "react";
 import "./paymentform.styles.scss";
 import CustomButton from "components/custom-button/custombutton.component";
-import { IPaymentFormProps } from "./types";
 
-const PaymentForm = ({
-  formData,
-  handleInputChange,
-  handleSubmit,
-}: IPaymentFormProps) => {
+const PaymentForm = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    firstName: "",
+    lastName: "",
+  });
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormData({ email: "", firstName: "", lastName: "" });
+  };
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target as HTMLInputElement;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
   return (
     <form className="payment-form" onSubmit={handleSubmit}>
       <label htmlFor="email">E-mail</label>
@@ -34,7 +47,7 @@ const PaymentForm = ({
         value={formData.lastName}
         onChange={handleInputChange}
       />
-      <CustomButton type="submit" onClick={handleSubmit} block>
+      <CustomButton type="submit" block>
         Confirm payment
       </CustomButton>
     </form>

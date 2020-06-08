@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, ChangeEvent } from "react";
+import React from "react";
 import "./paymentpage.styles.scss";
 import MovieInfo from "components/movie-info/movie-info.component";
 import { useSelector } from "react-redux";
@@ -9,25 +9,6 @@ import PaymentForm from "components/payment-form/payment-form.component";
 const PaymentPage = () => {
   const reservation = useSelector(selectReservation);
   const movie = useSelector(selectMovie(reservation.movieId));
-
-  const [formData, setFormData] = useState({
-    email: "",
-    firstName: "",
-    lastName: "",
-  });
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormData({ email: "", firstName: "", lastName: "" });
-  };
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target as HTMLInputElement;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
   const total = (movie!.ticketPrice * reservation.selectedSeats.length).toFixed(
     2
   );
@@ -39,11 +20,7 @@ const PaymentPage = () => {
         date={reservation.date}
         hour={reservation.hour}
       />
-      <PaymentForm
-        formData={formData}
-        handleInputChange={handleInputChange}
-        handleSubmit={handleSubmit}
-      />
+      <PaymentForm />
       <h2>Selected seats:</h2>
       <div className="selected-tickets">
         {reservation.selectedSeats.map((seat, index) => (
