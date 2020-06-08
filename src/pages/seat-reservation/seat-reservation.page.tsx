@@ -22,10 +22,7 @@ import CustomButton from "components/custom-button/custombutton.component";
 import { RouteComponentProps } from "react-router-dom";
 import { Dispatch } from "redux";
 import { ReservationActionTypes } from "redux/reservation/reservation.types";
-import {
-  resetSelectedSeats,
-  setReservationMovieId,
-} from "redux/reservation/reservation.actions";
+import { setReservationMovieId } from "redux/reservation/reservation.actions";
 import SeatingPlanLegend from "components/seating-plan-legend/seating-plan-legend.comopnent";
 import MovieInfo from "components/movie-info/movie-info.component";
 
@@ -34,7 +31,6 @@ const SeatReservationPage = ({
   hour,
   movie,
   selectedSeatsCount,
-  resetSelectedSeats,
   setReservationMovieId,
   ticketPrice,
   match,
@@ -42,9 +38,8 @@ const SeatReservationPage = ({
   ISeatReservationPageMapStateProps &
   ISeatReservationPageMapDispatchProps) => {
   useEffect(() => {
-    resetSelectedSeats();
     setReservationMovieId(match.params.movieId);
-  }, [resetSelectedSeats, setReservationMovieId, match.params.movieId]);
+  }, [setReservationMovieId, match.params.movieId]);
 
   const total = selectedSeatsCount
     ? `${(selectedSeatsCount * ticketPrice!).toFixed(2)}$`
@@ -81,7 +76,6 @@ const mapStateToProps = createStructuredSelector<
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<ReservationActionTypes>) => ({
-  resetSelectedSeats: () => dispatch(resetSelectedSeats()),
   setReservationMovieId: (movieId: string) =>
     dispatch(setReservationMovieId(movieId)),
 });

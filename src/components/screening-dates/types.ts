@@ -8,6 +8,10 @@ export interface IScreeningDatesContainerProps {
   screeningDates?: IScreeningDate[] | null;
 }
 
+export interface IScreeningDatesContainerDispatchProps {
+  resetSelectedSeats: () => void;
+}
+
 export interface IScreeningDatesProps {
   screeningDates?: IScreeningDate[] | null;
   activeDateIndex: number;

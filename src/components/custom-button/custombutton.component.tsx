@@ -14,7 +14,7 @@ const CustomButton: React.FC<ICustomButtonProps> = ({
     return (
       <button
         className={block ? "block" : ""}
-        onClick={() => onClick}
+        onClick={() => onClick()}
         disabled={disabled}
       >
         {children}
