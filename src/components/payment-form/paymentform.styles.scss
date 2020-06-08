@@ -16,4 +16,8 @@ form.payment-form {
     border: 2px solid $third-color;
     border-radius: 12px;
   }
+
+  .errorMsg {
+    color: $danger;
+  }
 }
