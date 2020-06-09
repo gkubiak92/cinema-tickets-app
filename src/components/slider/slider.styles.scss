@@ -1,4 +1,5 @@
 section.slider-container {
+  position: relative;
   display: block;
   width: 100vw;
   height: 300px;
@@ -12,11 +13,17 @@ section.slider-container {
 }
 
 div.slide {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  opacity: 0;
   background-size: cover;
   height: 100%;
-  transition: display 0.5 ease-in;
+  transition: opacity 0.5s ease-in;
   &.active {
-    display: block;
+    opacity: 1;
   }
 }
