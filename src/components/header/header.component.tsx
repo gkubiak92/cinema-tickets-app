@@ -9,7 +9,7 @@ const Header = () => (
   <header className="header">
     <SideDrawer />
     <MenuIcon />
-    <HeaderTitle />
+    <HeaderTitle theme="light" />
     <SearchIcon />
   </header>
 );

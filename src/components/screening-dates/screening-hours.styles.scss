@@ -3,7 +3,7 @@
 .screening-hours {
   display: flex;
   flex-direction: row;
-  overflow-x: hidden;
+  overflow-x: scroll;
   padding: 12px 0;
 
   .screening-hour {

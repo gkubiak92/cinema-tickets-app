@@ -1,0 +1,9 @@
+@import "../../styles/variables";
+
+.menu-icon {
+  cursor: pointer;
+
+  .fa-bars > path {
+    color: $theme-white;
+  }
+}

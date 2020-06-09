@@ -23,6 +23,11 @@
       display: inline-block;
     }
   }
+
+  @media (min-width: 1024px) {
+    flex-direction: column;
+    height: 100%;
+  }
 }
 
 @keyframes slideFromLeft {
