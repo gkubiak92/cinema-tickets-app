@@ -37,4 +37,40 @@
       flex: 3 1;
     }
   }
+
+  @media (min-width: 1024px) {
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+
+    section.slider-container {
+      flex: 1 1 40%;
+    }
+
+    div.movie-header {
+      flex-direction: column;
+      align-self: flex-end;
+      justify-self: flex-end;
+      height: 100%;
+      margin-right: 48px;
+
+      .thumbnail {
+        img {
+          position: relative;
+          top: 0;
+          display: block;
+          margin: 0 auto 0 0;
+        }
+      }
+    }
+
+    p.description {
+      display: inline-block;
+      margin: 24px 0;
+      flex: 1 1 100%;
+    }
+
+    div.screening-dates-container {
+      flex: 1 1 100%;
+    }
+  }
 }

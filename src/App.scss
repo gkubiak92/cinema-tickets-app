@@ -9,7 +9,7 @@
 }
 
 body {
-  padding: $header-height 24px 0 24px;
+  padding-top: $header-height;
 }
 
 a {
@@ -19,4 +19,8 @@ a {
 div.App {
   max-width: 1280px;
   margin: 0 auto;
+  background-color: #f6f6f6;
+  min-height: calc(100vh - #{$header-height});
+  padding: 24px 24px;
+  box-shadow: 0px 0px 40px 0px rgba(71, 71, 71, 0.3);
 }

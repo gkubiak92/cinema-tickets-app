@@ -8,7 +8,8 @@
   top: 0;
   left: 0;
   width: 100vw;
-  background: white;
+  background-color: $primary-text-color;
+  color: white;
   padding: 12px 20px;
   height: $header-height;
   z-index: 9;
