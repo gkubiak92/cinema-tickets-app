@@ -1,4 +1,19 @@
 .movie-list-container {
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 769px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    a {
+      flex: 1 1 50%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    a {
+      flex: 0 1 0;
+    }
+  }
 }
