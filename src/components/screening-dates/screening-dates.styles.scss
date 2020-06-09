@@ -3,8 +3,7 @@
 .screening-dates {
   display: flex;
   flex-direction: row;
-  overflow-x: hidden;
-  height: 100px;
+  overflow-x: scroll;
 
   .screening-date {
     display: flex;
