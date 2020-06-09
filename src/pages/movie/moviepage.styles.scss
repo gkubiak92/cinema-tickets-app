@@ -24,17 +24,15 @@
     height: 160px;
 
     .thumbnail {
-      flex: 2 1;
+      flex: 4 1 40%;
       img {
-        height: 200px;
-        max-height: none;
         position: absolute;
         top: -64px;
       }
     }
 
     .main-info {
-      flex: 3 1;
+      flex: 6 1 60%;
     }
   }
 
