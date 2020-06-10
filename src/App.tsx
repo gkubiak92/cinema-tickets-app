@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.scss";
 import "./styles/index.scss";
@@ -19,6 +19,11 @@ import MoviePage from "./pages/movie/moviepage.component";
 import MoviesPage from "./pages/movies/moviespage.component";
 import SeatReservationPage from "pages/seat-reservation/seat-reservation.page";
 import PaymentPage from "pages/payment/paymentpage.component";
+import { Dispatch } from "redux";
+import { MovieActionTypes } from "redux/movies/movies.types";
+import { fetchMoviesStart } from "redux/movies/movies.actions";
+import { connect } from "react-redux";
+import { IAppMapDispatchProps } from "types";
 
 library.add(
   faBars,
@@ -31,7 +36,11 @@ library.add(
   faHome
 );
 
-function App() {
+function App({ fetchMoviesStart }: IAppMapDispatchProps) {
+  useEffect(() => {
+    fetchMoviesStart();
+  }, [fetchMoviesStart]);
+
   return (
     <div className="App">
       <Header />
@@ -49,4 +58,8 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch: Dispatch<MovieActionTypes>) => ({
+  fetchMoviesStart: () => dispatch(fetchMoviesStart()),
+});
+
+export default connect(null, mapDispatchToProps)(App);

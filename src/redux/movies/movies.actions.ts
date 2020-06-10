@@ -3,6 +3,7 @@ import { IMoviesList } from "../../components/movies-list/types";
 
 export const fetchMoviesStart = () => ({
   type: MovieActionNames.FETCH_MOVIES_START,
+  payload: null,
 });
 
 export const fetchMoviesSuccess = (movies: IMoviesList) => ({

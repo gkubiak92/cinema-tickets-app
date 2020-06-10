@@ -1,8 +1,7 @@
 import { MovieActionNames, MovieActionTypes } from "./movies.types";
-import { movies } from "../../data/dump-data";
 
 const INITIAL_STATE = {
-  movies: movies,
+  movies: [],
   isFetching: false,
   error: "",
 };
