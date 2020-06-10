@@ -4,8 +4,5 @@ export interface IHomePageProps {
   newMovies: IMoviesList;
   popularMovies: IMoviesList;
   upcomingMovies: IMoviesList;
-}
-
-export interface IHomePageMapDispatchProps {
-  fetchMoviesStart: () => void;
+  isFetchingMovies: boolean;
 }

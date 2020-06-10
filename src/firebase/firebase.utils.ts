@@ -36,3 +36,12 @@ export const addCollectionAndDocuments = async (
   await batch.commit();
   console.log("Successfully added movies dump data to firestore");
 };
+
+/*
+ * Method which convert movies snapshot fetched from firestore
+ * to IMovies array which can be put into movies redux state
+ */
+export const convertMoviesSnapshotToMoviesArray = (movies: any) => {
+  const moviesArray = movies.docs.map((movie: any) => movie.data());
+  return moviesArray;
+};

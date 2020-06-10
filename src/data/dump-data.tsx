@@ -1,3 +1,9 @@
+/*
+ * DUMP DATA - use it for localhost purposes
+ * Or create some backend api e.g. firebase
+ * then upload there this data
+ */
+
 import { IMovie } from "../components/movie-listitem/types";
 
 export const slides = [

@@ -46,3 +46,8 @@ export const selectMovieTicketPrice = (id: string) =>
     }
     return null;
   });
+
+export const selectIsFetchingMovies = createSelector(
+  selectMovies,
+  ({ isFetching }) => isFetching
+);

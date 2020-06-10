@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import "./homepage.styles.scss";
 import { connect } from "react-redux";
 import Tabs from "../../components/tabs/tabs.component";
 import Slider from "../../components/slider/slider.component";
@@ -8,24 +9,18 @@ import {
   selectNewMovies,
   selectPopularMovies,
   selectUpcomingMovies,
+  selectIsFetchingMovies,
 } from "../../redux/movies/movies.selectors";
 import { createStructuredSelector } from "reselect";
-import { IHomePageProps, IHomePageMapDispatchProps } from "./types";
+import { IHomePageProps } from "./types";
 import { IRootState } from "../../redux/types";
-import { MovieActionTypes } from "redux/movies/movies.types";
-import { fetchMoviesStart } from "redux/movies/movies.actions";
-import { Dispatch } from "redux";
-
+import LoaderSpinner from "components/loader-spinner/loader-spinner.component";
 const HomePage = ({
   newMovies,
   popularMovies,
   upcomingMovies,
-  fetchMoviesStart,
-}: IHomePageProps & IHomePageMapDispatchProps) => {
-  useEffect(() => {
-    fetchMoviesStart();
-  }, []);
-
+  isFetchingMovies,
+}: IHomePageProps) => {
   const tabsData = [
     {
       name: "new",
@@ -44,7 +39,7 @@ const HomePage = ({
   return (
     <main className="homepage">
       <Slider interval={3000} slides={slides} />
-      <Tabs tabs={tabsData} />
+      {isFetchingMovies ? <LoaderSpinner /> : <Tabs tabs={tabsData} />}
     </main>
   );
 };
@@ -53,10 +48,7 @@ const mapStateToProps = createStructuredSelector<IRootState, IHomePageProps>({
   newMovies: selectNewMovies,
   popularMovies: selectPopularMovies,
   upcomingMovies: selectUpcomingMovies,
+  isFetchingMovies: selectIsFetchingMovies,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<MovieActionTypes>) => ({
-  fetchMoviesStart: () => dispatch(fetchMoviesStart()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps)(HomePage);
