@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Tabs from "../../components/tabs/tabs.component";
 import Slider from "../../components/slider/slider.component";
-import { slides, movies } from "../../data/dump-data";
+import { slides } from "../../data/dump-data";
 import MoviesList from "../../components/movies-list/movies-list.component";
 import {
   selectNewMovies,
@@ -10,15 +10,22 @@ import {
   selectUpcomingMovies,
 } from "../../redux/movies/movies.selectors";
 import { createStructuredSelector } from "reselect";
-import { IHomePageProps } from "./types";
+import { IHomePageProps, IHomePageMapDispatchProps } from "./types";
 import { IRootState } from "../../redux/types";
-import { addCollectionAndDocuments } from "firebase/firebase.utils";
+import { MovieActionTypes } from "redux/movies/movies.types";
+import { fetchMoviesStart } from "redux/movies/movies.actions";
+import { Dispatch } from "redux";
 
 const HomePage = ({
   newMovies,
   popularMovies,
   upcomingMovies,
-}: IHomePageProps) => {
+  fetchMoviesStart,
+}: IHomePageProps & IHomePageMapDispatchProps) => {
+  useEffect(() => {
+    fetchMoviesStart();
+  }, []);
+
   const tabsData = [
     {
       name: "new",
@@ -37,9 +44,6 @@ const HomePage = ({
   return (
     <main className="homepage">
       <Slider interval={3000} slides={slides} />
-      <button onClick={() => addCollectionAndDocuments("movies", movies)}>
-        UPLOAD DUMP DATA
-      </button>
       <Tabs tabs={tabsData} />
     </main>
   );
@@ -51,4 +55,8 @@ const mapStateToProps = createStructuredSelector<IRootState, IHomePageProps>({
   upcomingMovies: selectUpcomingMovies,
 });
 
-export default connect(mapStateToProps)(HomePage);
+const mapDispatchToProps = (dispatch: Dispatch<MovieActionTypes>) => ({
+  fetchMoviesStart: () => dispatch(fetchMoviesStart()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
