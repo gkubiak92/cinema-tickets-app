@@ -42,6 +42,12 @@ export const addCollectionAndDocuments = async (
  * to IMovies array which can be put into movies redux state
  */
 export const convertMoviesSnapshotToMoviesArray = (movies: any) => {
-  const moviesArray = movies.docs.map((movie: any) => movie.data());
+  const moviesArray = movies.docs.map((movie: any) => {
+    console.log(movie.id);
+    return {
+      ...movie.data(),
+      id: movie.id,
+    }
+  });
   return moviesArray;
 };

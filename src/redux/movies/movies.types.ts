@@ -25,7 +25,7 @@ interface IFetchMoviesFailureAction {
   payload: string;
 }
 
-interface IFetchMovieBookedSeatsStart {
+export interface IFetchMovieBookedSeatsStart {
   type: typeof MovieActionNames.FETCH_MOVIE_BOOKED_SEATS_START,
   payload: string,
 }

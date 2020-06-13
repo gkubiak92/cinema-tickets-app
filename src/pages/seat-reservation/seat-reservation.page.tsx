@@ -25,6 +25,7 @@ import { ReservationActionTypes } from "redux/reservation/reservation.types";
 import { setReservationMovieId } from "redux/reservation/reservation.actions";
 import SeatingPlanLegend from "components/seating-plan-legend/seating-plan-legend.comopnent";
 import MovieInfo from "components/movie-info/movie-info.component";
+import { fetchMovieBookedSeatsStart } from "redux/movies/movies.actions";
 
 const SeatReservationPage = ({
   date,
@@ -32,6 +33,7 @@ const SeatReservationPage = ({
   movie,
   selectedSeatsCount,
   setReservationMovieId,
+  fetchMovieBookedSeatsStart,
   ticketPrice,
   match,
 }: RouteComponentProps<ISeatReservationPageMatchParams> &
@@ -40,6 +42,10 @@ const SeatReservationPage = ({
   useEffect(() => {
     setReservationMovieId(match.params.movieId);
   }, [setReservationMovieId, match.params.movieId]);
+
+  useEffect(() => {
+    fetchMovieBookedSeatsStart(match.params.movieId);
+  }, [fetchMovieBookedSeatsStart]);
 
   const total = selectedSeatsCount
     ? `${(selectedSeatsCount * ticketPrice!).toFixed(2)}$`
@@ -78,6 +84,7 @@ const mapStateToProps = createStructuredSelector<
 const mapDispatchToProps = (dispatch: Dispatch<ReservationActionTypes>) => ({
   setReservationMovieId: (movieId: string) =>
     dispatch(setReservationMovieId(movieId)),
+  fetchMovieBookedSeatsStart: (movieId: string) => dispatch(fetchMovieBookedSeatsStart(movieId))
 });
 
 export default connect(

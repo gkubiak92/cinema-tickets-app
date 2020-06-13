@@ -1,5 +1,5 @@
 import { takeLatest, put, all, call } from "redux-saga/effects";
-import { MovieActionNames } from "./movies.types";
+import { MovieActionNames, IFetchMovieBookedSeatsStart } from "./movies.types";
 import { fetchMoviesFailure, fetchMoviesSuccess, fetchMovieBookedSeatsFailure, } from "./movies.actions";
 import {
   firestore,
@@ -12,6 +12,7 @@ export function* fetchMoviesStart() {
 
 export function* fetchMoviesAsync() {
   try {
+    console.log('fetchuje movies');
     const collectionRef = firestore.collection("movies");
     const snapshot = yield collectionRef.get();
     const moviesArray = yield call(
@@ -28,14 +29,16 @@ export function* fetchMovieBookedSeatsStart() {
   yield takeLatest(MovieActionNames.FETCH_MOVIE_BOOKED_SEATS_START, fetchMovieBookedSeats);
 }
 
-// export function* fetchMovieBookedSeats(){
-//   try {
-//     const movieDocRef = firestore.doc()
-//   } catch (error) {
-//     yield put(fetchMovieBookedSeatsFailure(error))
-//   }
-// }
+export function* fetchMovieBookedSeats(action: IFetchMovieBookedSeatsStart) {
+  try {
+    const movieDocRef = firestore.doc(`movies/${action.payload}`);
+    const movieSnapshot = yield movieDocRef.get();
+    console.log(movieSnapshot.data());
+  } catch (error) {
+    yield put(fetchMovieBookedSeatsFailure(error))
+  }
+}
 
 export function* moviesSagas() {
-  yield all([call(fetchMoviesStart)]);
+  yield all([call(fetchMoviesStart), call(fetchMovieBookedSeatsStart)]);
 }
