@@ -14,7 +14,7 @@ export const slides = [
 
 export const movies: IMovie[] = [
   {
-    id: "A13xQ3QRVPxFMQGqaTkq",
+    id: "",
     description:
       "Armed with only one word -- Tenet -- and fighting for the survival of the entire world, the Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
     director: "Christopher Nolan",
@@ -31,27 +31,69 @@ export const movies: IMovie[] = [
     screeningDates: [
       {
         date: "2020-06-01",
-        hours: ["12:00", "13:15", "16:00", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-02",
-        hours: ["10:00", "13:15", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-03",
-        hours: ["12:00", "13:15", "16:00", "17:15"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-04",
-        hours: ["17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-05",
-        hours: ["12:00", "13:15", "16:00", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-06",
-        hours: ["12:00", "13:15", "16:00", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
     ],
     stars: ["John David Washington", "Robert Pattinson", "Elizabeth Debicki"],
@@ -63,7 +105,7 @@ export const movies: IMovie[] = [
     writer: "Christopher Nolan",
   },
   {
-    id: "A13xQ3QRVPxFMQGqaTaq",
+    id: "",
     description:
       "A roadie travels across North America with a punk band during the 1980s",
     director: "Gerardo Naranjo",
@@ -80,27 +122,69 @@ export const movies: IMovie[] = [
     screeningDates: [
       {
         date: "2020-06-01",
-        hours: ["12:00", "13:15", "16:00", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-02",
-        hours: ["10:00", "13:15", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-03",
-        hours: ["12:00", "13:15", "16:00", "17:15"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-04",
-        hours: ["17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-05",
-        hours: ["12:00", "13:15", "16:00", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-06",
-        hours: ["12:00", "13:15", "16:00", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
     ],
     stars: ["Dakota Fanning", "Evan Rachel", "Wood", "Zoë Kravitz"],
@@ -112,7 +196,7 @@ export const movies: IMovie[] = [
     writer: "Gerardo Naranjo",
   },
   {
-    id: "A13xQ3QRVPxFMQGqaTbq",
+    id: "",
     description:
       "April 6th, 1917. As a regiment assembles to wage war deep in enemy territory, two soldiers are assigned to race against time and deliver a message that will stop 1,600 men from walking straight into a deadly trap.",
     director: "Sam Mendes",
@@ -128,27 +212,69 @@ export const movies: IMovie[] = [
     screeningDates: [
       {
         date: "2020-06-01",
-        hours: ["12:00", "13:15", "16:00", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-02",
-        hours: ["10:00", "13:15", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-03",
-        hours: ["12:00", "13:15", "16:00", "17:15"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-04",
-        hours: ["17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-05",
-        hours: ["12:00", "13:15", "16:00", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-06",
-        hours: ["12:00", "13:15", "16:00", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
     ],
     stars: ["Dean-Charles Chapman", "George MacKay", "Daniel Mays"],
@@ -160,7 +286,7 @@ export const movies: IMovie[] = [
     writer: "Sam Mendes",
   },
   {
-    id: "A13xQ3QRVPxFMQGqaTcq",
+    id: "",
     description:
       "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.",
     director: "Todd Phillips",
@@ -176,27 +302,69 @@ export const movies: IMovie[] = [
     screeningDates: [
       {
         date: "2020-06-01",
-        hours: ["12:00", "13:15", "16:00", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-02",
-        hours: ["10:00", "13:15", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-03",
-        hours: ["12:00", "13:15", "16:00", "17:15"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-04",
-        hours: ["17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-05",
-        hours: ["12:00", "13:15", "16:00", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
       {
         date: "2020-06-06",
-        hours: ["12:00", "13:15", "16:00", "17:15", "20:00", "21:30"],
+        hoursAndHalls: [
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+          { hour: "12:00", hallId: "xRtaPFMZJ51wsfdxHbbo" },
+        ],
       },
     ],
     stars: [" Joaquin Phoenix", "Robert De Niro", "Zazie Beetz"],

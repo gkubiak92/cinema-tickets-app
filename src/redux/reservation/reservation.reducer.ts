@@ -12,6 +12,7 @@ const INITIAL_STATE: IReservationState = {
   movieId: "",
   date: "",
   hour: "",
+  hallId: "",
   selectedSeats: [],
 };
 
@@ -35,6 +36,11 @@ const reservationReducer = (
       return {
         ...state,
         hour: action.payload,
+      };
+    case ReservationActionNames.SET_RESERVATION_HALL_ID:
+      return {
+        ...state,
+        hallId: action.payload,
       };
     case ReservationActionNames.ADD_SEAT_TO_RESERVATION:
       return {

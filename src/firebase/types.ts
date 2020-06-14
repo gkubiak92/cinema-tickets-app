@@ -1,3 +1,1 @@
-import { IMovie } from "components/movie-listitem/types";
-
-export type DocsToAdd = IMovie[];
+export type DocsToAdd = Object[];

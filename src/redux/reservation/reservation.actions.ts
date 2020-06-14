@@ -16,6 +16,11 @@ export const setReservationHour = (hour: string) => ({
   payload: hour,
 });
 
+export const setReservationHallId = (hallId: string) => ({
+  type: ReservationActionNames.SET_RESERVATION_HALL_ID,
+  payload: hallId,
+});
+
 export const addSeatToReservation = (seat: ISeat) => ({
   type: ReservationActionNames.ADD_SEAT_TO_RESERVATION,
   payload: seat,
