@@ -38,11 +38,11 @@ export function* fetchMovieBookedSeatsStart() {
 
 export function* fetchMovieBookedSeats(action: IFetchMovieBookedSeatsStart) {
   try {
-    const movieDocRef = firestore.doc(`movies/${action.payload}`);
-    const movieSnapshot = yield movieDocRef.get();
     const reservationHallId = yield select(selectReservationHallId);
+    const movieToHallRef = firestore.doc(`moviesToHalls/${reservationHallId}`);
+    const movieToHallSnapshot = yield movieToHallRef.get();
     console.log(reservationHallId);
-    console.log(movieSnapshot.data());
+    console.log(movieToHallSnapshot.data());
   } catch (error) {
     yield put(fetchMovieBookedSeatsFailure(error));
   }
