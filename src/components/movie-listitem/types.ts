@@ -7,13 +7,19 @@ export interface IMovie {
   isPopular: boolean;
   isUpcoming: boolean;
   photosUrl: string[];
-  screeningDates: { date: string; hours: string[] }[];
+  screeningDates: ScreeningDate[];
   stars: string[];
   thumbnailUrl: string;
   ticketPrice: number;
   title: string;
   rating: number;
   writer: string;
+}
+
+export interface ScreeningDate {
+  date: string;
+  hours: string[];
+  hallId: string;
 }
 
 export interface IMovieProps {

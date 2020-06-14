@@ -17,9 +17,9 @@ firebase.initializeApp(firebaseConfig);
 
 export const firestore = firebase.firestore();
 
-/* Method which allow you to add movies data to firestore
+/* Method which allow you to add any data to firestore
  * It first creates collection with provided key (name)
- * Then it uploads movies objects to this collection as documents
+ * Then it uploads objects to this collection as documents
  */
 export const addCollectionAndDocuments = async (
   collectionKey: string,
@@ -28,13 +28,13 @@ export const addCollectionAndDocuments = async (
   const collectionRef = firestore.collection(collectionKey);
   const batch = firestore.batch();
 
-  docsToAdd.forEach((doc) => {
+  docsToAdd.forEach((doc: any) => {
     const newDocRef = collectionRef.doc();
     batch.set(newDocRef, doc);
   });
 
   await batch.commit();
-  console.log("Successfully added movies dump data to firestore");
+  console.log("Successfully added objects data to firestore");
 };
 
 /*
@@ -47,7 +47,7 @@ export const convertMoviesSnapshotToMoviesArray = (movies: any) => {
     return {
       ...movie.data(),
       id: movie.id,
-    }
+    };
   });
   return moviesArray;
 };
