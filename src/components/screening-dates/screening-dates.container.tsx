@@ -21,24 +21,27 @@ const ScreeningDatesContainer = ({
   setReservationHallId,
 }: IScreeningDatesContainerProps & IScreeningDatesContainerDispatchProps) => {
   const [{ activeDate, activeDateIndex }, setActiveDate] = useState({
-    activeDate: undefined,
+    activeDate: "",
     activeDateIndex: 0,
   });
   const [{ activeHour, activeHourIndex }, setActiveHour] = useState({
-    activeHour: undefined,
+    activeHour: "",
     activeHourIndex: 0,
   });
   const history = useHistory();
 
   const handleButtonClick = () => {
-    console.log(activeDate);
-    console.log(movie.screeningDates);
-    const selectedScreeningDate = movie.screeningDates.find(
-      (date) => date.date === activeDate
-    );
+    // setting hallId in state for actual chosen movie, date and hour
+    const selectedScreeningDate = movie.screeningDates.find((date) => {
+      // TODO unify dates in whole app to be the same format
+      const screeningDate = new Date(date.date);
+      const choosenDate = new Date(activeDate);
+      return screeningDate.getTime() === choosenDate.getTime();
+    });
     if (selectedScreeningDate) {
-      console.log(selectedScreeningDate);
-      setReservationHallId(selectedScreeningDate.hallId);
+      setReservationHallId(
+        selectedScreeningDate.hoursAndHalls[activeHourIndex].hallId
+      );
     }
     resetSelectedSeats();
     history.push(`/seat-reservation/${movie.id}`);

@@ -7,7 +7,7 @@ export interface IMovie {
   isPopular: boolean;
   isUpcoming: boolean;
   photosUrl: string[];
-  screeningDates: ScreeningDate[];
+  screeningDates: IScreeningDate[];
   stars: string[];
   thumbnailUrl: string;
   ticketPrice: number;
@@ -16,9 +16,13 @@ export interface IMovie {
   writer: string;
 }
 
-export interface ScreeningDate {
+export interface IScreeningDate {
   date: string;
-  hours: string[];
+  hoursAndHalls: IHourAndHall[];
+}
+
+export interface IHourAndHall {
+  hour: string;
   hallId: string;
 }
 

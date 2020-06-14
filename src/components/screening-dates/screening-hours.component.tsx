@@ -14,18 +14,18 @@ const ScreeningHours = ({
 }: IScreeningHoursProps) => {
   return (
     <div className="screening-hours">
-      {screeningDate.hours.map((hour, index) => (
+      {screeningDate.hoursAndHalls.map((hourAndHall, index) => (
         <div
           key={index}
           onClick={() => {
-            onClick({ activeHour: hour, activeHourIndex: index });
-            setReservationHour(hour);
+            onClick({ activeHour: hourAndHall, activeHourIndex: index });
+            setReservationHour(hourAndHall.hour);
           }}
           className={`screening-hour ${
             index === activeHourIndex ? "active" : ""
           } `}
         >
-          <span>{hour}</span>
+          <span>{hourAndHall}</span>
         </div>
       ))}
     </div>

@@ -2,7 +2,11 @@ import { IMovie } from "components/movie-listitem/types";
 
 export interface IScreeningDate {
   date: string;
-  hours: string[];
+  hoursAndHalls: IHourAndHall[];
+}
+
+export interface IHourAndHall {
+  hour: string;
   hallId: string;
 }
 
