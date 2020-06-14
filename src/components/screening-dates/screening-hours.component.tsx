@@ -18,14 +18,14 @@ const ScreeningHours = ({
         <div
           key={index}
           onClick={() => {
-            onClick({ activeHour: hourAndHall, activeHourIndex: index });
+            onClick({ activeHour: hourAndHall.hour, activeHourIndex: index });
             setReservationHour(hourAndHall.hour);
           }}
           className={`screening-hour ${
             index === activeHourIndex ? "active" : ""
           } `}
         >
-          <span>{hourAndHall}</span>
+          <span>{hourAndHall.hour}</span>
         </div>
       ))}
     </div>
