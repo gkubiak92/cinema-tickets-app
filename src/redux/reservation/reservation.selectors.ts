@@ -18,6 +18,11 @@ export const selectReservationHour = createSelector(
   (reservation) => reservation.hour
 );
 
+export const selectReservationHallId = createSelector(
+  selectReservation,
+  (reservation) => reservation.hallId
+);
+
 export const selectSelectedSeats = createSelector(
   selectReservation,
   (reservation) => reservation.selectedSeats

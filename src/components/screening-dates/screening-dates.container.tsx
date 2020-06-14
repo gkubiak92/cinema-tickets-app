@@ -3,21 +3,22 @@ import {
   IScreeningDatesContainerProps,
   IScreeningDatesContainerDispatchProps,
 } from "./types";
-import { IRootState } from "redux/types";
-import { selectMovieScreeningDates } from "redux/movies/movies.selectors";
 import { connect } from "react-redux";
 import ScreeningDates from "./screening-dates.component";
 import ScreeningHours from "./screening-hours.component";
 import CustomButton from "components/custom-button/custombutton.component";
 import { Dispatch } from "redux";
 import { ReservationActionTypes } from "redux/reservation/reservation.types";
-import { resetSelectedSeats } from "redux/reservation/reservation.actions";
+import {
+  resetSelectedSeats,
+  setReservationHallId,
+} from "redux/reservation/reservation.actions";
 import { useHistory } from "react-router-dom";
 
 const ScreeningDatesContainer = ({
-  movieId,
-  screeningDates,
+  movie,
   resetSelectedSeats,
+  setReservationHallId,
 }: IScreeningDatesContainerProps & IScreeningDatesContainerDispatchProps) => {
   const [{ activeDate, activeDateIndex }, setActiveDate] = useState({
     activeDate: undefined,
@@ -30,8 +31,17 @@ const ScreeningDatesContainer = ({
   const history = useHistory();
 
   const handleButtonClick = () => {
+    console.log(activeDate);
+    console.log(movie.screeningDates);
+    const selectedScreeningDate = movie.screeningDates.find(
+      (date) => date.date === activeDate
+    );
+    if (selectedScreeningDate) {
+      console.log(selectedScreeningDate);
+      setReservationHallId(selectedScreeningDate.hallId);
+    }
     resetSelectedSeats();
-    history.push(`/seat-reservation/${movieId}`);
+    history.push(`/seat-reservation/${movie.id}`);
   };
 
   const canChooseSeat = activeDate && activeHour ? true : false;
@@ -39,12 +49,12 @@ const ScreeningDatesContainer = ({
   return (
     <div className="screening-dates-container">
       <ScreeningDates
-        screeningDates={screeningDates}
+        screeningDates={movie.screeningDates}
         activeDateIndex={activeDateIndex}
         onClick={setActiveDate}
       />
       <ScreeningHours
-        screeningDate={screeningDates![activeDateIndex]}
+        screeningDate={movie.screeningDates[activeDateIndex]}
         activeHourIndex={activeHourIndex}
         onClick={setActiveHour}
       />
@@ -60,18 +70,10 @@ const ScreeningDatesContainer = ({
   );
 };
 
-const mapStateToProps = (
-  state: IRootState,
-  ownProps: IScreeningDatesContainerProps
-) => ({
-  screeningDates: selectMovieScreeningDates(ownProps.movieId)(state),
-});
-
 const mapDispatchToProps = (dispatch: Dispatch<ReservationActionTypes>) => ({
   resetSelectedSeats: () => dispatch(resetSelectedSeats()),
+  setReservationHallId: (hallId: string) =>
+    dispatch(setReservationHallId(hallId)),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ScreeningDatesContainer);
+export default connect(null, mapDispatchToProps)(ScreeningDatesContainer);

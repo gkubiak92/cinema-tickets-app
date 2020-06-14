@@ -43,7 +43,6 @@ export const addCollectionAndDocuments = async (
  */
 export const convertMoviesSnapshotToMoviesArray = (movies: any) => {
   const moviesArray = movies.docs.map((movie: any) => {
-    console.log(movie.id);
     return {
       ...movie.data(),
       id: movie.id,

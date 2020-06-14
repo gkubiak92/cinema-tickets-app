@@ -1,15 +1,22 @@
+import { IMovie } from "components/movie-listitem/types";
+
 export interface IScreeningDate {
   date: string;
   hours: string[];
+  hallId: string;
 }
 
 export interface IScreeningDatesContainerProps {
-  movieId: string;
-  screeningDates?: IScreeningDate[] | null;
+  movie: IMovie;
+}
+
+export interface IscreeningDatesContainerMapStateProps {
+  screeningDates: IScreeningDate[] | null;
 }
 
 export interface IScreeningDatesContainerDispatchProps {
   resetSelectedSeats: () => void;
+  setReservationHallId: (hallId: string) => void;
 }
 
 export interface IScreeningDatesProps {

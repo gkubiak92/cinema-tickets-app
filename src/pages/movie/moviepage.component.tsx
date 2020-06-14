@@ -22,7 +22,7 @@ const MoviePage = ({ movie }: IMoviePageState) => {
         </div>
       </div>
       <p className="description">{movie.description}</p>
-      <ScreeningDatesContainer movieId={movie.id} />
+      <ScreeningDatesContainer movie={movie} />
     </div>
   ) : (
     <div className="movie-page">Not found</div>
