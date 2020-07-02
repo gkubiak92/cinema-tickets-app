@@ -38,15 +38,15 @@ export const addCollectionAndDocuments = async (
 };
 
 /*
- * Method which convert movies snapshot fetched from firestore
- * to IMovies array which can be put into movies redux state
+ * Method which convert collection snapshot fetched from firestore
+ * to array which can be put into redux state
  */
-export const convertMoviesSnapshotToMoviesArray = (movies: any) => {
-  const moviesArray = movies.docs.map((movie: any) => {
+export const convertSnapshotToArray = (collection: any) => {
+  const arr = collection.docs.map((item: any) => {
     return {
-      ...movie.data(),
-      id: movie.id,
+      ...item.data(),
+      id: item.id,
     };
   });
-  return moviesArray;
+  return arr;
 };

@@ -1,16 +1,21 @@
-import React from "react";
-import "./moviepage.styles.scss";
+import React, { useEffect } from "react";
+import "./styles.scss";
 import { RouteComponentProps } from "react-router-dom";
-import { selectMovie } from "redux/movies/movies.selectors";
+import { selectMovie } from "redux/movies/selectors";
 import { connect } from "react-redux";
 import Rating from "components/rating/rating.component";
-import { IMoviePageMatchParams, IMoviePageState } from "./types";
+import { IMoviePageMatchParams, IMoviePageProps } from "./types";
 import { IRootState } from "redux/types";
 import Slider from "components/slider/slider.component";
 import MovieThumbnail from "components/movie-thumbnail/moviethumbnail.component";
-import ScreeningDatesContainer from "components/screening-dates/screening-dates.container";
+import ScreeningDatesContainer from "components/screening-dates/ScreeningDatesContainer";
+import { fetchScreeningsStart } from "redux/screenings/actions";
 
-const MoviePage = ({ movie }: IMoviePageState) => {
+const MoviePage = ({ movie, fetchScreeningsStart }: IMoviePageProps) => {
+  useEffect(() => {
+    fetchScreeningsStart();
+  }, [fetchScreeningsStart]);
+
   return movie ? (
     <div className="movie-page">
       <Slider interval={2000} slides={movie.photosUrl} />
@@ -36,4 +41,8 @@ const mapStateToProps = (
   movie: selectMovie(ownProps.match.params.movieId)(state),
 });
 
-export default connect(mapStateToProps)(MoviePage);
+const mapDispatchToProps = {
+  fetchScreeningsStart,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MoviePage);

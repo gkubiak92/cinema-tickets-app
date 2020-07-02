@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import "./seat-reservation.styles.scss";
+import "./styles.scss";
 import { IRootState } from "redux/types";
 import { createStructuredSelector } from "reselect";
 import {
@@ -12,20 +12,15 @@ import {
   selectReservationDate,
   selectReservationHour,
   selectSelectedSeatsCount,
-} from "redux/reservation/reservation.selectors";
-import {
-  selectMovie,
-  selectMovieTicketPrice,
-} from "redux/movies/movies.selectors";
+} from "redux/reservation/selectors";
+import { selectMovie, selectMovieTicketPrice } from "redux/movies/selectors";
 import SeatingPlan from "components/seating-plan/seating-plan.component";
 import CustomButton from "components/custom-button/custombutton.component";
 import { RouteComponentProps } from "react-router-dom";
-import { Dispatch } from "redux";
-import { ReservationActionTypes } from "redux/reservation/reservation.types";
-import { setReservationMovieId } from "redux/reservation/reservation.actions";
+import { setReservationMovieId } from "redux/reservation/actions";
 import SeatingPlanLegend from "components/seating-plan-legend/seating-plan-legend.comopnent";
 import MovieInfo from "components/movie-info/movie-info.component";
-import { fetchMovieBookedSeatsStart } from "redux/movies/movies.actions";
+import { fetchMovieBookedSeatsStart } from "redux/movies/actions";
 
 const SeatReservationPage = ({
   date,
@@ -45,7 +40,7 @@ const SeatReservationPage = ({
 
   useEffect(() => {
     fetchMovieBookedSeatsStart(match.params.movieId);
-  }, [fetchMovieBookedSeatsStart]);
+  }, [fetchMovieBookedSeatsStart, match.params.movieId]);
 
   const total = selectedSeatsCount
     ? `${(selectedSeatsCount * ticketPrice!).toFixed(2)}$`
@@ -81,11 +76,10 @@ const mapStateToProps = createStructuredSelector<
     selectMovieTicketPrice(ownProps.match.params.movieId)(state),
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<ReservationActionTypes>) => ({
-  setReservationMovieId: (movieId: string) =>
-    dispatch(setReservationMovieId(movieId)),
-  fetchMovieBookedSeatsStart: (movieId: string) => dispatch(fetchMovieBookedSeatsStart(movieId))
-});
+const mapDispatchToProps = {
+  setReservationMovieId,
+  fetchMovieBookedSeatsStart,
+};
 
 export default connect(
   mapStateToProps,

@@ -1,9 +1,10 @@
 import React from "react";
 import { IScreeningHoursProps } from "./types";
-import "./screening-hours.styles.scss";
-import { Dispatch } from "redux";
-import { ReservationActionTypes } from "redux/reservation/reservation.types";
-import { setReservationHour } from "redux/reservation/reservation.actions";
+import "./styles.scss";
+import {
+  setReservationHour,
+  setReservationHallId,
+} from "redux/reservation/actions";
 import { connect } from "react-redux";
 
 const ScreeningHours = ({
@@ -11,6 +12,7 @@ const ScreeningHours = ({
   activeHourIndex,
   onClick,
   setReservationHour,
+  setReservationHallId,
 }: IScreeningHoursProps) => {
   return (
     <div className="screening-hours">
@@ -20,6 +22,7 @@ const ScreeningHours = ({
           onClick={() => {
             onClick({ activeHour: hourAndHall.hour, activeHourIndex: index });
             setReservationHour(hourAndHall.hour);
+            setReservationHallId(hourAndHall.hallId);
           }}
           className={`screening-hour ${
             index === activeHourIndex ? "active" : ""
@@ -32,8 +35,9 @@ const ScreeningHours = ({
   );
 };
 
-const mapDispatchToProps = (dispatch: Dispatch<ReservationActionTypes>) => ({
-  setReservationHour: (hour: string) => dispatch(setReservationHour(hour)),
-});
+const mapDispatchToProps = {
+  setReservationHour,
+  setReservationHallId,
+};
 
 export default connect(null, mapDispatchToProps)(ScreeningHours);

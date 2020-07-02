@@ -1,5 +1,5 @@
 import React from "react";
-import "./homepage.styles.scss";
+import "./styles.scss";
 import { connect } from "react-redux";
 import Tabs from "../../components/tabs/tabs.component";
 import Slider from "../../components/slider/slider.component";
@@ -10,7 +10,7 @@ import {
   selectPopularMovies,
   selectUpcomingMovies,
   selectIsFetchingMovies,
-} from "../../redux/movies/movies.selectors";
+} from "../../redux/movies/selectors";
 import { createStructuredSelector } from "reselect";
 import { IHomePageProps } from "./types";
 import { IRootState } from "../../redux/types";

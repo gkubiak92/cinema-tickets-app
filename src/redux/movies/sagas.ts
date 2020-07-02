@@ -1,15 +1,12 @@
 import { takeLatest, put, all, call, select } from "redux-saga/effects";
-import { MovieActionNames, IFetchMovieBookedSeatsStart } from "./movies.types";
+import { MovieActionNames, IFetchMovieBookedSeatsStart } from "./types";
 import {
   fetchMoviesFailure,
   fetchMoviesSuccess,
   fetchMovieBookedSeatsFailure,
-} from "./movies.actions";
-import {
-  firestore,
-  convertMoviesSnapshotToMoviesArray,
-} from "firebase/firebase.utils";
-import { selectReservationHallId } from "redux/reservation/reservation.selectors";
+} from "./actions";
+import { firestore, convertSnapshotToArray } from "firebase/firebase.utils";
+import { selectReservationHallId } from "redux/reservation/selectors";
 
 export function* fetchMoviesStart() {
   yield takeLatest(MovieActionNames.FETCH_MOVIES_START, fetchMoviesAsync);
@@ -19,10 +16,7 @@ export function* fetchMoviesAsync() {
   try {
     const collectionRef = firestore.collection("movies");
     const snapshot = yield collectionRef.get();
-    const moviesArray = yield call(
-      convertMoviesSnapshotToMoviesArray,
-      snapshot
-    );
+    const moviesArray = yield call(convertSnapshotToArray, snapshot);
     yield put(fetchMoviesSuccess(moviesArray));
   } catch (error) {
     yield put(fetchMoviesFailure(error));
