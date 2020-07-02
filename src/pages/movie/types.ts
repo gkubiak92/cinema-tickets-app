@@ -1,5 +1,5 @@
-import { IMovie } from "../../components/movie-listitem/types";
 import { fetchScreeningsStart } from "redux/screenings/actions";
+import { IMovie } from "api/types";
 
 export interface IMoviePageMatchParams {
   movieId: string;

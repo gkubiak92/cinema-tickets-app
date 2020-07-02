@@ -4,7 +4,7 @@
  * then upload there this data
  */
 
-import { IMovie } from "../components/movie-listitem/types";
+import { IMovie } from "api/types";
 
 export const slides = [
   "https://cdn.pastemagazine.com/www/system/images/photo_albums/best-movie-posters-2016/large/moonlight-ver2-xlg.jpg?1384968217",

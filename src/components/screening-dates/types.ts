@@ -1,19 +1,5 @@
-import { IMovie } from "components/movie-listitem/types";
-import {
-  setReservationHallId,
-  setReservationHour,
-  resetSelectedSeats,
-} from "redux/reservation/actions";
-
-export interface IHourAndHall {
-  hour: string;
-  hallId: string;
-}
-
-export interface IScreeningDate {
-  date: string;
-  hoursAndHalls: IHourAndHall[];
-}
+import { resetSelectedSeats } from "redux/reservation/actions";
+import { IMovie, IScreeningDate } from "api/types";
 
 export interface IscreeningDatesContainerMappedState {
   dates: IScreeningDate[];

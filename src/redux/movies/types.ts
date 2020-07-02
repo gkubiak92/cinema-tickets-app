@@ -1,5 +1,5 @@
 import { IMoviesList } from "components/movies-list/types";
-import { IMovie } from "components/movie-listitem/types";
+import { IMovie } from "api/types";
 
 export enum MovieActionNames {
   FETCH_MOVIES_START = "FETCH_MOVIES_START",

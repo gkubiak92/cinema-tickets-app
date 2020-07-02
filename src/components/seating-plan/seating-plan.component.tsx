@@ -5,10 +5,10 @@ import Seat from "components/seat/seat.component";
 import { connect } from "react-redux";
 import { selectSelectedSeats } from "redux/reservation/selectors";
 import { IRootState } from "redux/types";
-import { ISeatingPlanMapStateProps } from "./types";
+import { ISeatingPlanMappedState } from "./types";
 import { SeatType } from "components/seat/types";
 
-const SeatingPlan = ({ selectedSeats }: ISeatingPlanMapStateProps) => {
+const SeatingPlan = ({ selectedSeats }: ISeatingPlanMappedState) => {
   return (
     <>
       <div className="screen" />

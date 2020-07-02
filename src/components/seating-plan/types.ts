@@ -1,5 +1,5 @@
 import { ISeat } from "components/seat/types";
 
-export interface ISeatingPlanMapStateProps {
+export interface ISeatingPlanMappedState {
   selectedSeats: ISeat[];
 }

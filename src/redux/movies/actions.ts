@@ -8,7 +8,7 @@ import {
   IFetchMovieBookedSeatsFailure,
 } from "./types";
 import { IMoviesList } from "components/movies-list/types";
-import { IMovie } from "components/movie-listitem/types";
+import { IMovie } from "api/types";
 
 export const fetchMoviesStart = (): IFetchMoviesStartAction => ({
   type: MovieActionNames.FETCH_MOVIES_START,

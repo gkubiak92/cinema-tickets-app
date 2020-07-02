@@ -1,5 +1,4 @@
-import { IScreening } from "api/types";
-import { IScreeningDate } from "components/movie-listitem/types";
+import { IScreening, IScreeningDate } from "api/types";
 
 export enum ScreeningsActionNames {
   FETCH_SCREENINGS_START = "FETCH_SCREENINGS_START",
@@ -26,7 +25,7 @@ export type ScreeningsActionTypes =
   | IFetchScreeningsSuccessAction
   | IFetchScreeningsFailureAction;
 
-interface IScreeningDates {
+export interface IScreeningDates {
   [key: string]: IScreeningDate[];
 }
 

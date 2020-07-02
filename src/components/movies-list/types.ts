@@ -1,4 +1,4 @@
-import { IMovie } from "../movie-listitem/types";
+import { IMovie } from "api/types";
 
 export type IMoviesList = IMovie[];
 

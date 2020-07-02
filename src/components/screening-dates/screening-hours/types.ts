@@ -2,7 +2,7 @@ import {
   setReservationHallId,
   setReservationHour,
 } from "redux/reservation/actions";
-import { IScreeningDate } from "components/movie-listitem/types";
+import { IScreeningDate } from "api/types";
 
 export interface IScreeningHoursMappedDispatch {
   setReservationHallId: typeof setReservationHallId;

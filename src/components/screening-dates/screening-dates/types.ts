@@ -1,4 +1,4 @@
-import { IScreeningDate } from "components/movie-listitem/types";
+import { IScreeningDate } from "api/types";
 
 export interface IScreeningDatesProps {
   screeningDates: IScreeningDate[];

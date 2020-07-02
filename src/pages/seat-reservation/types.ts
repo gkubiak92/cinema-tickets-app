@@ -1,4 +1,4 @@
-import { IMovie } from "components/movie-listitem/types";
+import { IMovie } from "api/types";
 
 export interface ISeatReservationPageMatchParams {
   movieId: string;

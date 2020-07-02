@@ -1,8 +1,8 @@
 import { IScreening } from "api/types";
-import { IScreeningDate } from "components/movie-listitem/types";
+import { IScreeningDates } from "./types";
 
 export const convertScreeningsCollection = (screenings: IScreening[]) => {
-  const screeningDates: { [key: string]: IScreeningDate[] } = {};
+  const screeningDates: IScreeningDates = {};
 
   screenings.forEach((screening) => {
     const { dateAndHour, movieId, hallId } = screening;
