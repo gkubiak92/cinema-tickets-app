@@ -1,4 +1,8 @@
 import { IMovie } from "components/movie-listitem/types";
+import {
+  setReservationHallId,
+  setReservationHour,
+} from "redux/reservation/actions";
 
 export interface IScreeningDate {
   date: string;
@@ -20,11 +24,11 @@ export interface IscreeningDatesContainerMapStateProps {
 
 export interface IScreeningDatesContainerDispatchProps {
   resetSelectedSeats: () => void;
-  setReservationHallId: (hallId: string) => void;
+  setReservationHallId: typeof setReservationHallId;
 }
 
 export interface IScreeningDatesProps {
-  screeningDates?: IScreeningDate[] | null;
+  screeningDates: IScreeningDate[];
   activeDateIndex: number;
   onClick: Function;
   setReservationDate: (date: string) => void;
@@ -34,5 +38,5 @@ export interface IScreeningHoursProps {
   screeningDate: IScreeningDate;
   activeHourIndex: number;
   onClick: Function;
-  setReservationHour: (hour: string) => void;
+  setReservationHour: typeof setReservationHour;
 }

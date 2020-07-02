@@ -16,7 +16,7 @@ const ScreeningDates = ({
 }: IScreeningDatesProps) => {
   return (
     <div className="screening-dates">
-      {screeningDates?.map((screeningDate, index) => {
+      {screeningDates.map((screeningDate, index) => {
         const date = new Date(screeningDate.date);
         const weekday = date.toLocaleDateString(locale, { weekday: "short" });
         const dayNumber = date.toLocaleDateString(locale, { day: "2-digit" });

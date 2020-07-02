@@ -4,11 +4,9 @@ import {
   IScreeningDatesContainerDispatchProps,
 } from "./types";
 import { connect } from "react-redux";
-import ScreeningDates from "./screening-dates.component";
-import ScreeningHours from "./screening-hours.component";
+import ScreeningDates from "./ScreeningDates";
+import ScreeningHours from "./ScreeningHours";
 import CustomButton from "components/custom-button/custombutton.component";
-import { Dispatch } from "redux";
-import { ReservationActionTypes } from "redux/reservation/types";
 import {
   resetSelectedSeats,
   setReservationHallId,
@@ -73,10 +71,9 @@ const ScreeningDatesContainer = ({
   );
 };
 
-const mapDispatchToProps = (dispatch: Dispatch<ReservationActionTypes>) => ({
-  resetSelectedSeats: () => dispatch(resetSelectedSeats()),
-  setReservationHallId: (hallId: string) =>
-    dispatch(setReservationHallId(hallId)),
-});
+const mapDispatchToProps = {
+  resetSelectedSeats,
+  setReservationHallId,
+};
 
 export default connect(null, mapDispatchToProps)(ScreeningDatesContainer);
