@@ -2,11 +2,8 @@ import {
   IReservationState,
   ReservationActionTypes,
   ReservationActionNames,
-} from "./reservation.types";
-import {
-  addSeatToReservation,
-  removeSeatFromReservation,
-} from "./reservation.utils";
+} from "./types";
+import { addSeatToReservation, removeSeatFromReservation } from "./utils";
 
 const INITIAL_STATE: IReservationState = {
   movieId: "",

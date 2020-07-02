@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import { selectAllMovies } from "../../redux/movies/movies.selectors";
+import { selectAllMovies } from "../../redux/movies/selectors";
 import { IRootState } from "../../redux/types";
 import { IMoviesPageProps } from "./types";
 import MoviesList from "../../components/movies-list/movies-list.component";

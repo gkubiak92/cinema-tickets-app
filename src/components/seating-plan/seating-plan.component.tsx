@@ -3,7 +3,7 @@ import "./seating-plan.styles.scss";
 import { seatArrangement } from "../../data/seat-arrangement";
 import Seat from "components/seat/seat.component";
 import { connect } from "react-redux";
-import { selectSelectedSeats } from "redux/reservation/reservation.selectors";
+import { selectSelectedSeats } from "redux/reservation/selectors";
 import { IRootState } from "redux/types";
 import { ISeatingPlanMapStateProps } from "./types";
 import { SeatType } from "components/seat/types";

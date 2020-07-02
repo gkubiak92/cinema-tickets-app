@@ -2,8 +2,8 @@ import React from "react";
 import "./paymentpage.styles.scss";
 import MovieInfo from "components/movie-info/movie-info.component";
 import { useSelector } from "react-redux";
-import { selectReservation } from "redux/reservation/reservation.selectors";
-import { selectMovie } from "redux/movies/movies.selectors";
+import { selectReservation } from "redux/reservation/selectors";
+import { selectMovie } from "redux/movies/selectors";
 import PaymentForm from "components/payment-form/payment-form.component";
 
 const PaymentPage = () => {

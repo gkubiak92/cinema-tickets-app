@@ -1,6 +1,6 @@
-import { IMoviesState } from "./movies/movies.types";
-import { IUIState } from "./ui/ui.types";
-import { IReservationState } from "./reservation/reservation.types";
+import { IMoviesState } from "./movies/types";
+import { IUIState } from "./ui/types";
+import { IReservationState } from "./reservation/types";
 
 export interface IRootState {
   movies: IMoviesState;

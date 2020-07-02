@@ -10,7 +10,7 @@ import {
   selectPopularMovies,
   selectUpcomingMovies,
   selectIsFetchingMovies,
-} from "../../redux/movies/movies.selectors";
+} from "../../redux/movies/selectors";
 import { createStructuredSelector } from "reselect";
 import { IHomePageProps } from "./types";
 import { IRootState } from "../../redux/types";

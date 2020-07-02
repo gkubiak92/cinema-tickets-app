@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./seat.styles.scss";
 import { ISeatProps, ISeat, ISeatDispatchProps } from "./types";
 import { Dispatch } from "redux";
-import { ReservationActionTypes } from "redux/reservation/reservation.types";
+import { ReservationActionTypes } from "redux/reservation/types";
 import {
   addSeatToReservation,
   removeSeatFromReservation,
-} from "redux/reservation/reservation.actions";
+} from "redux/reservation/actions";
 import { connect } from "react-redux";
 
 const Seat = ({

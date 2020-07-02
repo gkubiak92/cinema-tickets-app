@@ -2,8 +2,8 @@ import React from "react";
 import { IScreeningDatesProps } from "./types";
 import "./screening-dates.styles.scss";
 import { Dispatch } from "redux";
-import { ReservationActionTypes } from "redux/reservation/reservation.types";
-import { setReservationDate } from "redux/reservation/reservation.actions";
+import { ReservationActionTypes } from "redux/reservation/types";
+import { setReservationDate } from "redux/reservation/actions";
 import { connect } from "react-redux";
 
 const locale = "pl-PL";

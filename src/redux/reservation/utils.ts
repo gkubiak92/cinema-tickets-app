@@ -1,6 +1,9 @@
 import { ISeat } from "components/seat/types";
 
-export const addSeatToReservation = (selectedSeats: ISeat[], payload: any) => {
+export const addSeatToReservation = (
+  selectedSeats: ISeat[],
+  payload: ISeat
+) => {
   const seatReservedAlready = selectedSeats.find(
     (seat) => seat.row === payload.row && seat.seatNumber === payload.seatNumber
   );
@@ -13,5 +16,5 @@ export const addSeatToReservation = (selectedSeats: ISeat[], payload: any) => {
 
 export const removeSeatFromReservation = (
   selectedSeats: ISeat[],
-  payload: any
+  payload: ISeat
 ) => selectedSeats.filter((seat) => seat.id !== payload.id);

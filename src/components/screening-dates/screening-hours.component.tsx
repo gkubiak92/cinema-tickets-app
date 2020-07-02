@@ -2,8 +2,8 @@ import React from "react";
 import { IScreeningHoursProps } from "./types";
 import "./screening-hours.styles.scss";
 import { Dispatch } from "redux";
-import { ReservationActionTypes } from "redux/reservation/reservation.types";
-import { setReservationHour } from "redux/reservation/reservation.actions";
+import { ReservationActionTypes } from "redux/reservation/types";
+import { setReservationHour } from "redux/reservation/actions";
 import { connect } from "react-redux";
 
 const ScreeningHours = ({

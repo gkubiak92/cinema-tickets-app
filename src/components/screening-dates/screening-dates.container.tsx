@@ -8,11 +8,11 @@ import ScreeningDates from "./screening-dates.component";
 import ScreeningHours from "./screening-hours.component";
 import CustomButton from "components/custom-button/custombutton.component";
 import { Dispatch } from "redux";
-import { ReservationActionTypes } from "redux/reservation/reservation.types";
+import { ReservationActionTypes } from "redux/reservation/types";
 import {
   resetSelectedSeats,
   setReservationHallId,
-} from "redux/reservation/reservation.actions";
+} from "redux/reservation/actions";
 import { useHistory } from "react-router-dom";
 
 const ScreeningDatesContainer = ({

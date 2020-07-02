@@ -20,8 +20,8 @@ import MoviesPage from "./pages/movies/moviespage.component";
 import SeatReservationPage from "pages/seat-reservation/seat-reservation.page";
 import PaymentPage from "pages/payment/paymentpage.component";
 import { Dispatch } from "redux";
-import { MovieActionTypes } from "redux/movies/movies.types";
-import { fetchMoviesStart } from "redux/movies/movies.actions";
+import { MovieActionTypes } from "redux/movies/types";
+import { fetchMoviesStart } from "redux/movies/actions";
 import { connect } from "react-redux";
 import { IAppMapDispatchProps } from "types";
 
