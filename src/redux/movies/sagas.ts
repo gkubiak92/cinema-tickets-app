@@ -5,10 +5,7 @@ import {
   fetchMoviesSuccess,
   fetchMovieBookedSeatsFailure,
 } from "./actions";
-import {
-  firestore,
-  convertMoviesSnapshotToMoviesArray,
-} from "firebase/firebase.utils";
+import { firestore, convertSnapshotToArray } from "firebase/firebase.utils";
 import { selectReservationHallId } from "redux/reservation/selectors";
 
 export function* fetchMoviesStart() {
@@ -19,10 +16,7 @@ export function* fetchMoviesAsync() {
   try {
     const collectionRef = firestore.collection("movies");
     const snapshot = yield collectionRef.get();
-    const moviesArray = yield call(
-      convertMoviesSnapshotToMoviesArray,
-      snapshot
-    );
+    const moviesArray = yield call(convertSnapshotToArray, snapshot);
     yield put(fetchMoviesSuccess(moviesArray));
   } catch (error) {
     yield put(fetchMoviesFailure(error));

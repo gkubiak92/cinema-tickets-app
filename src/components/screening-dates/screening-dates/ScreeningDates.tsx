@@ -1,6 +1,6 @@
 import React from "react";
 import { IScreeningDatesProps } from "./types";
-import "./screening-dates.styles.scss";
+import "./styles.scss";
 import { Dispatch } from "redux";
 import { ReservationActionTypes } from "redux/reservation/types";
 import { setReservationDate } from "redux/reservation/actions";
@@ -26,7 +26,7 @@ const ScreeningDates = ({
             key={index}
             onClick={() => {
               onClick({ activeDate: date, activeDateIndex: index });
-              setReservationDate(date.toLocaleDateString());
+              setReservationDate(date.toISOString());
             }}
             className={`screening-date ${
               index === activeDateIndex ? "active" : ""

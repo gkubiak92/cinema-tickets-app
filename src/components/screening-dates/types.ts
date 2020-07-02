@@ -2,41 +2,27 @@ import { IMovie } from "components/movie-listitem/types";
 import {
   setReservationHallId,
   setReservationHour,
+  resetSelectedSeats,
 } from "redux/reservation/actions";
-
-export interface IScreeningDate {
-  date: string;
-  hoursAndHalls: IHourAndHall[];
-}
 
 export interface IHourAndHall {
   hour: string;
   hallId: string;
 }
 
-export interface IScreeningDatesContainerProps {
+export interface IScreeningDate {
+  date: string;
+  hoursAndHalls: IHourAndHall[];
+}
+
+export interface IscreeningDatesContainerMappedState {
+  dates: IScreeningDate[];
+}
+
+export interface IScreeningDatesContainerMappedDispatch {
+  resetSelectedSeats: typeof resetSelectedSeats;
+}
+
+export type IScreeningDatesContainerProps = {
   movie: IMovie;
-}
-
-export interface IscreeningDatesContainerMapStateProps {
-  screeningDates: IScreeningDate[] | null;
-}
-
-export interface IScreeningDatesContainerDispatchProps {
-  resetSelectedSeats: () => void;
-  setReservationHallId: typeof setReservationHallId;
-}
-
-export interface IScreeningDatesProps {
-  screeningDates: IScreeningDate[];
-  activeDateIndex: number;
-  onClick: Function;
-  setReservationDate: (date: string) => void;
-}
-
-export interface IScreeningHoursProps {
-  screeningDate: IScreeningDate;
-  activeHourIndex: number;
-  onClick: Function;
-  setReservationHour: typeof setReservationHour;
-}
+};
