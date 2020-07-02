@@ -14,11 +14,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faStar as starEmpty } from "@fortawesome/free-regular-svg-icons";
 import Header from "./components/header/header.component";
-import HomePage from "./pages/home/homepage.component";
-import MoviePage from "./pages/movie/moviepage.component";
-import MoviesPage from "./pages/movies/moviespage.component";
-import SeatReservationPage from "pages/seat-reservation/seat-reservation.page";
-import PaymentPage from "pages/payment/paymentpage.component";
+import HomePage from "./pages/home/HomePage";
+import MoviePage from "./pages/movie/MoviePage";
+import MoviesPage from "./pages/movies/MoviesPage";
+import SeatReservationPage from "pages/seat-reservation/SeatReservationPage";
+import PaymentPage from "pages/payment/PaymentPage";
 import { Dispatch } from "redux";
 import { MovieActionTypes } from "redux/movies/types";
 import { fetchMoviesStart } from "redux/movies/actions";

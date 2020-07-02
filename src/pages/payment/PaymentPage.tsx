@@ -1,5 +1,5 @@
 import React from "react";
-import "./paymentpage.styles.scss";
+import "./styles.scss";
 import MovieInfo from "components/movie-info/movie-info.component";
 import { useSelector } from "react-redux";
 import { selectReservation } from "redux/reservation/selectors";

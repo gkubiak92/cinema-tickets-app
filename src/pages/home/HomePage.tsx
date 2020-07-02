@@ -1,5 +1,5 @@
 import React from "react";
-import "./homepage.styles.scss";
+import "./styles.scss";
 import { connect } from "react-redux";
 import Tabs from "../../components/tabs/tabs.component";
 import Slider from "../../components/slider/slider.component";

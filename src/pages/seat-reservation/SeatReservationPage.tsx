@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import "./seat-reservation.styles.scss";
+import "./styles.scss";
 import { IRootState } from "redux/types";
 import { createStructuredSelector } from "reselect";
 import {

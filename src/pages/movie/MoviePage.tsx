@@ -1,5 +1,5 @@
 import React from "react";
-import "./moviepage.styles.scss";
+import "./styles.scss";
 import { RouteComponentProps } from "react-router-dom";
 import { selectMovie } from "redux/movies/selectors";
 import { connect } from "react-redux";

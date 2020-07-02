@@ -5,7 +5,7 @@ import { selectAllMovies } from "../../redux/movies/selectors";
 import { IRootState } from "../../redux/types";
 import { IMoviesPageProps } from "./types";
 import MoviesList from "../../components/movies-list/movies-list.component";
-import "./moviespage.styles.scss";
+import "./styles.scss";
 
 const MoviesPage = ({ movies }: IMoviesPageProps) => (
   <div className="movies-list">
