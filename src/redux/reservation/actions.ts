@@ -7,8 +7,12 @@ import {
   IAddSeatToReservationAction,
   IRemoveSeatFromReservationAction,
   IResetSelectedSeatsAction,
+  IFetchSeatArrangementStartAction,
+  IFetchSeatArrangementSuccessAction,
+  IFetchSeatArrangementFailureAction,
 } from "./types";
 import { ISeat } from "components/seat/types";
+import { ISeatArrangement } from "api/types";
 
 export const setReservationMovieId = (
   movieId: string
@@ -54,4 +58,22 @@ export const removeSeatFromReservation = (
 
 export const resetSelectedSeats = (): IResetSelectedSeatsAction => ({
   type: ReservationActionNames.RESET_SELECTED_SEATS,
+});
+
+export const fetchSeatArrangementStart = (): IFetchSeatArrangementStartAction => ({
+  type: ReservationActionNames.FETCH_SEAT_ARRANGEMENT_START,
+});
+
+export const fetchSeatArrangementSuccess = (
+  seatArrangement: ISeatArrangement
+): IFetchSeatArrangementSuccessAction => ({
+  type: ReservationActionNames.FETCH_SEAT_ARRANGEMENT_SUCCESS,
+  payload: seatArrangement,
+});
+
+export const fetchSeatArrangementFailure = (
+  error: string
+): IFetchSeatArrangementFailureAction => ({
+  type: ReservationActionNames.FETCH_SEAT_ARRANGEMENT_FAILURE,
+  payload: error,
 });

@@ -1,4 +1,7 @@
-import { resetSelectedSeats } from "redux/reservation/actions";
+import {
+  resetSelectedSeats,
+  fetchSeatArrangementStart,
+} from "redux/reservation/actions";
 import { IMovie, IScreeningDate } from "api/types";
 
 export interface IscreeningDatesContainerMappedState {
@@ -7,6 +10,7 @@ export interface IscreeningDatesContainerMappedState {
 
 export interface IScreeningDatesContainerMappedDispatch {
   resetSelectedSeats: typeof resetSelectedSeats;
+  fetchSeatArrangementStart: typeof fetchSeatArrangementStart;
 }
 
 export type IScreeningDatesContainerProps = {

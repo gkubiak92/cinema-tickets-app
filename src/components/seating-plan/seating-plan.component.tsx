@@ -1,27 +1,31 @@
 import React from "react";
 import "./seating-plan.styles.scss";
-import { seatArrangement } from "../../data/seat-arrangement";
 import Seat from "components/seat/seat.component";
 import { connect } from "react-redux";
-import { selectSelectedSeats } from "redux/reservation/selectors";
+import {
+  selectSelectedSeats,
+  selectHallSeatArrangement,
+} from "redux/reservation/selectors";
 import { IRootState } from "redux/types";
 import { ISeatingPlanMappedState } from "./types";
 import { SeatType } from "components/seat/types";
 
-const SeatingPlan = ({ selectedSeats }: ISeatingPlanMappedState) => {
+const SeatingPlan = ({
+  selectedSeats,
+  seatArrangement,
+}: ISeatingPlanMappedState) => {
   return (
     <>
       <div className="screen" />
       <div className="seating-plan">
-        {Object.entries(seatArrangement).map((row) => {
+        {Object.entries(seatArrangement.seatArrangement).map((row) => {
           return (
             <div key={row[0]} className="row">
               {row[1].map((seat, index) => {
                 const type: SeatType = seat.disabled ? "disabled" : "";
-                const seatIndex = `${row[0]}${index}`;
                 let isSelected = false;
                 selectedSeats.forEach((selectedSeat) => {
-                  if (selectedSeat.id === seatIndex) {
+                  if (selectedSeat.id === seat.seatIndex) {
                     isSelected = true;
                   }
                 });
@@ -45,6 +49,7 @@ const SeatingPlan = ({ selectedSeats }: ISeatingPlanMappedState) => {
 
 const mapStateToProps = (state: IRootState) => ({
   selectedSeats: selectSelectedSeats(state),
+  seatArrangement: selectHallSeatArrangement(state),
 });
 
 export default connect(mapStateToProps)(SeatingPlan);

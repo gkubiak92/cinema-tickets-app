@@ -13,10 +13,12 @@ import { useHistory } from "react-router-dom";
 import { IRootState } from "redux/types";
 import { selectMovieScreeningDates } from "redux/screenings/selectors";
 import LoaderSpinner from "components/loader-spinner/loader-spinner.component";
+import { fetchSeatArrangementStart } from "redux/reservation/actions";
 
 const ScreeningDatesContainer = ({
   movie,
   resetSelectedSeats,
+  fetchSeatArrangementStart,
   dates,
 }: IScreeningDatesContainerProps &
   IScreeningDatesContainerMappedDispatch &
@@ -33,6 +35,7 @@ const ScreeningDatesContainer = ({
 
   const handleButtonClick = () => {
     resetSelectedSeats();
+    fetchSeatArrangementStart();
     history.push(`/seat-reservation/${movie.id}`);
   };
 
@@ -77,6 +80,7 @@ const mapStateToProps = (
 
 const mapDispatchToProps = {
   resetSelectedSeats,
+  fetchSeatArrangementStart,
 };
 
 export default connect(
