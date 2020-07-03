@@ -10,6 +10,11 @@ const INITIAL_STATE: IReservationState = {
   date: "",
   hour: "",
   hallId: "",
+  seatArrangement: {
+    id: "",
+    name: "",
+    seatArrangement: {},
+  },
   selectedSeats: [],
 };
 
@@ -60,7 +65,11 @@ const reservationReducer = (
         ...state,
         selectedSeats: [],
       };
-
+    case ReservationActionNames.FETCH_SEAT_ARRANGEMENT_SUCCESS:
+      return {
+        ...state,
+        seatArrangement: action.payload,
+      };
     default:
       return state;
   }

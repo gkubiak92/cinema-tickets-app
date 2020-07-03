@@ -1,4 +1,5 @@
-import { ISeat } from "components/seat/types";
+import { ISeat } from "components/Seat/types";
+import { ISeatArrangement } from "api/types";
 
 export enum ReservationActionNames {
   SET_RESERVATION_MOVIE_ID = "SET_RESERVATION_MOVIE_ID",
@@ -8,6 +9,9 @@ export enum ReservationActionNames {
   ADD_SEAT_TO_RESERVATION = "ADD_SEAT_TO_RESERVATION",
   REMOVE_SEAT_FROM_RESERVATION = "REMOVE_SEAT_FROM_RESERVATION",
   RESET_SELECTED_SEATS = "RESET_SELECTED_SEATS",
+  FETCH_SEAT_ARRANGEMENT_START = "FETCH_SEAT_ARRANGEMENT_START",
+  FETCH_SEAT_ARRANGEMENT_SUCCESS = "FETCH_SEAT_ARRANGEMENT_SUCCESS",
+  FETCH_SEAT_ARRANGEMENT_FAILURE = "FETCH_SEAT_ARRANGEMENT_FAILURE",
 }
 
 export interface ISetReservationMovieIdAction {
@@ -44,6 +48,20 @@ export interface IResetSelectedSeatsAction {
   type: ReservationActionNames.RESET_SELECTED_SEATS;
 }
 
+export interface IFetchSeatArrangementStartAction {
+  type: ReservationActionNames.FETCH_SEAT_ARRANGEMENT_START;
+}
+
+export interface IFetchSeatArrangementSuccessAction {
+  type: ReservationActionNames.FETCH_SEAT_ARRANGEMENT_SUCCESS;
+  payload: ISeatArrangement;
+}
+
+export interface IFetchSeatArrangementFailureAction {
+  type: ReservationActionNames.FETCH_SEAT_ARRANGEMENT_FAILURE;
+  payload: string;
+}
+
 export type ReservationActionTypes =
   | ISetReservationDateAction
   | ISetReservationHourAction
@@ -51,12 +69,16 @@ export type ReservationActionTypes =
   | IAddSeatToReservationAction
   | IRemoveSeatFromReservationAction
   | IResetSelectedSeatsAction
-  | ISetReservationHallIdAction;
+  | ISetReservationHallIdAction
+  | IFetchSeatArrangementStartAction
+  | IFetchSeatArrangementSuccessAction
+  | IFetchSeatArrangementFailureAction;
 
 export interface IReservationState {
   movieId: string;
   date: string;
   hour: string;
   hallId: string;
+  seatArrangement: ISeatArrangement;
   selectedSeats: ISeat[];
 }

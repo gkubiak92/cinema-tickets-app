@@ -32,3 +32,8 @@ export const selectSelectedSeatsCount = createSelector(
   selectReservation,
   (reservation) => reservation.selectedSeats.length
 );
+
+export const selectHallSeatArrangement = createSelector(
+  selectReservation,
+  ({ seatArrangement }) => seatArrangement
+);

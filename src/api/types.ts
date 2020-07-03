@@ -32,3 +32,11 @@ export interface IScreening {
   id: string;
   movieId: string;
 }
+
+export interface ISeatArrangement {
+  id: string;
+  name: string;
+  seatArrangement: {
+    [key: string]: { disabled: boolean; seatIndex: string }[];
+  };
+}

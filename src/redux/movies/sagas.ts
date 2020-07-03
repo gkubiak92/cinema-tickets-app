@@ -35,8 +35,6 @@ export function* fetchMovieBookedSeats(action: IFetchMovieBookedSeatsStart) {
     const reservationHallId = yield select(selectReservationHallId);
     const movieToHallRef = firestore.doc(`moviesToHalls/${reservationHallId}`);
     const movieToHallSnapshot = yield movieToHallRef.get();
-    console.log(reservationHallId);
-    console.log(movieToHallSnapshot.data());
   } catch (error) {
     yield put(fetchMovieBookedSeatsFailure(error));
   }
