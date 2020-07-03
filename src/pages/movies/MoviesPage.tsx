@@ -4,7 +4,7 @@ import { createStructuredSelector } from "reselect";
 import { selectAllMovies } from "../../redux/movies/selectors";
 import { IRootState } from "../../redux/types";
 import { IMoviesPageProps } from "./types";
-import MoviesList from "../../components/movies-list/movies-list.component";
+import MoviesList from "../../components/MoviesList/MoviesList";
 import "./styles.scss";
 
 const MoviesPage = ({ movies }: IMoviesPageProps) => (

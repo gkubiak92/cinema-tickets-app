@@ -13,10 +13,10 @@ import {
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
 import { faStar as starEmpty } from "@fortawesome/free-regular-svg-icons";
-import Header from "./components/header/header.component";
-import HomePage from "./pages/home/HomePage";
-import MoviePage from "./pages/movie/MoviePage";
-import MoviesPage from "./pages/movies/MoviesPage";
+import Header from "components/Header/Header";
+import HomePage from "pages/home/HomePage";
+import MoviePage from "pages/movie/MoviePage";
+import MoviesPage from "pages/movies/MoviesPage";
 import SeatReservationPage from "pages/seat-reservation/SeatReservationPage";
 import PaymentPage from "pages/payment/PaymentPage";
 import { Dispatch } from "redux";

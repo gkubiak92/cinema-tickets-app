@@ -3,12 +3,12 @@ import "./styles.scss";
 import { RouteComponentProps } from "react-router-dom";
 import { selectMovie } from "redux/movies/selectors";
 import { connect } from "react-redux";
-import Rating from "components/rating/rating.component";
+import Rating from "components/Rating/Rating";
 import { IMoviePageMatchParams, IMoviePageProps } from "./types";
 import { IRootState } from "redux/types";
-import Slider from "components/slider/slider.component";
-import MovieThumbnail from "components/movie-thumbnail/moviethumbnail.component";
-import ScreeningDatesContainer from "components/screening-dates/ScreeningDatesContainer";
+import Slider from "components/slider/Slider";
+import MovieThumbnail from "components/MovieThumbnail/MovieThumbnail";
+import ScreeningDatesContainer from "components/ScreeningDates/ScreeningDatesContainer";
 import { fetchScreeningsStart } from "redux/screenings/actions";
 
 const MoviePage = ({ movie, fetchScreeningsStart }: IMoviePageProps) => {

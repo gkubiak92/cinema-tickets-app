@@ -14,12 +14,12 @@ import {
   selectSelectedSeatsCount,
 } from "redux/reservation/selectors";
 import { selectMovie, selectMovieTicketPrice } from "redux/movies/selectors";
-import SeatingPlan from "components/seating-plan/seating-plan.component";
-import CustomButton from "components/custom-button/custombutton.component";
+import SeatingPlan from "components/SeatingPlan/SeatingPlan";
+import CustomButton from "components/CustomButton/CustomButton";
 import { RouteComponentProps } from "react-router-dom";
 import { setReservationMovieId } from "redux/reservation/actions";
-import SeatingPlanLegend from "components/seating-plan-legend/seating-plan-legend.comopnent";
-import MovieInfo from "components/movie-info/movie-info.component";
+import SeatingPlanLegend from "components/SeatingPlanLegend/SeatingPlanLegend";
+import MovieInfo from "components/MovieInfo/MovieInfo";
 import { fetchMovieBookedSeatsStart } from "redux/movies/actions";
 
 const SeatReservationPage = ({

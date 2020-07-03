@@ -1,4 +1,4 @@
-import { IMoviesList } from "components/movies-list/types";
+import { IMoviesList } from "components/MoviesList/types";
 import { IMovie } from "api/types";
 
 export enum MovieActionNames {
