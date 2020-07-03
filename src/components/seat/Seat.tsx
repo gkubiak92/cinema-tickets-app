@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./styles.scss";
-import { ISeatProps, ISeat, ISeatDispatchProps } from "./types";
-import { Dispatch } from "redux";
-import { ReservationActionTypes } from "redux/reservation/types";
+import { IProps, ISeat } from "./types";
 import {
   addSeatToReservation,
   removeSeatFromReservation,
@@ -17,7 +15,7 @@ const Seat = ({
   isSelected,
   addSeatToReservation,
   removeSeatFromReservation,
-}: ISeatProps & ISeatDispatchProps) => {
+}: IProps) => {
   const [selected, selectSeat] = useState(isSelected);
 
   const onSeatClickHandler = () => {
@@ -44,10 +42,9 @@ const Seat = ({
   );
 };
 
-const mapDispatchToProps = (dispatch: Dispatch<ReservationActionTypes>) => ({
-  addSeatToReservation: (seat: ISeat) => dispatch(addSeatToReservation(seat)),
-  removeSeatFromReservation: (seat: ISeat) =>
-    dispatch(removeSeatFromReservation(seat)),
-});
+const mapDispatchToProps = {
+  addSeatToReservation,
+  removeSeatFromReservation,
+};
 
 export default connect(null, mapDispatchToProps)(Seat);

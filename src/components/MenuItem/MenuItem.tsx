@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { IMenuItemProps } from "./types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./styles.scss";
-import { Dispatch } from "redux";
-import { UIActionTypes } from "redux/ui/types";
 import { toggleSideDrawer } from "redux/ui/actions";
 import { connect } from "react-redux";
 
@@ -17,8 +15,8 @@ const MenuItem = ({ to, title, icon, toggleSideDrawer }: IMenuItemProps) => (
   </Link>
 );
 
-const mapDispatchToProps = (dispatch: Dispatch<UIActionTypes>) => ({
-  toggleSideDrawer: () => dispatch(toggleSideDrawer()),
-});
+const mapDispatchToProps = {
+  toggleSideDrawer,
+};
 
 export default connect(null, mapDispatchToProps)(MenuItem);

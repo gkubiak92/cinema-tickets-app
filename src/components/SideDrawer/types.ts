@@ -1,4 +1,4 @@
-export interface ISideDrawerProps {
-    show: boolean,
-    toggleSideDrawer?: () => void
+export interface IProps {
+  show: boolean;
+  toggleSideDrawer?: () => void;
 }

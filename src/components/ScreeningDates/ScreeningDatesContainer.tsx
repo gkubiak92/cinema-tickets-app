@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import {
-  IScreeningDatesContainerProps,
-  IScreeningDatesContainerMappedDispatch,
-  IscreeningDatesContainerMappedState,
-} from "./types";
+import { IProps, IMappedActions, IMappedState } from "./types";
 import { connect } from "react-redux";
 import ScreeningDates from "./ScreeningDates/ScreeningDates";
 import ScreeningHours from "./ScreeningHours/ScreeningHours";
@@ -20,9 +16,7 @@ const ScreeningDatesContainer = ({
   resetSelectedSeats,
   fetchSeatArrangementStart,
   dates,
-}: IScreeningDatesContainerProps &
-  IScreeningDatesContainerMappedDispatch &
-  IscreeningDatesContainerMappedState) => {
+}: IProps & IMappedActions & IMappedState) => {
   const [{ activeDate, activeDateIndex }, setActiveDate] = useState({
     activeDate: "",
     activeDateIndex: 0,
@@ -71,10 +65,7 @@ const ScreeningDatesContainer = ({
   );
 };
 
-const mapStateToProps = (
-  state: IRootState,
-  ownProps: IScreeningDatesContainerProps
-) => ({
+const mapStateToProps = (state: IRootState, ownProps: IProps) => ({
   dates: selectMovieScreeningDates(ownProps.movie.id)(state),
 });
 

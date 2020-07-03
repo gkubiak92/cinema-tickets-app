@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
-import "./styles.scss";
 import { RouteComponentProps } from "react-router-dom";
-import { selectMovie } from "redux/movies/selectors";
 import { connect } from "react-redux";
-import Rating from "components/Rating/Rating";
-import { IMoviePageMatchParams, IMoviePageProps } from "./types";
+import { selectMovie } from "redux/movies/selectors";
 import { IRootState } from "redux/types";
+import { fetchScreeningsStart } from "redux/screenings/actions";
+import "./styles.scss";
+import Rating from "components/Rating/Rating";
 import Slider from "components/Slider/Slider";
 import MovieThumbnail from "components/MovieThumbnail/MovieThumbnail";
 import ScreeningDatesContainer from "components/ScreeningDates/ScreeningDatesContainer";
-import { fetchScreeningsStart } from "redux/screenings/actions";
+import { IMoviePageMatchParams, IMoviePageProps } from "./types";
 
 const MoviePage = ({ movie, fetchScreeningsStart }: IMoviePageProps) => {
   useEffect(() => {

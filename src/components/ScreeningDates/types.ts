@@ -4,15 +4,15 @@ import {
 } from "redux/reservation/actions";
 import { IMovie, IScreeningDate } from "api/types";
 
-export interface IscreeningDatesContainerMappedState {
+export interface IMappedState {
   dates: IScreeningDate[];
 }
 
-export interface IScreeningDatesContainerMappedDispatch {
+export interface IMappedActions {
   resetSelectedSeats: typeof resetSelectedSeats;
   fetchSeatArrangementStart: typeof fetchSeatArrangementStart;
 }
 
-export type IScreeningDatesContainerProps = {
+export type IProps = {
   movie: IMovie;
 };

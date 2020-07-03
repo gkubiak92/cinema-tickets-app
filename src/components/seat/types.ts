@@ -1,20 +1,25 @@
+import {
+  addSeatToReservation,
+  removeSeatFromReservation,
+} from "redux/reservation/actions";
+
 export type ISeat = {
   id: string;
   row: string;
   seatNumber: number;
 };
 
-export interface ISeatDispatchProps {
-  addSeatToReservation: (seat: ISeat) => void;
-  removeSeatFromReservation: (seat: ISeat) => void;
+export interface IMappedActions {
+  addSeatToReservation: typeof addSeatToReservation;
+  removeSeatFromReservation: typeof removeSeatFromReservation;
 }
 
 export type SeatType = "disabled" | "booked" | "";
 
-export interface ISeatProps {
+export type IProps = {
   type: SeatType;
   row: string;
   seatNumber: number;
   isSelected?: boolean;
   isLegend?: boolean;
-}
+} & IMappedActions;

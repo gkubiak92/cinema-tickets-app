@@ -1,11 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
-import { selectAllMovies } from "../../redux/movies/selectors";
-import { IRootState } from "../../redux/types";
-import { IMoviesPageProps } from "./types";
-import MoviesList from "../../components/MoviesList/MoviesList";
+import { selectAllMovies } from "redux/movies/selectors";
+import { IRootState } from "redux/types";
+import MoviesList from "components/MoviesList/MoviesList";
 import "./styles.scss";
+import { IMoviesPageProps } from "./types";
 
 const MoviesPage = ({ movies }: IMoviesPageProps) => (
   <div className="movies-list">
@@ -14,8 +13,8 @@ const MoviesPage = ({ movies }: IMoviesPageProps) => (
   </div>
 );
 
-const mapStateToProps = createStructuredSelector<IRootState, IMoviesPageProps>({
-  movies: selectAllMovies,
+const mapStateToProps = (state: IRootState) => ({
+  movies: selectAllMovies(state),
 });
 
 export default connect(mapStateToProps)(MoviesPage);
