@@ -1,8 +1,6 @@
 import React from "react";
 import { IScreeningDatesProps } from "./types";
 import "./styles.scss";
-import { Dispatch } from "redux";
-import { ReservationActionTypes } from "redux/reservation/types";
 import { setReservationDate } from "redux/reservation/actions";
 import { connect } from "react-redux";
 
@@ -42,8 +40,8 @@ const ScreeningDates = ({
   );
 };
 
-const mapDispatchToProps = (dispatch: Dispatch<ReservationActionTypes>) => ({
-  setReservationDate: (date: string) => dispatch(setReservationDate(date)),
-});
+const mapDispatchToProps = {
+  setReservationDate,
+};
 
 export default connect(null, mapDispatchToProps)(ScreeningDates);

@@ -7,13 +7,10 @@ import {
   selectHallSeatArrangement,
 } from "redux/reservation/selectors";
 import { IRootState } from "redux/types";
-import { ISeatingPlanMappedState } from "./types";
+import { IMappedState } from "./types";
 import { SeatType } from "components/Seat/types";
 
-const SeatingPlan = ({
-  selectedSeats,
-  seatArrangement,
-}: ISeatingPlanMappedState) => {
+const SeatingPlan = ({ selectedSeats, seatArrangement }: IMappedState) => {
   return (
     <>
       <div className="screen" />

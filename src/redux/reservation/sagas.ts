@@ -1,8 +1,5 @@
 import { takeLatest, put, all, call, select } from "redux-saga/effects";
-import {
-  ReservationActionNames,
-  IFetchSeatArrangementStartAction,
-} from "./types";
+import { ReservationActionNames } from "./types";
 import {
   fetchSeatArrangementFailure,
   fetchSeatArrangementSuccess,

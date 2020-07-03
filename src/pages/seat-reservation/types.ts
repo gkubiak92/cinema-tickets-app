@@ -1,10 +1,11 @@
 import { IMovie } from "api/types";
+import { setReservationMovieId } from "redux/reservation/actions";
 
-export interface ISeatReservationPageMatchParams {
+export interface IOwnProps {
   movieId: string;
 }
 
-export interface ISeatReservationPageMapStateProps {
+export interface IMappedState {
   date: string;
   hour: string;
   movie: IMovie | null;
@@ -12,7 +13,6 @@ export interface ISeatReservationPageMapStateProps {
   ticketPrice: number | null;
 }
 
-export interface ISeatReservationPageMapDispatchProps {
-  setReservationMovieId: (movieId: string) => void;
-  fetchMovieBookedSeatsStart: (movieId: string) => void;
+export interface IMappedActions {
+  setReservationMovieId: typeof setReservationMovieId;
 }

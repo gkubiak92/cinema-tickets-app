@@ -1,16 +1,14 @@
-import React, { Dispatch } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
-import { ISideDrawerProps } from "./types";
+import { IProps } from "./types";
 import "./styles.scss";
 import { selectIsSideDrawerShown } from "redux/ui/selectors";
-import { UIActionTypes } from "redux/ui/types";
 import { toggleSideDrawer } from "redux/ui/actions";
 import { IRootState } from "redux/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuItemsList from "components/MenuItemsList/MenuItemsList";
 
-const SideDrawer = ({ show, toggleSideDrawer }: ISideDrawerProps) => (
+const SideDrawer = ({ show, toggleSideDrawer }: IProps) => (
   <div className={`sidedrawer ${show ? "show" : ""}`}>
     <div onClick={toggleSideDrawer} className="close-button">
       <FontAwesomeIcon icon="times" />
@@ -19,12 +17,12 @@ const SideDrawer = ({ show, toggleSideDrawer }: ISideDrawerProps) => (
   </div>
 );
 
-const mapStateToProps = createStructuredSelector<IRootState, ISideDrawerProps>({
-  show: selectIsSideDrawerShown,
+const mapStateToProps = (state: IRootState) => ({
+  show: selectIsSideDrawerShown(state),
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<UIActionTypes>) => ({
-  toggleSideDrawer: () => dispatch(toggleSideDrawer()),
-});
+const mapDispatchToProps = {
+  toggleSideDrawer,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SideDrawer);

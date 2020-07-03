@@ -2,12 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import "./styles.scss";
 import { IRootState } from "redux/types";
-import { createStructuredSelector } from "reselect";
-import {
-  ISeatReservationPageMapStateProps,
-  ISeatReservationPageMatchParams,
-  ISeatReservationPageMapDispatchProps,
-} from "./types";
+import { IMappedState, IOwnProps, IMappedActions } from "./types";
 import {
   selectReservationDate,
   selectReservationHour,
@@ -20,7 +15,6 @@ import { RouteComponentProps } from "react-router-dom";
 import { setReservationMovieId } from "redux/reservation/actions";
 import SeatingPlanLegend from "components/SeatingPlanLegend/SeatingPlanLegend";
 import MovieInfo from "components/MovieInfo/MovieInfo";
-import { fetchMovieBookedSeatsStart } from "redux/movies/actions";
 
 const SeatReservationPage = ({
   date,
@@ -28,19 +22,15 @@ const SeatReservationPage = ({
   movie,
   selectedSeatsCount,
   setReservationMovieId,
-  fetchMovieBookedSeatsStart,
   ticketPrice,
   match,
-}: RouteComponentProps<ISeatReservationPageMatchParams> &
-  ISeatReservationPageMapStateProps &
-  ISeatReservationPageMapDispatchProps) => {
+}: RouteComponentProps<IOwnProps> & IMappedState & IMappedActions) => {
+  const {
+    params: { movieId },
+  } = match;
   useEffect(() => {
-    setReservationMovieId(match.params.movieId);
-  }, [setReservationMovieId, match.params.movieId]);
-
-  useEffect(() => {
-    fetchMovieBookedSeatsStart(match.params.movieId);
-  }, [fetchMovieBookedSeatsStart, match.params.movieId]);
+    setReservationMovieId(movieId);
+  }, [setReservationMovieId, movieId]);
 
   const total = selectedSeatsCount
     ? `${(selectedSeatsCount * ticketPrice!).toFixed(2)}$`
@@ -63,22 +53,19 @@ const SeatReservationPage = ({
   );
 };
 
-const mapStateToProps = createStructuredSelector<
-  IRootState,
-  RouteComponentProps<ISeatReservationPageMatchParams>,
-  ISeatReservationPageMapStateProps
->({
-  date: selectReservationDate,
-  hour: selectReservationHour,
-  movie: (state, ownProps) => selectMovie(ownProps.match.params.movieId)(state),
-  selectedSeatsCount: selectSelectedSeatsCount,
-  ticketPrice: (state, ownProps) =>
-    selectMovieTicketPrice(ownProps.match.params.movieId)(state),
+const mapStateToProps = (
+  state: IRootState,
+  ownProps: RouteComponentProps<IOwnProps>
+) => ({
+  date: selectReservationDate(state),
+  hour: selectReservationHour(state),
+  movie: selectMovie(ownProps.match.params.movieId)(state),
+  selectedSeatsCount: selectSelectedSeatsCount(state),
+  ticketPrice: selectMovieTicketPrice(ownProps.match.params.movieId)(state),
 });
 
 const mapDispatchToProps = {
   setReservationMovieId,
-  fetchMovieBookedSeatsStart,
 };
 
 export default connect(
