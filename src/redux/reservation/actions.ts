@@ -11,7 +11,7 @@ import {
   IFetchSeatArrangementSuccessAction,
   IFetchSeatArrangementFailureAction,
 } from "./types";
-import { ISeat } from "components/seat/types";
+import { ISeat } from "components/Seat/types";
 import { ISeatArrangement } from "api/types";
 
 export const setReservationMovieId = (

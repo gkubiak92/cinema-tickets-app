@@ -1,4 +1,4 @@
-import { ISeat } from "components/seat/types";
+import { ISeat } from "components/Seat/types";
 
 export const addSeatToReservation = (
   selectedSeats: ISeat[],

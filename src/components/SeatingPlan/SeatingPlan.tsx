@@ -8,7 +8,7 @@ import {
 } from "redux/reservation/selectors";
 import { IRootState } from "redux/types";
 import { ISeatingPlanMappedState } from "./types";
-import { SeatType } from "components/seat/types";
+import { SeatType } from "components/Seat/types";
 
 const SeatingPlan = ({
   selectedSeats,
