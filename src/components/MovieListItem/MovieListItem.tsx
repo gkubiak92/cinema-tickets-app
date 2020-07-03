@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.scss";
 import { IMovieListItemProps } from "./types";
-import Rating from "components/rating/Rating";
+import Rating from "components/Rating/Rating";
 import MovieThumbnail from "components/MovieThumbnail/MovieThumbnail";
 
 const MovieListItem = ({ movie }: IMovieListItemProps) => {

@@ -1,19 +1,19 @@
 import React from "react";
 import "./styles.scss";
 import { connect } from "react-redux";
-import Tabs from "../../components/Tabs/Tabs";
-import Slider from "../../components/slider/Slider";
-import { slides } from "../../data/dump-data";
-import MoviesList from "../../components/MoviesList/MoviesList";
+import Tabs from "components/Tabs/Tabs";
+import Slider from "components/Slider/Slider";
+import { slides } from "data/dump-data";
+import MoviesList from "components/MoviesList/MoviesList";
 import {
   selectNewMovies,
   selectPopularMovies,
   selectUpcomingMovies,
   selectIsFetchingMovies,
-} from "../../redux/movies/selectors";
+} from "redux/movies/selectors";
 import { createStructuredSelector } from "reselect";
 import { IHomePageProps } from "./types";
-import { IRootState } from "../../redux/types";
+import { IRootState } from "redux/types";
 import LoaderSpinner from "components/LoaderSpinner/LoaderSpinner";
 const HomePage = ({
   newMovies,

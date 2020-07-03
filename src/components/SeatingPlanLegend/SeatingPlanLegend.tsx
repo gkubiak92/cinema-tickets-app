@@ -1,5 +1,5 @@
 import React from "react";
-import Seat from "components/seat/Seat";
+import Seat from "components/Seat/Seat";
 
 const SeatingPlanLegend = () => (
   <div className="legend">

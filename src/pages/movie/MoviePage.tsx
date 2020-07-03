@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import Rating from "components/Rating/Rating";
 import { IMoviePageMatchParams, IMoviePageProps } from "./types";
 import { IRootState } from "redux/types";
-import Slider from "components/slider/Slider";
+import Slider from "components/Slider/Slider";
 import MovieThumbnail from "components/MovieThumbnail/MovieThumbnail";
 import ScreeningDatesContainer from "components/ScreeningDates/ScreeningDatesContainer";
 import { fetchScreeningsStart } from "redux/screenings/actions";

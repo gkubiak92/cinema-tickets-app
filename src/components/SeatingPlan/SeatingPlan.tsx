@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import Seat from "components/seat/Seat";
+import Seat from "components/Seat/Seat";
 import { connect } from "react-redux";
 import {
   selectSelectedSeats,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./seat.styles.scss";
+import "./styles.scss";
 import { ISeatProps, ISeat, ISeatDispatchProps } from "./types";
 import { Dispatch } from "redux";
 import { ReservationActionTypes } from "redux/reservation/types";
