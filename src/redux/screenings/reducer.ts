@@ -17,13 +17,13 @@ const screeningsReducer = (
   action: ScreeningsActionTypes
 ) => {
   switch (action.type) {
-    case ScreeningsActionNames.FETCH_SCREENINGS_START:
+    case ScreeningsActionNames.FETCH_MOVIE_SCREENINGS_START:
       return {
         ...state,
         isFetching: true,
         error: "",
       };
-    case ScreeningsActionNames.FETCH_SCREENINGS_SUCCESS:
+    case ScreeningsActionNames.FETCH_MOVIE_SCREENINGS_SUCCESS:
       return {
         ...state,
         screenings: action.payload,
@@ -31,7 +31,7 @@ const screeningsReducer = (
         isFetching: false,
         error: "",
       };
-    case ScreeningsActionNames.FETCH_SCREENINGS_FAILURE:
+    case ScreeningsActionNames.FETCH_MOVIE_SCREENINGS_FAILURE:
       return {
         ...state,
         isFetching: false,

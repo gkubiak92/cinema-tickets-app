@@ -1,29 +1,30 @@
 import { IScreening, IScreeningDate } from "api/types";
 
 export enum ScreeningsActionNames {
-  FETCH_SCREENINGS_START = "FETCH_SCREENINGS_START",
-  FETCH_SCREENINGS_SUCCESS = "FETCH_SCREENINGS_SUCCESS",
-  FETCH_SCREENINGS_FAILURE = "FETCH_SCREENINGS_FAILURE",
+  FETCH_MOVIE_SCREENINGS_START = "FETCH_MOVIE_SCREENINGS_START",
+  FETCH_MOVIE_SCREENINGS_SUCCESS = "FETCH_MOVIE_SCREENINGS_SUCCESS",
+  FETCH_MOVIE_SCREENINGS_FAILURE = "FETCH_MOVIE_SCREENINGS_FAILURE",
 }
 
-export interface IFetchScreeningsStartAction {
-  type: ScreeningsActionNames.FETCH_SCREENINGS_START;
+export interface IFetchMovieScreeningsStartAction {
+  type: ScreeningsActionNames.FETCH_MOVIE_SCREENINGS_START;
+  payload: string;
 }
 
-export interface IFetchScreeningsSuccessAction {
-  type: ScreeningsActionNames.FETCH_SCREENINGS_SUCCESS;
+export interface IFetchMovieScreeningsSuccessAction {
+  type: ScreeningsActionNames.FETCH_MOVIE_SCREENINGS_SUCCESS;
   payload: IScreening[];
 }
 
-export interface IFetchScreeningsFailureAction {
-  type: ScreeningsActionNames.FETCH_SCREENINGS_FAILURE;
+export interface IFetchMovieScreeningsFailureAction {
+  type: ScreeningsActionNames.FETCH_MOVIE_SCREENINGS_FAILURE;
   payload: string;
 }
 
 export type ScreeningsActionTypes =
-  | IFetchScreeningsStartAction
-  | IFetchScreeningsSuccessAction
-  | IFetchScreeningsFailureAction;
+  | IFetchMovieScreeningsStartAction
+  | IFetchMovieScreeningsSuccessAction
+  | IFetchMovieScreeningsFailureAction;
 
 export interface IScreeningDates {
   [key: string]: IScreeningDate[];

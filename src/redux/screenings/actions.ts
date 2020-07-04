@@ -1,25 +1,28 @@
 import {
-  IFetchScreeningsStartAction,
+  IFetchMovieScreeningsStartAction,
   ScreeningsActionNames,
-  IFetchScreeningsSuccessAction,
-  IFetchScreeningsFailureAction,
+  IFetchMovieScreeningsSuccessAction,
+  IFetchMovieScreeningsFailureAction,
 } from "./types";
 import { IScreening } from "api/types";
 
-export const fetchScreeningsStart = (): IFetchScreeningsStartAction => ({
-  type: ScreeningsActionNames.FETCH_SCREENINGS_START,
+export const fetchScreeningsStart = (
+  movieId: string
+): IFetchMovieScreeningsStartAction => ({
+  type: ScreeningsActionNames.FETCH_MOVIE_SCREENINGS_START,
+  payload: movieId,
 });
 
 export const fetchScreeningsSuccess = (
   screenings: IScreening[]
-): IFetchScreeningsSuccessAction => ({
-  type: ScreeningsActionNames.FETCH_SCREENINGS_SUCCESS,
+): IFetchMovieScreeningsSuccessAction => ({
+  type: ScreeningsActionNames.FETCH_MOVIE_SCREENINGS_SUCCESS,
   payload: screenings,
 });
 
 export const fetchScreeningsFailure = (
   error: string
-): IFetchScreeningsFailureAction => ({
-  type: ScreeningsActionNames.FETCH_SCREENINGS_FAILURE,
+): IFetchMovieScreeningsFailureAction => ({
+  type: ScreeningsActionNames.FETCH_MOVIE_SCREENINGS_FAILURE,
   payload: error,
 });
