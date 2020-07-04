@@ -1,6 +1,12 @@
 import { IScreening } from "api/types";
 import { IScreeningDates } from "./types";
 
+/*
+ * This metod converts array of objects to object with key value pairs
+ * where key is movieId, and value is array of objects {date, arrayOfHours}
+ * Its work both for fetching all screenings for all movies
+ * and even if you fetch screenings for only one movie
+ */
 export const convertScreeningsCollection = (screenings: IScreening[]) => {
   const screeningDates: IScreeningDates = {};
 

@@ -1,5 +1,6 @@
 import { IRootState } from "redux/types";
 import { createSelector } from "reselect";
+import { getSortedKeyValuePairs } from "redux/utils";
 
 export const selectReservation = (state: IRootState) => state.reservation;
 
@@ -35,5 +36,5 @@ export const selectSelectedSeatsCount = createSelector(
 
 export const selectHallSeatArrangement = createSelector(
   selectReservation,
-  ({ seatArrangement }) => seatArrangement
+  ({ hallData: { seatArrangement } }) => getSortedKeyValuePairs(seatArrangement)
 );

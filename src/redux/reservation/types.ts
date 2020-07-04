@@ -1,5 +1,5 @@
 import { ISeat } from "components/Seat/types";
-import { ISeatArrangement } from "api/types";
+import { IHallData } from "api/types";
 
 export enum ReservationActionNames {
   SET_RESERVATION_MOVIE_ID = "SET_RESERVATION_MOVIE_ID",
@@ -9,9 +9,9 @@ export enum ReservationActionNames {
   ADD_SEAT_TO_RESERVATION = "ADD_SEAT_TO_RESERVATION",
   REMOVE_SEAT_FROM_RESERVATION = "REMOVE_SEAT_FROM_RESERVATION",
   RESET_SELECTED_SEATS = "RESET_SELECTED_SEATS",
-  FETCH_SEAT_ARRANGEMENT_START = "FETCH_SEAT_ARRANGEMENT_START",
-  FETCH_SEAT_ARRANGEMENT_SUCCESS = "FETCH_SEAT_ARRANGEMENT_SUCCESS",
-  FETCH_SEAT_ARRANGEMENT_FAILURE = "FETCH_SEAT_ARRANGEMENT_FAILURE",
+  FETCH_HALL_DATA_START = "FETCH_HALL_DATA_START",
+  FETCH_HALL_DATA_SUCCESS = "FETCH_HALL_DATA_SUCCESS",
+  FETCH_HALL_DATA_FAILURE = "FETCH_HALL_DATA_FAILURE",
 }
 
 export interface ISetReservationMovieIdAction {
@@ -48,17 +48,17 @@ export interface IResetSelectedSeatsAction {
   type: ReservationActionNames.RESET_SELECTED_SEATS;
 }
 
-export interface IFetchSeatArrangementStartAction {
-  type: ReservationActionNames.FETCH_SEAT_ARRANGEMENT_START;
+export interface IFetchHallDataStartAction {
+  type: ReservationActionNames.FETCH_HALL_DATA_START;
 }
 
-export interface IFetchSeatArrangementSuccessAction {
-  type: ReservationActionNames.FETCH_SEAT_ARRANGEMENT_SUCCESS;
-  payload: ISeatArrangement;
+export interface IFetchHallDataSuccessAction {
+  type: ReservationActionNames.FETCH_HALL_DATA_SUCCESS;
+  payload: IHallData;
 }
 
-export interface IFetchSeatArrangementFailureAction {
-  type: ReservationActionNames.FETCH_SEAT_ARRANGEMENT_FAILURE;
+export interface IFetchHallDataFailureAction {
+  type: ReservationActionNames.FETCH_HALL_DATA_FAILURE;
   payload: string;
 }
 
@@ -70,15 +70,15 @@ export type ReservationActionTypes =
   | IRemoveSeatFromReservationAction
   | IResetSelectedSeatsAction
   | ISetReservationHallIdAction
-  | IFetchSeatArrangementStartAction
-  | IFetchSeatArrangementSuccessAction
-  | IFetchSeatArrangementFailureAction;
+  | IFetchHallDataStartAction
+  | IFetchHallDataSuccessAction
+  | IFetchHallDataFailureAction;
 
 export interface IReservationState {
   movieId: string;
   date: string;
   hour: string;
   hallId: string;
-  seatArrangement: ISeatArrangement;
+  hallData: IHallData;
   selectedSeats: ISeat[];
 }

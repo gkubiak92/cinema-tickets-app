@@ -34,9 +34,11 @@ export interface IScreening {
 }
 
 export interface ISeatArrangement {
+  [key: string]: { disabled: boolean; seatIndex: string }[];
+}
+
+export interface IHallData {
   id: string;
   name: string;
-  seatArrangement: {
-    [key: string]: { disabled: boolean; seatIndex: string }[];
-  };
+  seatArrangement: ISeatArrangement;
 }

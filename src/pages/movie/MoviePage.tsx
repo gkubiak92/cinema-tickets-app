@@ -11,10 +11,14 @@ import MovieThumbnail from "components/MovieThumbnail/MovieThumbnail";
 import ScreeningDatesContainer from "components/ScreeningDates/ScreeningDatesContainer";
 import { IMoviePageMatchParams, IMoviePageProps } from "./types";
 
-const MoviePage = ({ movie, fetchScreeningsStart }: IMoviePageProps) => {
+const MoviePage = ({
+  movie,
+  fetchScreeningsStart,
+  match,
+}: IMoviePageProps & RouteComponentProps<IMoviePageMatchParams>) => {
   useEffect(() => {
-    fetchScreeningsStart();
-  }, [fetchScreeningsStart]);
+    fetchScreeningsStart(match.params.movieId);
+  }, [fetchScreeningsStart, match.params.movieId]);
 
   return movie ? (
     <div className="movie-page">

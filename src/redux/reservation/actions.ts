@@ -7,12 +7,12 @@ import {
   IAddSeatToReservationAction,
   IRemoveSeatFromReservationAction,
   IResetSelectedSeatsAction,
-  IFetchSeatArrangementStartAction,
-  IFetchSeatArrangementSuccessAction,
-  IFetchSeatArrangementFailureAction,
+  IFetchHallDataStartAction,
+  IFetchHallDataSuccessAction,
+  IFetchHallDataFailureAction,
 } from "./types";
 import { ISeat } from "components/Seat/types";
-import { ISeatArrangement } from "api/types";
+import { IHallData } from "api/types";
 
 export const setReservationMovieId = (
   movieId: string
@@ -60,20 +60,20 @@ export const resetSelectedSeats = (): IResetSelectedSeatsAction => ({
   type: ReservationActionNames.RESET_SELECTED_SEATS,
 });
 
-export const fetchSeatArrangementStart = (): IFetchSeatArrangementStartAction => ({
-  type: ReservationActionNames.FETCH_SEAT_ARRANGEMENT_START,
+export const fetchHallDataStart = (): IFetchHallDataStartAction => ({
+  type: ReservationActionNames.FETCH_HALL_DATA_START,
 });
 
-export const fetchSeatArrangementSuccess = (
-  seatArrangement: ISeatArrangement
-): IFetchSeatArrangementSuccessAction => ({
-  type: ReservationActionNames.FETCH_SEAT_ARRANGEMENT_SUCCESS,
-  payload: seatArrangement,
+export const fetchHallDataSuccess = (
+  hallData: IHallData
+): IFetchHallDataSuccessAction => ({
+  type: ReservationActionNames.FETCH_HALL_DATA_SUCCESS,
+  payload: hallData,
 });
 
-export const fetchSeatArrangementFailure = (
+export const fetchHalLDataFailure = (
   error: string
-): IFetchSeatArrangementFailureAction => ({
-  type: ReservationActionNames.FETCH_SEAT_ARRANGEMENT_FAILURE,
+): IFetchHallDataFailureAction => ({
+  type: ReservationActionNames.FETCH_HALL_DATA_FAILURE,
   payload: error,
 });
