@@ -10,7 +10,7 @@ const INITIAL_STATE: IReservationState = {
   date: "",
   hour: "",
   hallId: "",
-  seatArrangement: {
+  hallData: {
     id: "",
     name: "",
     seatArrangement: {},
@@ -65,10 +65,10 @@ const reservationReducer = (
         ...state,
         selectedSeats: [],
       };
-    case ReservationActionNames.FETCH_SEAT_ARRANGEMENT_SUCCESS:
+    case ReservationActionNames.FETCH_HALL_DATA_SUCCESS:
       return {
         ...state,
-        seatArrangement: action.payload,
+        hallData: action.payload,
       };
     default:
       return state;

@@ -1,6 +1,6 @@
 import {
   resetSelectedSeats,
-  fetchSeatArrangementStart,
+  fetchHallDataStart,
 } from "redux/reservation/actions";
 import { IMovie, IScreeningDate } from "api/types";
 
@@ -10,7 +10,7 @@ export interface IMappedState {
 
 export interface IMappedActions {
   resetSelectedSeats: typeof resetSelectedSeats;
-  fetchSeatArrangementStart: typeof fetchSeatArrangementStart;
+  fetchSeatArrangementStart: typeof fetchHallDataStart;
 }
 
 export type IProps = {

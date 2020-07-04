@@ -15,7 +15,7 @@ const SeatingPlan = ({ selectedSeats, seatArrangement }: IMappedState) => {
     <>
       <div className="screen" />
       <div className="seating-plan">
-        {Object.entries(seatArrangement.seatArrangement).map((row) => {
+        {Object.entries(seatArrangement).map((row) => {
           return (
             <div key={row[0]} className="row">
               {row[1].map((seat, index) => {
