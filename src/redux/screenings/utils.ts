@@ -11,7 +11,7 @@ export const convertScreeningsCollection = (screenings: IScreening[]) => {
   const screeningDates: IScreeningDates = {};
 
   screenings.forEach((screening) => {
-    const { dateAndHour, movieId, hallId } = screening;
+    const { dateAndHour, movieId, hallId, id } = screening;
     const dateObj = new Date(dateAndHour);
     const date = dateObj.toISOString().split("T")[0];
     const time = dateObj.toLocaleTimeString();
@@ -20,7 +20,7 @@ export const convertScreeningsCollection = (screenings: IScreening[]) => {
       screeningDates[movieId] = [];
       screeningDates[movieId].push({
         date: date,
-        hoursAndHalls: [{ hour: time, hallId: hallId }],
+        hoursAndHalls: [{ hour: time, hallId: hallId, screeningId: id }],
       });
     } else {
       // if not check whether actual iterating row has the same date or not
@@ -29,12 +29,16 @@ export const convertScreeningsCollection = (screenings: IScreening[]) => {
       );
       if (theSameDateObj) {
         // if yes push another entry to hoursAndHalls
-        theSameDateObj.hoursAndHalls.push({ hour: time, hallId: hallId });
+        theSameDateObj.hoursAndHalls.push({
+          hour: time,
+          hallId: hallId,
+          screeningId: id,
+        });
       } else {
         // if not add another entry with different date
         screeningDates[movieId].push({
           date: date,
-          hoursAndHalls: [{ hour: time, hallId: hallId }],
+          hoursAndHalls: [{ hour: time, hallId: hallId, screeningId: id }],
         });
       }
     }

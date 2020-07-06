@@ -24,6 +24,7 @@ export interface IScreeningDate {
 export interface IHourAndHall {
   hour: string;
   hallId: string;
+  screeningId: string;
 }
 
 export interface IScreening {
@@ -41,4 +42,14 @@ export interface IHallData {
   id: string;
   name: string;
   seatArrangement: ISeatArrangement;
+}
+
+export interface IReservation {
+  id: string;
+  screeningId: string;
+  bookedSeats: string[];
+  email: string;
+  firstName: string;
+  lastName: string;
+  price: number;
 }

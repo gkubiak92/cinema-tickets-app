@@ -10,9 +10,13 @@ import {
   IFetchHallDataStartAction,
   IFetchHallDataSuccessAction,
   IFetchHallDataFailureAction,
+  IAddReservationStartAction,
+  IAddReservationSuccessAction,
+  IAddReservationFailureAction,
 } from "./types";
 import { ISeat } from "components/Seat/types";
 import { IHallData } from "api/types";
+import { PaymentFormValues } from "pages/payment/PaymentForm/types";
 
 export const setReservationMovieId = (
   movieId: string
@@ -40,6 +44,11 @@ export const setReservationHallId = (
 ): ISetReservationHallIdAction => ({
   type: ReservationActionNames.SET_RESERVATION_HALL_ID,
   payload: hallId,
+});
+
+export const setReservationScreeningId = (screeningId: string) => ({
+  type: ReservationActionNames.SET_RESERVATION_SCREENING_ID,
+  payload: screeningId,
 });
 
 export const addSeatToReservation = (
@@ -75,5 +84,26 @@ export const fetchHalLDataFailure = (
   error: string
 ): IFetchHallDataFailureAction => ({
   type: ReservationActionNames.FETCH_HALL_DATA_FAILURE,
+  payload: error,
+});
+
+export const addReservationStart = (
+  reservation: PaymentFormValues
+): IAddReservationStartAction => ({
+  type: ReservationActionNames.ADD_RESERVATION_START,
+  payload: reservation,
+});
+
+export const addReservationSuccess = (
+  message: string
+): IAddReservationSuccessAction => ({
+  type: ReservationActionNames.ADD_RESERVATION_SUCCESS,
+  payload: message,
+});
+
+export const addReservationFailure = (
+  error: string
+): IAddReservationFailureAction => ({
+  type: ReservationActionNames.ADD_RESERVATION_FAILURE,
   payload: error,
 });
