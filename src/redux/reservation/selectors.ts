@@ -4,6 +4,11 @@ import { getSortedKeyValuePairs } from "redux/utils";
 
 export const selectReservation = (state: IRootState) => state.reservation;
 
+export const selectReservationData = createSelector(
+  selectReservation,
+  (reservation) => reservation
+);
+
 export const selectReservationMovieId = createSelector(
   selectReservation,
   (reservation) => reservation.movieId

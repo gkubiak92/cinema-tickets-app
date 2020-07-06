@@ -2,11 +2,13 @@ import React from "react";
 import "./styles.scss";
 import CustomButton from "components/CustomButton/CustomButton";
 import { Form, Field } from "react-final-form";
-import { PaymentFormValues, PaymentFormErrors } from "./types";
+import { PaymentFormValues, PaymentFormErrors, MappedDispatch } from "./types";
 import TextInput from "./Fields/TextInput";
 import { validateEmail, validateName } from "./utils";
+import { connect } from "react-redux";
+import { addReservationStart } from "redux/reservation/actions";
 
-const PaymentForm = () => {
+const PaymentForm = ({ addReservationStart }: MappedDispatch) => {
   const initialValues: PaymentFormValues = {
     email: "",
     firstName: "",
@@ -15,6 +17,7 @@ const PaymentForm = () => {
 
   const onSubmit = (values: PaymentFormValues) => {
     console.log(values);
+    addReservationStart(values);
   };
 
   const validateErrors = (values: PaymentFormValues): PaymentFormErrors => {
@@ -75,4 +78,8 @@ const PaymentForm = () => {
   );
 };
 
-export default PaymentForm;
+const mapDispatchToProps = {
+  addReservationStart,
+};
+
+export default connect(null, mapDispatchToProps)(PaymentForm);

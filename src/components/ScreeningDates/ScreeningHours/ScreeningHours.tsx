@@ -4,6 +4,7 @@ import "./styles.scss";
 import {
   setReservationHour,
   setReservationHallId,
+  setReservationScreeningId,
 } from "redux/reservation/actions";
 import { connect } from "react-redux";
 
@@ -13,11 +14,12 @@ const ScreeningHours = ({
   onClick,
   setReservationHour,
   setReservationHallId,
+  setReservationScreeningId,
 }: IScreeningHoursProps) => {
   return (
     <div className="screening-hours">
       {screeningDate.hoursAndHalls.map((hourAndHall, index) => {
-        const { hallId, hour } = hourAndHall;
+        const { hallId, hour, screeningId } = hourAndHall;
         return (
           <div
             key={index}
@@ -25,6 +27,7 @@ const ScreeningHours = ({
               onClick({ activeHour: hour, activeHourIndex: index });
               setReservationHour(hour);
               setReservationHallId(hallId);
+              setReservationScreeningId(screeningId);
             }}
             className={`screening-hour ${
               index === activeHourIndex ? "active" : ""
@@ -41,6 +44,7 @@ const ScreeningHours = ({
 const mapDispatchToProps = {
   setReservationHour,
   setReservationHallId,
+  setReservationScreeningId,
 };
 
 export default connect(null, mapDispatchToProps)(ScreeningHours);
