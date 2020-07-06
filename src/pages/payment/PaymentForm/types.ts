@@ -9,9 +9,3 @@ export type PaymentFormErrors = {
   firstName?: string;
   lastName?: string;
 };
-
-export interface IFormErrorMsgs {
-  email: string;
-  firstName: string;
-  lastName: string;
-}
