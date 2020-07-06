@@ -4,7 +4,7 @@ import MovieInfo from "components/MovieInfo/MovieInfo";
 import { useSelector } from "react-redux";
 import { selectReservation } from "redux/reservation/selectors";
 import { selectMovie } from "redux/movies/selectors";
-import PaymentForm from "components/PaymentForm/PaymentForm";
+import PaymentForm from "pages/payment/PaymentForm/PaymentForm";
 
 const PaymentPage = () => {
   const reservation = useSelector(selectReservation);
