@@ -11,6 +11,7 @@ export interface IMappedState {
   movie: IMovie | null;
   selectedSeatsCount: number;
   ticketPrice: number | null;
+  screeningId: string;
 }
 
 export interface IMappedActions {
