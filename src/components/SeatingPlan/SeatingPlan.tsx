@@ -7,10 +7,15 @@ import {
   selectHallSeatArrangement,
 } from "redux/reservation/selectors";
 import { IRootState } from "redux/types";
-import { IMappedState } from "./types";
+import { IMappedState, Props } from "./types";
 import { SeatType } from "components/Seat/types";
+import { selectMovieScreeningBookedSeats } from "redux/screenings/selectors";
 
-const SeatingPlan = ({ selectedSeats, seatArrangement }: IMappedState) => {
+const SeatingPlan = ({
+  selectedSeats,
+  seatArrangement,
+  bookedSeats,
+}: Props & IMappedState) => {
   return (
     <>
       <div className="screen" />
@@ -19,7 +24,13 @@ const SeatingPlan = ({ selectedSeats, seatArrangement }: IMappedState) => {
           return (
             <div key={row[0]} className="row">
               {row[1].map((seat, index) => {
-                const type: SeatType = seat.disabled ? "disabled" : "";
+                const seatIndex = `${row[0]}${index}`;
+                const isBooked = bookedSeats!.includes(seatIndex);
+                const type: SeatType = seat.disabled
+                  ? "disabled"
+                  : isBooked
+                  ? "booked"
+                  : "";
                 let isSelected = false;
                 selectedSeats.forEach((selectedSeat) => {
                   if (selectedSeat.id === seat.seatIndex) {
@@ -44,9 +55,10 @@ const SeatingPlan = ({ selectedSeats, seatArrangement }: IMappedState) => {
   );
 };
 
-const mapStateToProps = (state: IRootState) => ({
+const mapStateToProps = (state: IRootState, ownProps: Props) => ({
   selectedSeats: selectSelectedSeats(state),
   seatArrangement: selectHallSeatArrangement(state),
+  bookedSeats: selectMovieScreeningBookedSeats(ownProps.screeningId)(state),
 });
 
 export default connect(mapStateToProps)(SeatingPlan);

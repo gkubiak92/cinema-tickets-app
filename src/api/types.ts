@@ -32,6 +32,7 @@ export interface IScreening {
   hallId: string;
   id: string;
   movieId: string;
+  bookedSeats: string[];
 }
 
 export interface ISeatArrangement {

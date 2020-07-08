@@ -29,6 +29,11 @@ export const selectReservationHallId = createSelector(
   (reservation) => reservation.hallId
 );
 
+export const selectReservationScreeningId = createSelector(
+  selectReservation,
+  (reservation) => reservation.screeningId
+);
+
 export const selectSelectedSeats = createSelector(
   selectReservation,
   (reservation) => reservation.selectedSeats

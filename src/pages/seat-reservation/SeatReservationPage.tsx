@@ -7,6 +7,7 @@ import {
   selectReservationDate,
   selectReservationHour,
   selectSelectedSeatsCount,
+  selectReservationScreeningId,
 } from "redux/reservation/selectors";
 import { selectMovie, selectMovieTicketPrice } from "redux/movies/selectors";
 import SeatingPlan from "components/SeatingPlan/SeatingPlan";
@@ -24,6 +25,7 @@ const SeatReservationPage = ({
   setReservationMovieId,
   ticketPrice,
   match,
+  screeningId,
 }: RouteComponentProps<IOwnProps> & IMappedState & IMappedActions) => {
   const {
     params: { movieId },
@@ -39,7 +41,7 @@ const SeatReservationPage = ({
   return (
     <div className="seat-reservation">
       <MovieInfo movie={movie} date={date} hour={hour} />
-      <SeatingPlan />
+      <SeatingPlan screeningId={screeningId} />
       <SeatingPlanLegend />
       <CustomButton
         type="button"
@@ -62,6 +64,7 @@ const mapStateToProps = (
   movie: selectMovie(ownProps.match.params.movieId)(state),
   selectedSeatsCount: selectSelectedSeatsCount(state),
   ticketPrice: selectMovieTicketPrice(ownProps.match.params.movieId)(state),
+  screeningId: selectReservationScreeningId(state),
 });
 
 const mapDispatchToProps = {
