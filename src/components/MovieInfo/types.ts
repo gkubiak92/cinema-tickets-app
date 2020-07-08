@@ -1,7 +1,7 @@
 import { IMovie } from "api/types";
 
 export interface IMovieInfoProps {
-  movie: IMovie | null;
+  movie: IMovie;
   date: string;
   hour: string;
 }

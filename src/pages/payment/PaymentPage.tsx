@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { selectReservation } from "redux/reservation/selectors";
 import { selectMovie } from "redux/movies/selectors";
 import PaymentForm from "pages/payment/PaymentForm/PaymentForm";
+import LoaderSpinner from "components/LoaderSpinner/LoaderSpinner";
 
 const PaymentPage = () => {
   const reservation = useSelector(selectReservation);
@@ -15,11 +16,16 @@ const PaymentPage = () => {
 
   return (
     <div className="payment-page">
-      <MovieInfo
-        movie={movie}
-        date={reservation.date}
-        hour={reservation.hour}
-      />
+      {movie ? (
+        <MovieInfo
+          movie={movie}
+          date={reservation.date}
+          hour={reservation.hour}
+        />
+      ) : (
+        <LoaderSpinner />
+      )}
+
       <PaymentForm />
       <h2>Selected seats:</h2>
       <div className="selected-tickets">

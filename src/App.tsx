@@ -49,7 +49,7 @@ function App({ fetchMoviesStart }: IAppMapDispatchProps) {
         <Route path="/movie/:movieId" component={MoviePage} />
         <Route path="/movies" component={MoviesPage} />
         <Route
-          path="/seat-reservation/:movieId"
+          path="/seat-reservation/:screeningId"
           component={SeatReservationPage}
         />
         <Route path="/payment" component={PaymentPage} />

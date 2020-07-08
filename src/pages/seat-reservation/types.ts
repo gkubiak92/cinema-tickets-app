@@ -1,8 +1,7 @@
 import { IMovie } from "api/types";
-import { setReservationMovieId } from "redux/reservation/actions";
 
-export interface IOwnProps {
-  movieId: string;
+export interface IRouteProps {
+  screeningId: string;
 }
 
 export interface IMappedState {
@@ -11,9 +10,4 @@ export interface IMappedState {
   movie: IMovie | null;
   selectedSeatsCount: number;
   ticketPrice: number | null;
-  screeningId: string;
-}
-
-export interface IMappedActions {
-  setReservationMovieId: typeof setReservationMovieId;
 }
