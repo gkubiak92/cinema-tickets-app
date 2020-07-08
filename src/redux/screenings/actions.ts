@@ -6,7 +6,7 @@ import {
 } from "./types";
 import { IScreening } from "api/types";
 
-export const fetchScreeningsStart = (
+export const fetchMovieScreeningsStart = (
   movieId: string
 ): IFetchMovieScreeningsStartAction => ({
   type: ScreeningsActionNames.FETCH_MOVIE_SCREENINGS_START,

@@ -1,0 +1,30 @@
+What components needs:
+
+- [X] HomePage: 
+  - [X] Route: /
+  - [X] Tabs:
+    - [X] selectors for popular, upcoming, new movies
+- [X] MoviePage:
+  - [X] Route: /movieId
+  - [X] movie object from API
+  - [X] screening days and hours
+- [X] SeatReservationPage:
+  - [X] Route: /ScreeningId
+  - [X] Movie:
+    - [X] Title
+    - [X] Thumbnail url
+  - [X] Screening:
+    - [X] Date
+    - [X] Hour
+    - [X] already booked seats
+  - [X] SeatingPlan:
+    - [X] hall arangement
+- [ ] PaymentPage:
+  - [ ] Route: /payment
+  - [ ] Movie:
+    - [ ] Title
+    - [ ] Thumbnail url
+  - [ ] Screening:
+    - [ ] Date
+    - [ ] Hour
+    - [ ] already booked seats

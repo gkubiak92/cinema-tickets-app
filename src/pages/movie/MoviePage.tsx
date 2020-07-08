@@ -3,7 +3,7 @@ import { RouteComponentProps } from "react-router-dom";
 import { connect } from "react-redux";
 import { selectMovie } from "redux/movies/selectors";
 import { IRootState } from "redux/types";
-import { fetchScreeningsStart } from "redux/screenings/actions";
+import { fetchMovieScreeningsStart } from "redux/screenings/actions";
 import "./styles.scss";
 import Rating from "components/Rating/Rating";
 import Slider from "components/Slider/Slider";
@@ -13,12 +13,12 @@ import { IMoviePageMatchParams, IMoviePageProps } from "./types";
 
 const MoviePage = ({
   movie,
-  fetchScreeningsStart,
+  fetchMovieScreeningsStart,
   match,
 }: IMoviePageProps & RouteComponentProps<IMoviePageMatchParams>) => {
   useEffect(() => {
-    fetchScreeningsStart(match.params.movieId);
-  }, [fetchScreeningsStart, match.params.movieId]);
+    fetchMovieScreeningsStart(match.params.movieId);
+  }, [fetchMovieScreeningsStart, match.params.movieId]);
 
   return movie ? (
     <div className="movie-page">
@@ -31,7 +31,7 @@ const MoviePage = ({
         </div>
       </div>
       <p className="description">{movie.description}</p>
-      <ScreeningDatesContainer movie={movie} />
+      <ScreeningDatesContainer movieId={movie.id} />
     </div>
   ) : (
     <div className="movie-page">Not found</div>
@@ -46,7 +46,7 @@ const mapStateToProps = (
 });
 
 const mapDispatchToProps = {
-  fetchScreeningsStart,
+  fetchMovieScreeningsStart,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoviePage);

@@ -1,18 +1,21 @@
 import {
   resetSelectedSeats,
   fetchHallDataStart,
+  setReservationMovieId,
 } from "redux/reservation/actions";
-import { IMovie, IScreeningDate } from "api/types";
+import { IScreeningDate } from "api/types";
 
 export interface IMappedState {
   dates: IScreeningDate[];
+  screeningId: string;
 }
 
 export interface IMappedActions {
   resetSelectedSeats: typeof resetSelectedSeats;
-  fetchSeatArrangementStart: typeof fetchHallDataStart;
+  fetchHallDataStart: typeof fetchHallDataStart;
+  setReservationMovieId: typeof setReservationMovieId;
 }
 
 export type IProps = {
-  movie: IMovie;
+  movieId: string;
 };

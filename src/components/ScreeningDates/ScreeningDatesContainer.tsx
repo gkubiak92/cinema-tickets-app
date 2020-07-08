@@ -9,13 +9,19 @@ import { useHistory } from "react-router-dom";
 import { IRootState } from "redux/types";
 import { selectMovieScreeningDates } from "redux/screenings/selectors";
 import LoaderSpinner from "components/LoaderSpinner/LoaderSpinner";
-import { fetchHallDataStart } from "redux/reservation/actions";
+import {
+  fetchHallDataStart,
+  setReservationMovieId,
+} from "redux/reservation/actions";
+import { selectReservationScreeningId } from "redux/reservation/selectors";
 
 const ScreeningDatesContainer = ({
-  movie,
+  fetchHallDataStart,
   resetSelectedSeats,
-  fetchSeatArrangementStart,
+  setReservationMovieId,
+  movieId,
   dates,
+  screeningId,
 }: IProps & IMappedActions & IMappedState) => {
   const [{ activeDate, activeDateIndex }, setActiveDate] = useState({
     activeDate: "",
@@ -29,8 +35,9 @@ const ScreeningDatesContainer = ({
 
   const handleButtonClick = () => {
     resetSelectedSeats();
-    fetchSeatArrangementStart();
-    history.push(`/seat-reservation/${movie.id}`);
+    fetchHallDataStart();
+    setReservationMovieId(movieId);
+    history.push(`/seat-reservation/${screeningId}`);
   };
 
   const canChooseSeat = activeDate && activeHour ? true : false;
@@ -66,12 +73,14 @@ const ScreeningDatesContainer = ({
 };
 
 const mapStateToProps = (state: IRootState, ownProps: IProps) => ({
-  dates: selectMovieScreeningDates(ownProps.movie.id)(state),
+  dates: selectMovieScreeningDates(ownProps.movieId)(state),
+  screeningId: selectReservationScreeningId(state),
 });
 
 const mapDispatchToProps = {
   resetSelectedSeats,
-  fetchSeatArrangementStart: fetchHallDataStart,
+  fetchHallDataStart,
+  setReservationMovieId,
 };
 
 export default connect(
