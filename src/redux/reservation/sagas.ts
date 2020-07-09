@@ -14,6 +14,7 @@ import { firestore } from "firebase/firebase.utils";
 import { FirestoreCollections } from "firebase/types";
 import { selectReservationHallId, selectReservationData } from "./selectors";
 import { IReservation } from "api/types";
+import { addBookedSeatsToScreeningStart } from "redux/screenings/actions";
 
 function* fetchHallDataStart() {
   yield takeLatest(
@@ -65,6 +66,7 @@ function* addReservationAsync({ payload }: IAddReservationStartAction) {
       screeningId,
     };
     yield reservationRef.set(resToAdd);
+    yield put(addBookedSeatsToScreeningStart({ screeningId, bookedSeats }));
     yield put(addReservationSuccess("Succesfully added reservation"));
   } catch (error) {
     yield put(addReservationFailure(error));
