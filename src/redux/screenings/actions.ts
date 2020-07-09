@@ -26,3 +26,21 @@ export const fetchScreeningsFailure = (
   type: ScreeningsActionNames.FETCH_MOVIE_SCREENINGS_FAILURE,
   payload: error,
 });
+
+export const addBookedSeatsToScreeningStart = (payload: {
+  screeningId: string;
+  bookedSeats: string[];
+}) => ({
+  type: ScreeningsActionNames.ADD_BOOKED_SEATS_TO_SCREENING_START,
+  payload,
+});
+
+export const addBookedSeatsToScreeningSuccess = (message: string) => ({
+  type: ScreeningsActionNames.ADD_BOOKED_SEATS_TO_SCREENING_SUCCESS,
+  payload: message,
+});
+
+export const addBookedSeatsToScreeningFailure = (error: string) => ({
+  type: ScreeningsActionNames.ADD_BOOKED_SEATS_TO_SCREENING_FAILURE,
+  payload: error,
+});

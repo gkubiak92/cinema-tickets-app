@@ -4,6 +4,9 @@ export enum ScreeningsActionNames {
   FETCH_MOVIE_SCREENINGS_START = "FETCH_MOVIE_SCREENINGS_START",
   FETCH_MOVIE_SCREENINGS_SUCCESS = "FETCH_MOVIE_SCREENINGS_SUCCESS",
   FETCH_MOVIE_SCREENINGS_FAILURE = "FETCH_MOVIE_SCREENINGS_FAILURE",
+  ADD_BOOKED_SEATS_TO_SCREENING_START = "ADD_BOOKED_SEATS_TO_SCREENING_START",
+  ADD_BOOKED_SEATS_TO_SCREENING_SUCCESS = "ADD_BOOKED_SEATS_TO_SCREENING_SUCCESS",
+  ADD_BOOKED_SEATS_TO_SCREENING_FAILURE = "ADD_BOOKED_SEATS_TO_SCREENING_FAILURE",
 }
 
 export interface IFetchMovieScreeningsStartAction {
@@ -18,6 +21,21 @@ export interface IFetchMovieScreeningsSuccessAction {
 
 export interface IFetchMovieScreeningsFailureAction {
   type: ScreeningsActionNames.FETCH_MOVIE_SCREENINGS_FAILURE;
+  payload: string;
+}
+
+export interface IAddBookedSeatsToScreeningStartAction {
+  type: ScreeningsActionNames.ADD_BOOKED_SEATS_TO_SCREENING_START;
+  payload: { screeningId: string; bookedSeats: string[] };
+}
+
+export interface IAddBookedSeatsToScreeningSuccessAction {
+  type: ScreeningsActionNames.ADD_BOOKED_SEATS_TO_SCREENING_SUCCESS;
+  payload: string;
+}
+
+export interface IAddBookedSeatsToScreeningFailureAction {
+  type: ScreeningsActionNames.ADD_BOOKED_SEATS_TO_SCREENING_FAILURE;
   payload: string;
 }
 

@@ -17,6 +17,7 @@ const INITIAL_STATE: IReservationState = {
   },
   screeningId: "",
   selectedSeats: [],
+  paymentSuccess: false,
 };
 
 const reservationReducer = (
@@ -75,6 +76,15 @@ const reservationReducer = (
       return {
         ...state,
         hallData: action.payload,
+      };
+    case ReservationActionNames.ADD_RESERVATION_SUCCESS:
+      return {
+        ...state,
+        paymentSuccess: true,
+      };
+    case ReservationActionNames.RESET_RESERVATION_DATA:
+      return {
+        ...INITIAL_STATE,
       };
     default:
       return state;

@@ -13,6 +13,7 @@ import {
   IAddReservationStartAction,
   IAddReservationSuccessAction,
   IAddReservationFailureAction,
+  IResetReservationDataAction,
 } from "./types";
 import { ISeat } from "components/Seat/types";
 import { IHallData } from "api/types";
@@ -67,6 +68,10 @@ export const removeSeatFromReservation = (
 
 export const resetSelectedSeats = (): IResetSelectedSeatsAction => ({
   type: ReservationActionNames.RESET_SELECTED_SEATS,
+});
+
+export const resetReservationData = (): IResetReservationDataAction => ({
+  type: ReservationActionNames.RESET_RESERVATION_DATA,
 });
 
 export const fetchHallDataStart = (): IFetchHallDataStartAction => ({

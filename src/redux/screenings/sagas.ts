@@ -2,10 +2,17 @@ import { takeLatest, put, all, call } from "redux-saga/effects";
 import {
   ScreeningsActionNames,
   IFetchMovieScreeningsStartAction,
+  IAddBookedSeatsToScreeningStartAction,
 } from "./types";
-import { fetchScreeningsFailure, fetchScreeningsSuccess } from "./actions";
+import {
+  fetchScreeningsFailure,
+  fetchScreeningsSuccess,
+  addBookedSeatsToScreeningFailure,
+  addBookedSeatsToScreeningSuccess,
+} from "./actions";
 import { firestore, convertSnapshotToArray } from "firebase/firebase.utils";
 import { FirestoreCollections } from "firebase/types";
+import firebase from "firebase";
 
 function* fetchScreeningsStart() {
   yield takeLatest(
@@ -25,6 +32,35 @@ function* fetchScreeningsAsync({ payload }: IFetchMovieScreeningsStartAction) {
   }
 }
 
+function* addBookedSeatsToScreeningStart() {
+  yield takeLatest(
+    ScreeningsActionNames.ADD_BOOKED_SEATS_TO_SCREENING_START,
+    addBookedSeatsToScreeningAsync
+  );
+}
+
+function* addBookedSeatsToScreeningAsync({
+  payload,
+}: IAddBookedSeatsToScreeningStartAction) {
+  try {
+    const screeningRef = firestore
+      .collection(FirestoreCollections.SCREENINGS)
+      .doc(payload.screeningId);
+    yield screeningRef.update({
+      bookedSeats: firebase.firestore.FieldValue.arrayUnion(
+        ...payload.bookedSeats
+      ),
+    });
+    yield put(
+      addBookedSeatsToScreeningSuccess(
+        "Successfully added booked seats to screening"
+      )
+    );
+  } catch (error) {
+    yield put(addBookedSeatsToScreeningFailure(error));
+  }
+}
+
 export function* screeningsSagas() {
-  yield all([call(fetchScreeningsStart)]);
+  yield all([call(fetchScreeningsStart), call(addBookedSeatsToScreeningStart)]);
 }
