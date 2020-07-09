@@ -24,6 +24,7 @@ import { MovieActionTypes } from "redux/movies/types";
 import { fetchMoviesStart } from "redux/movies/actions";
 import { connect } from "react-redux";
 import { IAppMapDispatchProps } from "types";
+import GlobalSpinner from "components/GlobalSpinner/GlobalSpinner";
 
 library.add(
   faBars,
@@ -44,6 +45,7 @@ function App({ fetchMoviesStart }: IAppMapDispatchProps) {
   return (
     <div className="App">
       <Header />
+      <GlobalSpinner />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/movie/:movieId" component={MoviePage} />
