@@ -15,6 +15,7 @@ import { FirestoreCollections } from "firebase/types";
 import { selectReservationHallId, selectReservationData } from "./selectors";
 import { IReservation } from "api/types";
 import { addBookedSeatsToScreeningStart } from "redux/screenings/actions";
+import { spinnerStart, spinnerFinish } from "redux/ui/actions";
 
 function* fetchHallDataStart() {
   yield takeLatest(
@@ -25,14 +26,17 @@ function* fetchHallDataStart() {
 
 function* fetchHallDataAsync() {
   try {
+    yield put(spinnerStart());
     const hallId = yield select(selectReservationHallId);
     const hallDataRef = firestore
       .collection(FirestoreCollections.HALLS)
       .doc(hallId);
     const snapshot = yield hallDataRef.get();
     yield put(fetchHallDataSuccess(snapshot.data()));
+    yield put(spinnerFinish());
   } catch (error) {
     yield put(fetchHalLDataFailure(error));
+    yield put(spinnerFinish());
   }
 }
 
@@ -46,6 +50,7 @@ function* addReservationStart() {
 function* addReservationAsync({ payload }: IAddReservationStartAction) {
   const { email, firstName, lastName } = payload;
   try {
+    yield put(spinnerStart());
     const reservationRef = firestore
       .collection(FirestoreCollections.RESERVATIONS)
       .doc();
@@ -68,8 +73,10 @@ function* addReservationAsync({ payload }: IAddReservationStartAction) {
     yield reservationRef.set(resToAdd);
     yield put(addBookedSeatsToScreeningStart({ screeningId, bookedSeats }));
     yield put(addReservationSuccess("Succesfully added reservation"));
+    yield put(spinnerFinish());
   } catch (error) {
     yield put(addReservationFailure(error));
+    yield put(spinnerFinish());
   }
 }
 
