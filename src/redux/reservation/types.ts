@@ -11,6 +11,7 @@ export enum ReservationActionNames {
   ADD_SEAT_TO_RESERVATION = "ADD_SEAT_TO_RESERVATION",
   REMOVE_SEAT_FROM_RESERVATION = "REMOVE_SEAT_FROM_RESERVATION",
   RESET_SELECTED_SEATS = "RESET_SELECTED_SEATS",
+  RESET_RESERVATION_DATA = "RESET_RESERVATION_DATA",
   FETCH_HALL_DATA_START = "FETCH_HALL_DATA_START",
   FETCH_HALL_DATA_SUCCESS = "FETCH_HALL_DATA_SUCCESS",
   FETCH_HALL_DATA_FAILURE = "FETCH_HALL_DATA_FAILURE",
@@ -58,6 +59,10 @@ export interface IResetSelectedSeatsAction {
   type: ReservationActionNames.RESET_SELECTED_SEATS;
 }
 
+export interface IResetReservationDataAction {
+  type: ReservationActionNames.RESET_RESERVATION_DATA;
+}
+
 export interface IFetchHallDataStartAction {
   type: ReservationActionNames.FETCH_HALL_DATA_START;
 }
@@ -95,6 +100,7 @@ export type ReservationActionTypes =
   | IAddSeatToReservationAction
   | IRemoveSeatFromReservationAction
   | IResetSelectedSeatsAction
+  | IResetReservationDataAction
   | ISetReservationHallIdAction
   | IFetchHallDataStartAction
   | IFetchHallDataSuccessAction
@@ -111,4 +117,5 @@ export interface IReservationState {
   hallData: IHallData;
   screeningId: string;
   selectedSeats: ISeat[];
+  paymentSuccess: false;
 }

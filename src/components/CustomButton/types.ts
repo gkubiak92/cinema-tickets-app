@@ -1,7 +1,7 @@
 export interface ICustomButtonProps {
   onClick?: Function;
   to?: string;
-  block: boolean;
+  block?: boolean;
   type: "submit" | "button";
   disabled?: boolean;
 }

@@ -1,15 +1,19 @@
 import React from "react";
 import "./styles.scss";
 import MovieInfo from "components/MovieInfo/MovieInfo";
-import { useSelector } from "react-redux";
-import { selectReservation } from "redux/reservation/selectors";
+import { connect } from "react-redux";
+import {
+  selectReservation,
+  selectReservationMovieId,
+} from "redux/reservation/selectors";
 import { selectMovie } from "redux/movies/selectors";
 import PaymentForm from "pages/payment/PaymentForm/PaymentForm";
 import LoaderSpinner from "components/LoaderSpinner/LoaderSpinner";
+import PaymentSuccess from "./PaymentSuccess/PaymentSuccess";
+import { IRootState } from "redux/types";
+import { IMappedState } from "./types";
 
-const PaymentPage = () => {
-  const reservation = useSelector(selectReservation);
-  const movie = useSelector(selectMovie(reservation.movieId));
+const PaymentPage = ({ paymentSuccess, movie, reservation }: IMappedState) => {
   const total = (movie!.ticketPrice * reservation.selectedSeats.length).toFixed(
     2
   );
@@ -36,7 +40,15 @@ const PaymentPage = () => {
         ))}
       </div>
       <div className="total">Total: {total} $</div>
+      {paymentSuccess && <PaymentSuccess />}
     </div>
   );
 };
-export default PaymentPage;
+
+const mapStateToProps = (state: IRootState) => ({
+  reservation: selectReservation(state),
+  paymentSuccess: state.reservation.paymentSuccess,
+  movie: selectMovie(selectReservationMovieId(state))(state),
+});
+
+export default connect(mapStateToProps)(PaymentPage);
