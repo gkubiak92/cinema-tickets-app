@@ -15,7 +15,7 @@ import {
   IAddReservationFailureAction,
   IResetReservationDataAction,
 } from "./types";
-import { ISeat } from "components/Seat/types";
+import { ISeat } from "pages/seat-reservation/components/Seat/types";
 import { IHallData } from "api/types";
 import { PaymentFormValues } from "pages/payment/PaymentForm/types";
 

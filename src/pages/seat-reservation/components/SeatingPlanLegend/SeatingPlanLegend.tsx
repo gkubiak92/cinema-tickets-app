@@ -1,5 +1,5 @@
 import React from "react";
-import Seat from "components/Seat/Seat";
+import Seat from "pages/seat-reservation/components/Seat/Seat";
 import "./styles.scss";
 
 const SeatingPlanLegend = () => (

@@ -6,7 +6,7 @@ import { selectIsSideDrawerShown } from "redux/ui/selectors";
 import { toggleSideDrawer } from "redux/ui/actions";
 import { IRootState } from "redux/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import MenuItemsList from "components/MenuItemsList/MenuItemsList";
+import MenuItemsList from "components/UI/MenuItemsList/MenuItemsList";
 
 const SideDrawer = ({ show, toggleSideDrawer }: IProps) => (
   <div className={`sidedrawer ${show ? "show" : ""}`}>

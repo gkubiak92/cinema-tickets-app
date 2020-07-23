@@ -1,4 +1,4 @@
-import { ISeat } from "components/Seat/types";
+import { ISeat } from "pages/seat-reservation/components/Seat/types";
 import { ISeatArrangement } from "api/types";
 
 export interface IMappedState {

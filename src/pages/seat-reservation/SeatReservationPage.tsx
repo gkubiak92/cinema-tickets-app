@@ -9,10 +9,10 @@ import {
   selectSelectedSeatsCount,
 } from "redux/reservation/selectors";
 import { selectMovie, selectMovieTicketPrice } from "redux/movies/selectors";
-import SeatingPlan from "components/SeatingPlan/SeatingPlan";
+import SeatingPlan from "pages/seat-reservation/components/SeatingPlan/SeatingPlan";
 import CustomButton from "components/CustomButton/CustomButton";
 import { RouteComponentProps } from "react-router-dom";
-import SeatingPlanLegend from "components/SeatingPlanLegend/SeatingPlanLegend";
+import SeatingPlanLegend from "pages/seat-reservation/components/SeatingPlanLegend/SeatingPlanLegend";
 import MovieInfo from "components/MovieInfo/MovieInfo";
 import LoaderSpinner from "components/LoaderSpinner/LoaderSpinner";
 

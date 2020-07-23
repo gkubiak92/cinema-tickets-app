@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import Seat from "components/Seat/Seat";
+import Seat from "pages/seat-reservation/components/Seat/Seat";
 import { connect } from "react-redux";
 import {
   selectSelectedSeats,
@@ -8,7 +8,7 @@ import {
 } from "redux/reservation/selectors";
 import { IRootState } from "redux/types";
 import { IMappedState, Props } from "./types";
-import { SeatType } from "components/Seat/types";
+import { SeatType } from "pages/seat-reservation/components/Seat/types";
 import { selectMovieScreeningBookedSeats } from "redux/screenings/selectors";
 import LoaderSpinner from "components/LoaderSpinner/LoaderSpinner";
 

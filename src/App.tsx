@@ -13,7 +13,7 @@ import {
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
 import { faStar as starEmpty } from "@fortawesome/free-regular-svg-icons";
-import Header from "components/Header/Header";
+import Header from "components/UI/Header/Header";
 import HomePage from "pages/home/HomePage";
 import MoviePage from "pages/movie/MoviePage";
 import MoviesPage from "pages/movies/MoviesPage";

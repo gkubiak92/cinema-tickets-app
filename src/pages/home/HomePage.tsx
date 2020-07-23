@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import "./styles.scss";
 import { connect } from "react-redux";
 import Tabs from "components/Tabs/Tabs";
-import Slider from "components/Slider/Slider";
+import Slider from "pages/home/components/Slider/Slider";
 import { slides } from "data/dump-data";
-import MoviesList from "components/MoviesList/MoviesList";
+import MoviesList from "pages/movies/components/MoviesList/MoviesList";
 import {
   selectNewMovies,
   selectPopularMovies,

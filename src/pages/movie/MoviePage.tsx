@@ -6,9 +6,9 @@ import { IRootState } from "redux/types";
 import { fetchMovieScreeningsStart } from "redux/screenings/actions";
 import "./styles.scss";
 import Rating from "components/Rating/Rating";
-import Slider from "components/Slider/Slider";
+import Slider from "pages/home/components/Slider/Slider";
 import MovieThumbnail from "components/MovieThumbnail/MovieThumbnail";
-import ScreeningDatesContainer from "components/ScreeningDates/ScreeningDatesContainer";
+import ScreeningDatesContainer from "pages/movie/components/ScreeningDatesContainer";
 import { IMoviePageMatchParams, IMoviePageProps } from "./types";
 
 const MoviePage = ({

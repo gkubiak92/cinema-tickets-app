@@ -1,7 +1,7 @@
 import React from "react";
-import MenuItem from "components/MenuItem/MenuItem";
+import MenuItem from "components/UI/MenuItem/MenuItem";
 import "./styles.scss";
-import HeaderTitle from "components/HeaderTitle/HeaderTitle";
+import HeaderTitle from "components/UI/HeaderTitle/HeaderTitle";
 
 const MenuItemsList = () => (
   <div className="menu-items-list">
