@@ -8,7 +8,7 @@ const MovieInfo = ({ movie, date, hour }: IMovieInfoProps) => (
     <MovieThumbnail thumbnailUrl={movie.thumbnailUrl} />
     <div className="movie-details">
       <h1>{movie!.title}</h1>
-      <p>{date}</p>
+      <p>{new Intl.DateTimeFormat('pl-PL').format(new Date(date))}</p>
       <p>{hour}</p>
     </div>
   </div>

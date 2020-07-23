@@ -1,0 +1,13 @@
+@import 'styles/variables.scss';
+
+h1.title {
+  font-size: 24px;
+
+  &.light {
+    color: $theme-white;
+  }
+
+  &.dark {
+    color: $primary-text-color;
+  }
+}

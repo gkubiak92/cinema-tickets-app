@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.scss";
 import "./styles/index.scss";
@@ -13,17 +13,12 @@ import {
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
 import { faStar as starEmpty } from "@fortawesome/free-regular-svg-icons";
-import Header from "components/Header/Header";
+import Header from "components/UI/Header/Header";
 import HomePage from "pages/home/HomePage";
 import MoviePage from "pages/movie/MoviePage";
 import MoviesPage from "pages/movies/MoviesPage";
 import SeatReservationPage from "pages/seat-reservation/SeatReservationPage";
 import PaymentPage from "pages/payment/PaymentPage";
-import { Dispatch } from "redux";
-import { MovieActionTypes } from "redux/movies/types";
-import { fetchMoviesStart } from "redux/movies/actions";
-import { connect } from "react-redux";
-import { IAppMapDispatchProps } from "types";
 import GlobalSpinner from "components/GlobalSpinner/GlobalSpinner";
 
 library.add(
@@ -37,11 +32,7 @@ library.add(
   faHome
 );
 
-function App({ fetchMoviesStart }: IAppMapDispatchProps) {
-  useEffect(() => {
-    fetchMoviesStart();
-  }, [fetchMoviesStart]);
-
+function App() {
   return (
     <div className="App">
       <Header />
@@ -60,8 +51,4 @@ function App({ fetchMoviesStart }: IAppMapDispatchProps) {
   );
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<MovieActionTypes>) => ({
-  fetchMoviesStart: () => dispatch(fetchMoviesStart()),
-});
-
-export default connect(null, mapDispatchToProps)(App);
+export default App;

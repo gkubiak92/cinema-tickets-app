@@ -1,0 +1,26 @@
+@import 'styles/variables.scss';
+
+div.seat {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  margin: 8px 4px;
+  border: 2px solid $primary-color;
+  border-radius: 4px;
+  background-color: transparent;
+
+  &.disabled {
+    cursor: none;
+    border: none;
+    background-color: transparent;
+  }
+
+  &.booked {
+    border-color: gray;
+    background-color: gray;
+  }
+
+  &.selected {
+    background-color: $primary-color;
+  }
+}

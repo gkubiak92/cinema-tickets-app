@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.scss";
 import { connect } from "react-redux";
 import Tabs from "components/Tabs/Tabs";
-import Slider from "components/Slider/Slider";
+import Slider from "pages/home/components/Slider/Slider";
 import { slides } from "data/dump-data";
-import MoviesList from "components/MoviesList/MoviesList";
+import MoviesList from "pages/movies/components/MoviesList/MoviesList";
 import {
   selectNewMovies,
   selectPopularMovies,
@@ -12,15 +12,22 @@ import {
   selectIsFetchingMovies,
 } from "redux/movies/selectors";
 import { createStructuredSelector } from "reselect";
-import { IHomePageProps } from "./types";
+import { IHomePageProps, IMappedActions } from "./types";
 import { IRootState } from "redux/types";
 import LoaderSpinner from "components/LoaderSpinner/LoaderSpinner";
+import { fetchMoviesStart } from "redux/movies/actions";
+
 const HomePage = ({
   newMovies,
   popularMovies,
   upcomingMovies,
   isFetchingMovies,
-}: IHomePageProps) => {
+  fetchMoviesStart
+}: IHomePageProps & IMappedActions) => {
+  useEffect(() => {
+    fetchMoviesStart();
+  }, [fetchMoviesStart]);
+
   const tabsData = [
     {
       name: "new",
@@ -51,4 +58,8 @@ const mapStateToProps = createStructuredSelector<IRootState, IHomePageProps>({
   isFetchingMovies: selectIsFetchingMovies,
 });
 
-export default connect(mapStateToProps)(HomePage);
+const mapDispatchToProps = {
+  fetchMoviesStart
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
