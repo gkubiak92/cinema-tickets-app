@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { selectAllMovies } from "redux/movies/selectors";
 import { IRootState } from "redux/types";
 import MoviesList from "pages/movies/components/MoviesList/MoviesList";
-import "./styles.scss";
 import { IMoviesPageProps } from "./types";
 
 const MoviesPage = ({ movies }: IMoviesPageProps) => (
