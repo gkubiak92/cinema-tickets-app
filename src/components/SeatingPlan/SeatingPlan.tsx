@@ -43,7 +43,7 @@ const SeatingPlan = ({
                     key={index}
                     type={type}
                     row={row[0]}
-                    seatNumber={index}
+                    seatNumber={index+1}
                     isSelected={isSelected}
                   />
                 );
