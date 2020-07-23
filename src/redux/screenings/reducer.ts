@@ -38,9 +38,7 @@ const screeningsReducer = (
         error: action.payload,
       };
     default:
-      return {
-        ...state,
-      };
+      return state;
   }
 };
 

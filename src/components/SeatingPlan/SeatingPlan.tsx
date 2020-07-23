@@ -10,6 +10,7 @@ import { IRootState } from "redux/types";
 import { IMappedState, Props } from "./types";
 import { SeatType } from "components/Seat/types";
 import { selectMovieScreeningBookedSeats } from "redux/screenings/selectors";
+import LoaderSpinner from "components/LoaderSpinner/LoaderSpinner";
 
 const SeatingPlan = ({
   selectedSeats,
@@ -21,11 +22,11 @@ const SeatingPlan = ({
       <div className="screen" />
       <div className="seating-plan">
         {Object.entries(seatArrangement).map((row) => {
-          return (
+          return bookedSeats ? (
             <div key={row[0]} className="row">
               {row[1].map((seat, index) => {
                 const seatIndex = `${row[0]}${index}`;
-                const isBooked = bookedSeats!.includes(seatIndex);
+                const isBooked = bookedSeats.includes(seatIndex);
                 const type: SeatType = seat.disabled
                   ? "disabled"
                   : isBooked
@@ -48,7 +49,7 @@ const SeatingPlan = ({
                 );
               })}
             </div>
-          );
+          ) : <LoaderSpinner />;
         })}
       </div>
     </>
