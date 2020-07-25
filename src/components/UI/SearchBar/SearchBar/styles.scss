@@ -1,0 +1,25 @@
+@import 'styles/variables.scss';
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    height: $header-height;
+    padding: 8px 12px;
+
+    .search-input {
+        flex: 1;
+        align-self: stretch;
+        border: none;
+        &:active,
+        &:focus,
+        &:visited {
+            border: none !important;
+            outline: none !important;
+        }
+        &::placeholder {
+            color: rgba($color: #000, $alpha: .4);
+        }
+    }
+}

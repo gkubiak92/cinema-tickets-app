@@ -1,6 +1,6 @@
 import React from "react";
 import { IMoviesListProps } from "./types";
-import MovieListItem from "pages/movies/components/MovieListItem/MovieListItem";
+import MovieListItem from "components/MovieListItem/MovieListItem";
 import "./styles.scss";
 import { Link } from "react-router-dom";
 

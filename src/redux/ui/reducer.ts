@@ -3,6 +3,7 @@ import { IUIState, UIActionTypes, UIActionNames } from "./types";
 const INITIAL_STATE: IUIState = {
   show: false,
   spinner: false,
+  showSearchBar: false,
 };
 
 const uiReducer = (state = INITIAL_STATE, action: UIActionTypes) => {
@@ -22,6 +23,16 @@ const uiReducer = (state = INITIAL_STATE, action: UIActionTypes) => {
         ...state,
         spinner: false,
       };
+    case UIActionNames.SHOW_SEARCH_BAR:
+      return {
+        ...state,
+        showSearchBar: true,
+      }
+    case UIActionNames.HIDE_SEARCH_BAR:
+      return {
+        ...state,
+        showSearchBar: false,
+      }
     default:
       return state;
   }

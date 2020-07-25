@@ -3,6 +3,8 @@ import {
   IToggleSidedrawerAction,
   ISpinnerStart,
   ISpinnerFinish,
+  IShowSearchBar,
+  IHideSearchBar,
 } from "./types";
 
 export const toggleSideDrawer = (): IToggleSidedrawerAction => ({
@@ -16,3 +18,11 @@ export const spinnerStart = (): ISpinnerStart => ({
 export const spinnerFinish = (): ISpinnerFinish => ({
   type: UIActionNames.SPINNER_FINISH,
 });
+
+export const showSearchBar = (): IShowSearchBar => ({
+  type: UIActionNames.SHOW_SEARCH_BAR,
+})
+
+export const hideSearchBar = (): IHideSearchBar => ({
+  type: UIActionNames.HIDE_SEARCH_BAR,
+})

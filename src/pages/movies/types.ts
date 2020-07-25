@@ -1,5 +1,5 @@
-import { IMoviesList } from "./components/MoviesList/types";
+import { IMovie } from "api/types";
 
 export interface IMoviesPageProps {
-  movies: IMoviesList;
+  movies: IMovie[];
 }

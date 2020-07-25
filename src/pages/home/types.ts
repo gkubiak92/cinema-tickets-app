@@ -1,13 +1,13 @@
-import { IMoviesList } from "../movies/components/MoviesList/types";
 import { fetchMoviesStart } from "redux/movies/actions";
+import { IMovie } from "api/types";
 
 export type IMappedActions = {
   fetchMoviesStart: typeof fetchMoviesStart;
 }
 
 export type IHomePageProps = {
-  newMovies: IMoviesList;
-  popularMovies: IMoviesList;
-  upcomingMovies: IMoviesList;
+  newMovies: IMovie[];
+  popularMovies: IMovie[];
+  upcomingMovies: IMovie[];
   isFetchingMovies: boolean;
 }
