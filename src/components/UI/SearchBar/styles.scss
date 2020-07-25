@@ -1,0 +1,25 @@
+@import 'styles/variables.scss';
+
+.search-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    animation: slideIn .5s;
+    display: flex;
+    flex-direction: column;
+
+    .search-results {
+        padding: 12px;
+        background-color: #fff;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}

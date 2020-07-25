@@ -51,3 +51,11 @@ export const selectIsFetchingMovies = createSelector(
   selectMovies,
   ({ isFetching }) => isFetching
 );
+
+export const selectMovieBySearchFilter = (searchFilter: string) => createSelector(
+  selectAllMovies,
+  (movies) => (searchFilter ?
+    movies.filter(
+      (movie) => movie.title.toLowerCase().includes(searchFilter)
+    ) : [])
+);

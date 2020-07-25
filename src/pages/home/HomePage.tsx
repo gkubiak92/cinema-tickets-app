@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Tabs from "components/Tabs/Tabs";
 import Slider from "pages/home/components/Slider/Slider";
 import { slides } from "data/dump-data";
-import MoviesList from "pages/movies/components/MoviesList/MoviesList";
+import MoviesList from "components/MoviesList/MoviesList";
 import {
   selectNewMovies,
   selectPopularMovies,

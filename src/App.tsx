@@ -29,7 +29,7 @@ library.add(
   faStarHalf,
   starEmpty,
   faFilm,
-  faHome
+  faHome,
 );
 
 function App() {
