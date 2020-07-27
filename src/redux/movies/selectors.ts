@@ -56,6 +56,6 @@ export const selectMovieBySearchFilter = (searchFilter: string) => createSelecto
   selectAllMovies,
   (movies) => (searchFilter ?
     movies.filter(
-      (movie) => movie.title.toLowerCase().includes(searchFilter)
+      (movie) => movie.title.toLowerCase().includes(searchFilter.toLowerCase())
     ) : [])
 );
