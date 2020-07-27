@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IRatingProps } from "components/rating/types";
+import { IRatingProps } from "components/Rating/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as starEmpty } from "@fortawesome/free-regular-svg-icons";
 

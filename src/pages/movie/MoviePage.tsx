@@ -5,7 +5,7 @@ import { selectMovie } from "redux/movies/selectors";
 import { IRootState } from "redux/types";
 import { fetchMovieScreeningsStart } from "redux/screenings/actions";
 import "./styles.scss";
-import Rating from "components/rating/Rating";
+import Rating from "components/Rating/Rating";
 import Slider from "pages/home/components/Slider/Slider";
 import MovieThumbnail from "components/MovieThumbnail/MovieThumbnail";
 import ScreeningDatesContainer from "pages/movie/components/ScreeningDatesContainer";
