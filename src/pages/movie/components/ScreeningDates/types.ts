@@ -2,7 +2,7 @@ import { IScreeningDate } from "api/types";
 
 export interface IScreeningDatesProps {
   screeningDates: IScreeningDate[];
-  activeDateIndex: number;
+  activeDateIndex: number | null;
   onClick: Function;
   setReservationDate: (date: string) => void;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IProps, IMappedActions, IMappedState } from "./types";
+import { IProps, IMappedActions, IMappedState, ActiveDate, ActiveHour } from "./types";
 import { connect } from "react-redux";
 import ScreeningDates from "./ScreeningDates/ScreeningDates";
 import ScreeningHours from "./ScreeningHours/ScreeningHours";
@@ -23,14 +23,14 @@ const ScreeningDatesContainer = ({
   dates,
   screeningId,
 }: IProps & IMappedActions & IMappedState) => {
-  const [{ activeDate, activeDateIndex }, setActiveDate] = useState({
-    activeDate: "",
-    activeDateIndex: 0,
-  });
-  const [{ activeHour, activeHourIndex }, setActiveHour] = useState({
-    activeHour: "",
-    activeHourIndex: 0,
-  });
+  const [activeDate, setActiveDate] = useState({
+    date: "",
+    index: null,
+  } as ActiveDate);
+  const [activeHour, setActiveHour] = useState({
+    hour: "",
+    index: null,
+  } as ActiveHour);
   const history = useHistory();
 
   const handleButtonClick = () => {
@@ -40,7 +40,7 @@ const ScreeningDatesContainer = ({
     history.push(`/seat-reservation/${screeningId}`);
   };
 
-  const canChooseSeat = activeDate && activeHour ? true : false;
+  const canChooseSeat = activeDate.date && activeHour.hour ? true : false;
 
   return (
     <div className="screening-dates-container">
@@ -48,18 +48,20 @@ const ScreeningDatesContainer = ({
         <>
           <ScreeningDates
             screeningDates={dates}
-            activeDateIndex={activeDateIndex}
+            activeDateIndex={activeDate.index}
             onClick={setActiveDate}
           />
-          <ScreeningHours
-            screeningDate={dates[activeDateIndex]}
-            activeHourIndex={activeHourIndex}
-            onClick={setActiveHour}
-          />
+          {
+            activeDate.index !== null && (<ScreeningHours
+              screeningDate={dates[activeDate.index]}
+              activeHourIndex={activeHour.index}
+              onClick={setActiveHour}
+            />)
+          }
         </>
       ) : (
-        <LoaderSpinner />
-      )}
+          <LoaderSpinner />
+        )}
       <CustomButton
         type="button"
         block

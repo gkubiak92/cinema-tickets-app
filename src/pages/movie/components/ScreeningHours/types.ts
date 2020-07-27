@@ -13,6 +13,6 @@ export interface IScreeningHoursMappedDispatch {
 
 export type IScreeningHoursProps = {
   screeningDate: IScreeningDate;
-  activeHourIndex: number;
+  activeHourIndex: number | null;
   onClick: Function;
 } & IScreeningHoursMappedDispatch;

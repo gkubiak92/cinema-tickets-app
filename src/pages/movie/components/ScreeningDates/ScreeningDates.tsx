@@ -23,12 +23,12 @@ const ScreeningDates = ({
           <div
             key={index}
             onClick={() => {
-              onClick({ activeDate: date, activeDateIndex: index });
+              onClick({ date, index });
               setReservationDate(date.toISOString());
             }}
             className={`screening-date ${
               index === activeDateIndex ? "active" : ""
-            } `}
+              } `}
           >
             <p className="day-of-week">{weekday}</p>
             <p className="day-number">{dayNumber}</p>

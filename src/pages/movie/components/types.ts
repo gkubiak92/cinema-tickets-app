@@ -19,3 +19,13 @@ export interface IMappedActions {
 export type IProps = {
   movieId: string;
 };
+
+export type ActiveDate = {
+  date: string,
+  index: null | number;
+}
+
+export type ActiveHour = {
+  hour: string,
+  index: null | number;
+}
