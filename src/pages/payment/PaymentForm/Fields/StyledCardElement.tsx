@@ -6,7 +6,6 @@ const StyledCardElement = () => {
         () => ({
             style: {
                 base: {
-                    marginTop: '16px',
                     fontSize: '16px',
                     color: "#424770",
                     letterSpacing: "0.025em",
