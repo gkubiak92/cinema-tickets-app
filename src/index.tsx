@@ -6,13 +6,17 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import { store, persistor } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
+import { Elements } from '@stripe/react-stripe-js'
+import { stripe } from "services/stripe/stripe";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <BrowserRouter>
-          <App />
+          <Elements stripe={stripe}>
+            <App />
+          </Elements>
         </BrowserRouter>
       </PersistGate>
     </Provider>

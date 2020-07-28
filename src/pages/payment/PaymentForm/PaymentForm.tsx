@@ -2,43 +2,45 @@ import React from "react";
 import "./styles.scss";
 import CustomButton from "components/CustomButton/CustomButton";
 import { Form, Field } from "react-final-form";
-import { PaymentFormValues, PaymentFormErrors, MappedDispatch } from "./types";
+import { PaymentFormValues, MappedDispatch } from "./types";
 import TextInput from "./Fields/TextInput";
-import { validateEmail, validateName } from "./utils";
+import { validateErrors } from "./utils";
 import { connect } from "react-redux";
 import { addReservationStart } from "redux/reservation/actions";
+import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import StyledCardElement from "./Fields/StyledCardElement";
 
 const PaymentForm = ({ addReservationStart }: MappedDispatch) => {
+  const stripe = useStripe();
+  const elements = useElements();
+
   const initialValues: PaymentFormValues = {
     email: "",
     firstName: "",
     lastName: "",
   };
 
-  const onSubmit = (values: PaymentFormValues) => {
-    console.log(values);
-    addReservationStart(values);
-  };
+  const onSubmit = async (values: PaymentFormValues) => {
+    console.log('submit');
+    if (!stripe || !elements) {
+      return;
+    }
+    const card = elements.getElement(CardElement);
+    if (!card) {
+      return;
+    }
 
-  const validateErrors = (values: PaymentFormValues): PaymentFormErrors => {
-    const errors: PaymentFormErrors = {};
-    const { email, firstName, lastName } = values;
-    if (!email) {
-      errors.email = "Email is required";
-    } else if (!validateEmail(email)) {
-      errors.email = "Email must be in email format with @ sign";
+    try {
+      //TODO: change this to use some backend to pay or some serverless functions
+      const payload = await stripe.createPaymentMethod({
+        type: 'card',
+        card,
+      });
+      console.log("Succesfully paid with [PaymentMethod]: ", payload);
+      addReservationStart(values);
+    } catch (error) {
+      console.log(error);
     }
-    if (!firstName) {
-      errors.firstName = "First name is required";
-    } else if (!validateName(firstName)) {
-      errors.firstName = "First name must contain only letters";
-    }
-    if (!lastName) {
-      errors.lastName = "Last name is required";
-    } else if (!validateName(lastName)) {
-      errors.lastName = "Last name must contain only letters";
-    }
-    return errors;
   };
 
   return (
@@ -46,7 +48,7 @@ const PaymentForm = ({ addReservationStart }: MappedDispatch) => {
       onSubmit={onSubmit}
       initialValues={initialValues}
       validate={(values) => validateErrors(values)}
-      render={({ handleSubmit, submitting, pristine }) => (
+      render={({ handleSubmit, submitting, pristine, valid }) => (
         <form className="payment-form" onSubmit={handleSubmit}>
           <label htmlFor="email">E-mail</label>
           <Field
@@ -69,7 +71,10 @@ const PaymentForm = ({ addReservationStart }: MappedDispatch) => {
               <TextInput input={input} meta={meta} />
             )}
           />
-          <CustomButton type="submit" block disabled={submitting || pristine}>
+          <div className="card-row">
+            <StyledCardElement />
+          </div>
+          <CustomButton type="submit" block disabled={submitting || pristine || !stripe || !valid}>
             Confirm payment
           </CustomButton>
         </form>

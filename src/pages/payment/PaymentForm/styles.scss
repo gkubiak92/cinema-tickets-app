@@ -10,14 +10,21 @@ form.payment-form {
   }
 
   input {
-    height: 48px;
-    padding: 8px 8px;
-    font-size: 18px;
+    height: 36px;
+    padding: 4px 4px;
+    font-size: 16px;
     border: 2px solid $third-color;
     border-radius: 12px;
   }
 
   .errorMsg {
     color: $danger;
+  }
+
+  .card-row {
+    margin-top: 24px;
+    padding: 8px;
+    background-color: rgb(230, 234, 255);
+    border-radius: 8px;
   }
 }
