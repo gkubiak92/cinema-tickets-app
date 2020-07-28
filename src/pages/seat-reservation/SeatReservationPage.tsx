@@ -37,10 +37,10 @@ const SeatReservationPage = ({
       {movie ? (
         <MovieInfo movie={movie} date={date} hour={hour} />
       ) : (
-        <LoaderSpinner />
-      )}
-      <SeatingPlan screeningId={screeningId} />
+          <LoaderSpinner />
+        )}
       <SeatingPlanLegend />
+      <SeatingPlan screeningId={screeningId} />
       <CustomButton
         type="button"
         to="/payment"
