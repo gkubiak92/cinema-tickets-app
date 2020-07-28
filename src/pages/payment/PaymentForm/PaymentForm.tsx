@@ -21,7 +21,6 @@ const PaymentForm = ({ addReservationStart }: MappedDispatch) => {
   };
 
   const onSubmit = async (values: PaymentFormValues) => {
-    console.log('submit');
     if (!stripe || !elements) {
       return;
     }
