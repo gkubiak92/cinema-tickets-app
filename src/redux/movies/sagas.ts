@@ -1,8 +1,8 @@
 import { takeLatest, put, all, call } from "redux-saga/effects";
 import { MovieActionNames } from "./types";
 import { fetchMoviesFailure, fetchMoviesSuccess } from "./actions";
-import { firestore, convertSnapshotToArray } from "firebase/firebase.utils";
-import { FirestoreCollections } from "firebase/types";
+import { firestore, convertSnapshotToArray } from "services/firebase/firebase.utils";
+import { FirestoreCollections } from "services/firebase/types";
 
 export function* fetchMoviesStart() {
   yield takeLatest(MovieActionNames.FETCH_MOVIES_START, fetchMoviesAsync);

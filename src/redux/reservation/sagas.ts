@@ -10,8 +10,8 @@ import {
   addReservationFailure,
   addReservationSuccess,
 } from "./actions";
-import { firestore } from "firebase/firebase.utils";
-import { FirestoreCollections } from "firebase/types";
+import { firestore } from "services/firebase/firebase.utils";
+import { FirestoreCollections } from "services/firebase/types";
 import { selectReservationHallId, selectReservationData } from "./selectors";
 import { IReservation } from "api/types";
 import { addBookedSeatsToScreeningStart } from "redux/screenings/actions";

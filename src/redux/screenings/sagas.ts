@@ -10,8 +10,8 @@ import {
   addBookedSeatsToScreeningFailure,
   addBookedSeatsToScreeningSuccess,
 } from "./actions";
-import { firestore, convertSnapshotToArray } from "firebase/firebase.utils";
-import { FirestoreCollections } from "firebase/types";
+import { firestore, convertSnapshotToArray } from "services/firebase/firebase.utils";
+import { FirestoreCollections } from "services/firebase/types";
 import firebase from "firebase";
 
 function* fetchScreeningsStart() {
