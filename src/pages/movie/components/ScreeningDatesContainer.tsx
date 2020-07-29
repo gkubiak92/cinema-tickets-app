@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './styles.scss';
 import { IProps, IMappedActions, IMappedState, ActiveDate, ActiveHour } from "./types";
 import { connect } from "react-redux";
 import ScreeningDates from "./ScreeningDates/ScreeningDates";
@@ -8,7 +9,6 @@ import { resetSelectedSeats } from "redux/reservation/actions";
 import { useHistory } from "react-router-dom";
 import { IRootState } from "redux/types";
 import { selectMovieScreeningDates } from "redux/screenings/selectors";
-import LoaderSpinner from "components/LoaderSpinner/LoaderSpinner";
 import {
   fetchHallDataStart,
   setReservationMovieId,
@@ -60,14 +60,13 @@ const ScreeningDatesContainer = ({
           }
         </>
       ) : (
-          <LoaderSpinner />
+          <p className="no-screenings-info">There are no screening dates yet</p>
         )}
       <CustomButton
         type="button"
         block
         onClick={handleButtonClick}
-        disabled={!canChooseSeat}
-      >
+        disabled={!canChooseSeat}>
         Take a seat
       </CustomButton>
     </div>
