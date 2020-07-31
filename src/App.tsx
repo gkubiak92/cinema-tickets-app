@@ -20,6 +20,9 @@ import MoviesPage from "pages/movies/MoviesPage";
 import SeatReservationPage from "pages/seat-reservation/SeatReservationPage";
 import PaymentPage from "pages/payment/PaymentPage";
 import GlobalSpinner from "components/GlobalSpinner/GlobalSpinner";
+import { IRootState } from "redux/types";
+import { connect } from "react-redux";
+import { MappedState } from "types";
 
 library.add(
   faBars,
@@ -32,11 +35,11 @@ library.add(
   faHome,
 );
 
-function App() {
+function App({ loading }: MappedState) {
   return (
     <div className="App">
       <Header />
-      <GlobalSpinner />
+      {loading && <GlobalSpinner />}
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/movie/:movieId" component={MoviePage} />
@@ -51,4 +54,8 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state: IRootState) => ({
+  loading: state.ui.spinner,
+})
+
+export default connect(mapStateToProps)(App);

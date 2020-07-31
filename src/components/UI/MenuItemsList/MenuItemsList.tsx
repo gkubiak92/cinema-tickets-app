@@ -5,7 +5,7 @@ import HeaderTitle from "components/UI/HeaderTitle/HeaderTitle";
 
 const MenuItemsList = () => (
   <div className="menu-items-list">
-    <HeaderTitle theme="dark" />
+    <HeaderTitle theme="dark" title="CINEMAPP" />
     <MenuItem to={"/"} title={"Home"} icon={"home"} />
     <MenuItem to={"/movies"} title={"Movies"} icon={"film"} />
   </div>
