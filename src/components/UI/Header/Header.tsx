@@ -13,7 +13,7 @@ const Header = ({ showSearchBar }: IMappedState) => (
   <header className="header">
     <SideDrawer />
     <MenuIcon />
-    <HeaderTitle theme="light" />
+    <HeaderTitle theme="light" title="CINEMAPP" />
     <SearchIcon />
     {showSearchBar && <SearchBarContainer />}
   </header>
