@@ -8,7 +8,7 @@ describe('Custom button', () => {
     const defaultLocation = 'http://localhost';
 
     afterEach(() => {
-        window.history.pushState({}, '', defaultLocation);
+        window.history.replaceState({}, '', defaultLocation);
     });
 
     test('redner custom button', () => {
