@@ -7,7 +7,7 @@ import { fetchMovieScreeningsStart } from "redux/screenings/actions";
 import "./styles.scss";
 import Rating from "components/Rating/Rating";
 import Slider from "pages/home/components/Slider/Slider";
-import MovieThumbnail from "components/MovieThumbnail/MovieThumbnail";
+import MovieThumbnail from "components/MovieInfo/MovieThumbnail/MovieThumbnail";
 import ScreeningDatesContainer from "pages/movie/components/ScreeningDatesContainer";
 import { IMoviePageMatchParams, IMoviePageProps } from "./types";
 
