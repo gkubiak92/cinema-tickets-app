@@ -6,7 +6,7 @@ import uiReducer from "./ui/reducer";
 import reservationReducer from "./reservation/reducer";
 import screeningsReducer from "./screenings/reducer";
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   movies: moviesReducer,
   ui: uiReducer,
   reservation: reservationReducer,
