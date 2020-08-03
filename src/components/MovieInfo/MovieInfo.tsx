@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import MovieThumbnail from "components/MovieInfo/MovieThumbnail/MovieThumbnail";
+import MovieThumbnail from "components/MovieThumbnail/MovieThumbnail";
 import { IMovieInfoProps } from "./types";
 
 const MovieInfo = ({ movie, date, hour }: IMovieInfoProps) => {

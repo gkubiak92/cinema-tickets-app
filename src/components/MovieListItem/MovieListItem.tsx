@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.scss";
 import { IMovieListItemProps } from "./types";
 import Rating from "components/Rating/Rating";
-import MovieThumbnail from "components/MovieInfo/MovieThumbnail/MovieThumbnail";
+import MovieThumbnail from "components/MovieThumbnail/MovieThumbnail";
 import { useDispatch } from "react-redux";
 import { hideSearchBar } from "redux/ui/actions";
 
