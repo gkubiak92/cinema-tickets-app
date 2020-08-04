@@ -1,11 +1,10 @@
 import React from 'react';
 import MovieListItem from './MovieListItem';
-import { render, screen, fireEvent } from 'tests/test-utils';
+import { render, fireEvent } from 'tests/test-utils';
 import { IMovie } from 'api/types';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
-import { createStore } from 'redux';
-import { showSearchBar, hideSearchBar } from 'redux/ui/actions';
+import { hideSearchBar } from 'redux/ui/actions';
 import { store as initialStore } from 'redux/store'
 
 library.add(
@@ -31,7 +30,7 @@ const mockMovie: IMovie = {
 }
 
 describe('MovieListItem component', () => {
-    test('Render MovieListItem component', () => {
+    test('Render MovieListItem component with proper data', () => {
         const { container } = render(<MovieListItem movie={mockMovie} />);
         expect(container).toBeInTheDocument();
         const content = document.querySelector('.content');
