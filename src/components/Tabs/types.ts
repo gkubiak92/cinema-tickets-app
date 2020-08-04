@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 export interface ITabProps {
   name: string;
   isActive: boolean;
