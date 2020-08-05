@@ -2,17 +2,6 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.scss";
 import "./styles/index.scss";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-  faBars,
-  faSearch,
-  faTimes,
-  faStar,
-  faStarHalf,
-  faFilm,
-  faHome,
-} from "@fortawesome/free-solid-svg-icons";
-import { faStar as starEmpty } from "@fortawesome/free-regular-svg-icons";
 import Header from "components/UI/Header/Header";
 import HomePage from "pages/home/HomePage";
 import MoviePage from "pages/movie/MoviePage";
@@ -24,16 +13,6 @@ import { IRootState } from "redux/types";
 import { connect } from "react-redux";
 import { MappedState } from "types";
 
-library.add(
-  faBars,
-  faSearch,
-  faTimes,
-  faStar,
-  faStarHalf,
-  starEmpty,
-  faFilm,
-  faHome,
-);
 
 function App({ loading }: MappedState) {
   return (

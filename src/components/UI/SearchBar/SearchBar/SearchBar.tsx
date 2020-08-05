@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch } from 'react-redux';
 import { hideSearchBar } from 'redux/ui/actions';
 import { IProps } from './types';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const SearchBar = ({ inputVal, handleChange }: IProps) => {
     const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const SearchBar = ({ inputVal, handleChange }: IProps) => {
                 onChange={(e) => handleChange(e)} />
             <FontAwesomeIcon className="close-icon"
                 size="lg"
-                icon="times"
+                icon={faTimes}
                 onClick={() => dispatch(hideSearchBar())} />
         </div>
     )
