@@ -7,11 +7,12 @@ import { toggleSideDrawer } from "redux/ui/actions";
 import { IRootState } from "redux/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuItemsList from "components/UI/MenuItemsList/MenuItemsList";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const SideDrawer = ({ show, toggleSideDrawer }: IProps) => (
   <div className={`sidedrawer ${show ? "show" : ""}`}>
     <div onClick={toggleSideDrawer} className="close-button">
-      <FontAwesomeIcon icon="times" />
+      <FontAwesomeIcon icon={faTimes} />
     </div>
     <MenuItemsList />
   </div>

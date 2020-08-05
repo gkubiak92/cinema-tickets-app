@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchIcon from './SearchIcon';
-import { render, fireEvent, screen } from 'tests/test-utils';
+import { render, fireEvent } from 'tests/test-utils';
 import { store as initialStore } from 'redux/store';
 import { showSearchBar } from 'redux/ui/actions';
 
@@ -19,9 +19,9 @@ describe('SearchIcon component', () => {
     test('clicking icon dispatch showSearchBar action', () => {
         const mockStore = initialStore;
         mockStore.dispatch = jest.fn();
-        const { container, store } = render(<SearchIcon />);
+        const { container } = render(<SearchIcon />, mockStore);
         fireEvent.click(container.firstChild!);
-        expect(store.dispatch).toHaveBeenCalledTimes(1);
-        expect(store.dispatch).toHaveBeenCalledWith(showSearchBar());
+        expect(mockStore.dispatch).toHaveBeenCalledTimes(1);
+        expect(mockStore.dispatch).toHaveBeenCalledWith(showSearchBar());
     });
 });
