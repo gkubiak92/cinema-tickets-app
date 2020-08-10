@@ -7,9 +7,12 @@ https://cinema-tickets-app.vercel.app/
 
 ## Technologies used in this project:
 - React with Typescript (CRA with TS template)
+- React-router-dom
 - Redux
+- Redux-persist
 - Redux-Saga
-- SASS
+- Reselect
+- React final form
 - Firebase
 - Stripe
 
