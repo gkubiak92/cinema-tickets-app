@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./styles.scss";
 import { connect } from "react-redux";
 import Slider from "pages/home/components/Slider/Slider";
-import { slides } from "data/dump-data";
+import { slides } from "./slides";
 import MoviesList from "components/MoviesList/MoviesList";
 import Tabs from "components/Tabs/Tabs";
 import {
