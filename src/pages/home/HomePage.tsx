@@ -14,8 +14,8 @@ import {
 import { createStructuredSelector } from "reselect";
 import { IHomePageProps, IMappedActions } from "./types";
 import { IRootState } from "redux/types";
-import LoaderSpinner from "components/LoaderSpinner/LoaderSpinner";
 import { fetchMoviesStart } from "redux/movies/actions";
+import withSpinner from "components/HOC/withSpinner/withSpinner";
 
 const HomePage = ({
   newMovies,
@@ -43,10 +43,12 @@ const HomePage = ({
     },
   ];
 
+  const TabsWithSpinner = withSpinner(Tabs, isFetchingMovies);
+
   return (
     <main className="homepage">
       <Slider interval={3000} slides={slides} />
-      {isFetchingMovies ? <LoaderSpinner /> : <Tabs tabs={tabsData} />}
+      <TabsWithSpinner tabs={tabsData} />
     </main>
   );
 };
