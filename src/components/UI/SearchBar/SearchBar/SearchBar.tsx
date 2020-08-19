@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import './styles.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch } from 'react-redux';
@@ -8,10 +8,15 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const SearchBar = ({ inputVal, handleChange }: IProps) => {
     const dispatch = useDispatch();
+    const inputRef = useRef<HTMLInputElement>(null);
+    useEffect(() => {
+        inputRef.current?.focus();
+    }, []);
 
     return (
         <div className="search-bar">
             <input className="search-input"
+                ref={inputRef}
                 type="text"
                 placeholder="Search Movie"
                 value={inputVal}
