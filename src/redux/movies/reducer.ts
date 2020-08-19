@@ -1,6 +1,6 @@
-import { MovieActionNames, MovieActionTypes } from "./types";
+import { MovieActionNames, MovieActionTypes, IMoviesState } from "./types";
 
-const INITIAL_STATE = {
+const INITIAL_STATE: IMoviesState = {
   movies: [],
   isFetching: false,
   error: "",
