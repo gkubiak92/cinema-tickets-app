@@ -16,9 +16,18 @@ const SearchBarContainer = () => {
     const SearchResult = () => {
         if (searchFilter !== '') {
             if (movies.length > 0) {
-                return <MoviesList movies={movies} />
+                return (
+                    <div className="search-results">
+                        <MoviesList movies={movies} />
+                    </div>
+                )
+
             } else {
-                return <p>There is no movies matching entered title</p>
+                return (
+                    <div className="search-results">
+                        <p>There is no movies matching entered title</p>
+                    </div>
+                )
             }
         } else {
             return null;
@@ -28,9 +37,7 @@ const SearchBarContainer = () => {
     return (
         <div className="search-bar-container">
             <SearchBar inputVal={searchFilter} handleChange={handleInputChange} />
-            <div className="search-results">
-                {<SearchResult />}
-            </div>
+            {<SearchResult />}
         </div>
     )
 }
