@@ -22,7 +22,7 @@ div.App {
   margin: 0 auto;
   background-color: #f6f6f6;
   min-height: calc(100vh - #{$bottom-button-height});
-  padding: 0 24px $bottom-button-height 24px;
+  padding: 0 24px;
   box-shadow: 0px 0px 40px 0px rgba(71, 71, 71, 0.3);
 
   @media (min-width: 1024px) {

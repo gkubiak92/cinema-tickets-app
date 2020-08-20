@@ -1,6 +1,9 @@
+@import "./styles/variables";
+
 .movie-page {
   display: flex;
   flex-direction: column;
+  padding-bottom: $bottom-button-height;
 
   .image {
     margin-left: -24px;
