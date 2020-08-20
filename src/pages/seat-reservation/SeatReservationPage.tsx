@@ -34,13 +34,11 @@ const SeatReservationPage = ({
 
   return (
     <div className="seat-reservation">
-      {movie ? (
-        <MovieInfo movie={movie} date={date} hour={hour} />
-      ) : (
-          <LoaderSpinner />
-        )}
-      <SeatingPlanLegend />
-      <SeatingPlan screeningId={screeningId} />
+      {movie ? (<MovieInfo movie={movie} date={date} hour={hour} />) : (<LoaderSpinner />)}
+      <div className="seat-reservation-plan">
+        <SeatingPlanLegend />
+        <SeatingPlan screeningId={screeningId} />
+      </div>
       <CustomButton
         type="button"
         to="/payment"

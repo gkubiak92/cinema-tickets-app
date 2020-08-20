@@ -2,6 +2,7 @@
 
 div.seat-reservation {
   padding-top: 24px;
+  padding-bottom: $bottom-button-height + 12px;
 
   .legend {
     display: flex;
