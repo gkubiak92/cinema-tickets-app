@@ -13,13 +13,23 @@ const SearchBarContainer = () => {
         setSearchFilter(e.target.value);
     };
 
+    const SearchResult = () => {
+        if (searchFilter !== '') {
+            if (movies.length > 0) {
+                return <MoviesList movies={movies} />
+            } else {
+                return <p>There is no movies matching entered title</p>
+            }
+        } else {
+            return null;
+        }
+    }
+
     return (
         <div className="search-bar-container">
             <SearchBar inputVal={searchFilter} handleChange={handleInputChange} />
             <div className="search-results">
-                {movies.length
-                    ? <MoviesList movies={movies} />
-                    : <p>There is no movies matching entered title</p>}
+                {<SearchResult />}
             </div>
         </div>
     )

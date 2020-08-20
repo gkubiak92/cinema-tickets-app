@@ -12,6 +12,8 @@
         flex: 1;
         align-self: stretch;
         border: none;
+        font-size: 16px;
+        font-weight: 600;
         &:active,
         &:focus,
         &:visited {
@@ -21,5 +23,9 @@
         &::placeholder {
             color: rgba($color: #000, $alpha: .4);
         }
+    }
+
+    .close-icon {
+        cursor: pointer;
     }
 }
